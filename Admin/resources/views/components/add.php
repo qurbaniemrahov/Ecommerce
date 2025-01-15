@@ -38,12 +38,11 @@
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
-       <?php 
-       include("../partials/_sidebar.php")
-       ?>
-      <!-- <a href="../partials/_sidebar.php"></a> -->
+      <?php 
+      include("../partials/_sidebar.php")
+      ?>
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
+      <div class="container-fluid">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div
@@ -343,7 +342,7 @@
                     <h4 class="card-title">Default form</h4>
                     <p class="card-description">Basic form layout</p>
                     <form class="forms-sample">
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label for="exampleInputUsername1">Firstname</label>
                         <input
                           type="text"
@@ -351,8 +350,8 @@
                           id="exampleInputUsername1"
                           placeholder="Firstname"
                         />
-                      </div>
-                      <div class="form-group">
+                      </div> -->
+                      <!-- <div class="form-group">
                         <label for="exampleInputEmail1">Lastname</label>
                         <input
                           type="text"
@@ -360,14 +359,14 @@
                           id="exampleInputEmail1"
                           placeholder="Lastname"
                         />
-                      </div>
-                      <div class="form-group">
+                      </div> -->
+                      <!-- <div class="form-group">
                         <form action="/action_page.php">
                           <label for="birthday">Birthday:</label>
                           <input type="date" id="birthday" name="birthday" />
                           <input type="submit" />
                         </form>
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input
@@ -386,7 +385,7 @@
                           placeholder="Password"
                         />
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label for="exampleInputConfirmPassword1"
                           >Confirm Password</label
                         >
@@ -396,14 +395,14 @@
                           id="exampleInputConfirmPassword1"
                           placeholder="Password"
                         />
-                      </div>
+                      </div> -->
                       <div
                         class="form-check form-check-flat form-check-primary"
                       >
-                        <label class="form-check-label">
+                        <!-- <label class="form-check-label">
                           <input type="checkbox" class="form-check-input" />
                           Remember me
-                        </label>
+                        </label> -->
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">
                         Submit
