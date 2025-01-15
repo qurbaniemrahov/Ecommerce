@@ -4,7 +4,7 @@
             <div class="page-header">
 
               <h3 class="page-title">İstifadəçilər</h3>
-           <a href="../../views/components/add.php">
+           <a href="../resources/views/components/add.php">
             <button class="btn btn-info">
               Add
             </button>
@@ -26,7 +26,7 @@
                       <table class="table">
                         <thead>
                           <tr>
-                         
+                          <th>Id</th>
                             <th>Email</th>
                             <th>Şifrə</th>
                             <th>Edit</th>
@@ -35,11 +35,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                         
+                         <td>1</td>
                             <td>test@mail.ru</td>
                             <td>1234</td>
                             <td>
-                              <a class="btn btn-success" href="../partials/_edit.html">
+                              <a class="btn btn-success" href="../resources/views/components/edit.php">
                                 Edit
                               </a>
                             </td>
