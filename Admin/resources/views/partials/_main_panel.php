@@ -4,7 +4,7 @@
             <div class="page-header">
 
               <h3 class="page-title">İstifadəçilər</h3>
-           <a href="../resources/views/components/add.php">
+           <a href="../resources/views/components/_user_add.php">
             <button class="btn btn-info">
               Add
             </button>

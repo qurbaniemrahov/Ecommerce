@@ -341,7 +341,8 @@
                   <div class="card-body">
                     <h4 class="card-title">Default form</h4>
                     <p class="card-description">Basic form layout</p>
-                    <form class="forms-sample">
+                 
+                    <form action="../../../app/Http/Controllers/user/user.php" class="forms-sample" method="POST">
                       <!-- <div class="form-group">
                         <label for="exampleInputUsername1">Firstname</label>
                         <input
@@ -371,6 +372,7 @@
                         <label for="exampleInputEmail1">Email</label>
                         <input
                           type="email"
+                          name="email"
                           class="form-control"
                           id="exampleInputEmail1"
                           placeholder="Email"
@@ -380,6 +382,7 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input
                           type="password"
+                          name="password"
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Password"
@@ -404,7 +407,7 @@
                           Remember me
                         </label> -->
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">
+                      <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">
                         Submit
                       </button>
                       <button class="btn btn-dark">Cancel</button>
