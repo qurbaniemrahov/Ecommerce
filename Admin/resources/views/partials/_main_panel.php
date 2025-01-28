@@ -34,25 +34,51 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                         <td>1</td>
-                            <td>test@mail.ru</td>
-                            <td>1234</td>
-                            <td>
-                              <a class="btn btn-success" href="../resources/views/components/edit.php">
-                                Edit
-                              </a>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger" href="">
-                                  Delete
-                                </a>
-                              </td>
-                          </tr>
                          
-                        
-                        
-                        
+                        <?php
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Include database connection
+include("../../../../config/connection.php");
+
+// Check if $pdo is defined
+if (!isset($pdo)) {
+    die("Database connection not established.");
+}
+
+$sql = "SELECT * FROM admin_user";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$users = $stmt->fetchAll();
+
+if (!$users) {
+    echo "<tr><td colspan='5'>No data found!</td></tr>";
+} else {
+    foreach ($users as $user) {
+        ?>
+        <tr>
+            <td><?php echo $user['id']; ?></td>
+            <td><?php echo $user['email']; ?></td>
+            <td><?php echo $user['password']; ?></td>
+            <td>
+                <a class="btn btn-success" href="../resources/views/components/edit.php?id=<?php echo $user['id']; ?>">
+                    Edit
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="../resources/views/components/delete.php?id=<?php echo $user['id']; ?>">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        <?php
+    }
+}
+?>
+
+
                         </tbody>
                       </table>
                     </div>
