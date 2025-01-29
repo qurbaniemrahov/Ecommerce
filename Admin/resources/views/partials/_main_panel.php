@@ -82,10 +82,14 @@ if (!$users) {
                 </a>
             </td>
             <td>
-                <a class="btn btn-danger" href="../resources/views/components/delete.php?id=<?php echo $user['id']; ?>">
-                    Delete
-                </a>
+            <form action="../app/Http/Controllers/user/user_delete.php" method="POST">
+    <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
             </td>
+
+
+           
         </tr>
         <?php
     }
