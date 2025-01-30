@@ -3,7 +3,7 @@ include("../../../../config/connection.php");
 
 try {
     if (isset($_POST['id'])) {
-        $id = $_POST['id']; // Get ID from POST request
+        $id = $_POST['id']; 
         echo "Received ID: " . $id . "<br>";
 
         // Check if ID exists in the database before deleting
@@ -15,7 +15,7 @@ try {
         if ($checkStmt->rowCount() > 0) {
             echo "User found. Proceeding to delete...<br>";
 
-            // Delete user
+            
             $sql = "DELETE FROM admin_user WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
