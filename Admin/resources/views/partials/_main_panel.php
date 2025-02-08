@@ -28,7 +28,7 @@
                           <tr>
                           <th>Id</th>
                             <th>Email</th>
-                            <th>Şifrə</th>
+                            <!-- <th>Şifrə</th> -->
                             <th>Edit</th>
                             <th>Delete</th>
                           </tr>
@@ -75,11 +75,16 @@ if (!$users) {
         <tr>
             <td><?php echo $user['id']; ?></td>
             <td><?php echo $user['email']; ?></td>
-            <td><?php echo $user['password']; ?></td>
+         
             <td>
-                <a class="btn btn-success" href="../resources/views/components/edit.php?id=<?php echo $user['id']; ?>">
-                    Edit
-                </a>
+      
+  
+    <a href="../resources/views/components/_user_edit.php">
+    <button type="submit" class="btn btn-success">Edit</button>
+    </a>
+ 
+
+
             </td>
             <td>
             <form action="../app/Http/Controllers/user/user_delete.php" method="POST">
