@@ -1,3 +1,22 @@
+<?php
+include("../../../config/connection.php");
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+
+  $stmt = $pdo->prepare("SELECT * FROM admin_user WHERE id = :id");
+  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if (!$user) {
+      echo "İstifadəçi tapılmadı!";
+      exit;
+  }
+} else {
+  echo "ID mövcud deyil!";
+  exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -299,22 +318,17 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper ">
-          <form class="w-25" action="../../../app/Http/Controllers/user/user_edit_controller.php">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+          <form action="../../../app/Http/Controllers/user/user_edit_controller.php" method="POST">
+    <input type="hidden" name="id" value="<?= $user['id']; ?>"> <!-- Dəyişdiriləcək istifadəçi ID -->
+    <label>Email:</label>
+    <input type="email" name="email" value="<?= htmlspecialchars($user['email']); ?>" required>
+
+    <label>Yeni Şifrə:</label>
+    <input type="password" name="password">
+
+    <button type="submit">Yenilə</button>
 </form>
+
         
           </div>
           <!-- content-wrapper ends -->
