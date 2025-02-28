@@ -1,21 +1,7 @@
-<?php
+<?php 
 include("../../../config/connection.php");
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
 
-  $stmt = $pdo->prepare("SELECT * FROM admin_user WHERE id = :id");
-  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-  $stmt->execute();
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if (!$user) {
-      echo "İstifadəçi tapılmadı!";
-      exit;
-  }
-} else {
-  echo "ID mövcud deyil!";
-  exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -321,7 +307,7 @@ if (isset($_GET['id'])) {
           <form action="../../../app/Http/Controllers/user/user_edit_controller.php" method="POST">
     <input type="hidden" name="id" value="<?= $user['id']; ?>"> <!-- Dəyişdiriləcək istifadəçi ID -->
     <label>Email:</label>
-    <input type="email" name="email" value="<?= htmlspecialchars($user['email']); ?>" required>
+    <input type="email" name="email" value="" required>
 
     <label>Yeni Şifrə:</label>
     <input type="password" name="password">

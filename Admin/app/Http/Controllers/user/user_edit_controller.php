@@ -1,29 +1,34 @@
 <?php
 include("../../../../config/connection.php");
 
+try {
+    if (isset($_POST['id'])) {
+        $id = $_POST['id']; 
+        echo "Received ID: " . $id . "<br>";
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id']; // İstifadəçi ID
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Şifrəni hash-lə
-
-    try {
-        $sql = "UPDATE admin_user SET email = :email, password = :password WHERE id = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+      
+        $checkSql = "SELECT * FROM admin_user WHERE id = :id";
+        $checkStmt = $pdo->prepare($checkSql);
+        $checkStmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $checkStmt->execute();
         
-        if ($stmt->execute()) {
-            echo "İstifadəçi uğurla yeniləndi!";
-        } else {
-            echo "Yeniləmə zamanı xəta baş verdi.";
-        }
-    } catch (PDOException $e) {
-        echo "Xəta: " . $e->getMessage();
-    }
-}
-?>
+        if ($checkStmt->rowCount() > 0) {
+            echo "User found. Proceeding to delete...<br>";
 
+            
+            $sql = "UPDATE FROM admin_user WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            echo "User updated successfully!";
+        } else {
+            echo "Error: User not found!";
+        }
+    } else {
+        echo "Error: ID is missing!";
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
 ?>
