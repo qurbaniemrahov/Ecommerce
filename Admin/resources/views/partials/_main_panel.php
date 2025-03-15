@@ -79,12 +79,11 @@ if (!$users) {
             <td>
       
   
-    <a href="../resources/views/components/_user_edit.php">
-    <button type="submit" class="btn btn-success">Edit</button>
+    <a href="../resources/views/components/_user_edit.php?id=<?php echo $user['id'] ?>">
+    <!-- <input type="hidden" name="id" value="<?php echo $user['id']; ?>"> -->
+    <button  type="submit" class="btn btn-success">Edit</button>
     </a>
- 
-
-
+    
             </td>
             <td>
             <form action="../app/Http/Controllers/user/user_delete.php" method="POST">

@@ -1,34 +1,39 @@
-<?php
+<?php 
 include("../../../../config/connection.php");
 
-try {
-    if (isset($_POST['id'])) {
-        $id = $_POST['id']; 
-        echo "Received ID: " . $id . "<br>";
+$email = $password = "";
 
-      
-        $checkSql = "SELECT * FROM admin_user WHERE id = :id";
-        $checkStmt = $pdo->prepare($checkSql);
-        $checkStmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $checkStmt->execute();
-        
-        if ($checkStmt->rowCount() > 0) {
-            echo "User found. Proceeding to delete...<br>";
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $stmt=$pdo->prepare("SELECT * FROM admin_user WHERE id = :id");
+    $stmt->execute(["id"=>$id]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            
-            $sql = "UPDATE FROM admin_user WHERE id = :id";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-
-            echo "User updated successfully!";
-        } else {
-            echo "Error: User not found!";
-        }
-    } else {
-        echo "Error: ID is missing!";
+    if ($user) {
+        $email = $user['email'];
+        $password = $user['password'];
+    }else {
+        echo "user not found";
+        exit;
     }
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
 }
+
+//update data
+
+if ($_SERVER["REQUEST_METHOD"]== "POST") {
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+    if (!empty($email) && !empty($password)) {
+        $sql = "UPDATE admin_user SET email = :email, password = :password WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['email' => $email, 'password' => $password, 'id' => $id]);
+        echo "Data updated successfully!";
+    } else {
+        echo "Please fill all fields.";
+    }
+}
+
+
 ?>
