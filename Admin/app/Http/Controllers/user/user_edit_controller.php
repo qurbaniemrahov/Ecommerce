@@ -6,24 +6,24 @@ $email = $password = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt=$pdo->prepare("SELECT * FROM admin_user WHERE id = :id");
-    $stmt->execute(["id"=>$id]);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
         $email = $user['email'];
         $password = $user['password'];
-    }else {
+    } else {
         echo "user not found";
         exit;
     }
 }
-
 //update data
 
 if ($_SERVER["REQUEST_METHOD"]== "POST") {
     $id = $_POST['id'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $password = $_POST['password'];
 
     if (!empty($email) && !empty($password)) {
         $sql = "UPDATE admin_user SET email = :email, password = :password WHERE id = :id";
