@@ -20,20 +20,6 @@ if (isset($_GET['id'])) {
 }
 //update data
 
-if ($_SERVER["REQUEST_METHOD"]== "POST") {
-    $id = $_POST['id'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if (!empty($email) && !empty($password)) {
-        $sql = "UPDATE admin_user SET email = :email, password = :password WHERE id = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['email' => $email, 'password' => $password, 'id' => $id]);
-        echo "Data updated successfully!";
-    } else {
-        echo "Please fill all fields.";
-    }
-}
 
 
 ?>

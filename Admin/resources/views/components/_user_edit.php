@@ -76,7 +76,7 @@ require("../../../app/Http/Controllers/user/user_edit_controller.php");
 
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" value="<?= htmlspecialchars($user['password']) ?>" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

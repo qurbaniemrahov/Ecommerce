@@ -9,7 +9,7 @@ try {
     
     $stmt->execute([
         "email" => $_POST["email"],
-        "password" => password_hash($_POST["password"], PASSWORD_DEFAULT), // Hash the password for security
+        "password" => $_POST["password"] // Hash the password for security
     ]);
 
     echo "User added successfully.";
