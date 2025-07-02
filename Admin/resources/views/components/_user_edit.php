@@ -82,7 +82,7 @@ require("../../../app/Http/Controllers/user/user_edit_controller.php");
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button name="update" type="submit" class="btn btn-primary">Submit</button>
 </form>
 
                 </div>
