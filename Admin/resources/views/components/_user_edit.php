@@ -67,23 +67,15 @@ require("../../../app/Http/Controllers/user/user_edit_controller.php");
                 <div class="content-wrapper">
             
                 <form method="POST" action="../../../app/Http/Controllers/user/user_edit_controller.php">
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" value="<?= htmlspecialchars($user['email']) ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="text" value="<?= htmlspecialchars($user['password']) ?>"   class="form-control" id="exampleInputPassword1" placeholder="Password">
-  
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button name="update" type="submit" class="btn btn-primary">Submit</button>
+    <label>Email:</label>
+    <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required><br><br>
+
+    <label>Password:</label>
+    <input type="text" name="password" value="<?php echo htmlspecialchars($password); ?>" required><br><br>
+
+    <button type="submit" name="update" value="1">Update</button>
 </form>
 
                 </div>
