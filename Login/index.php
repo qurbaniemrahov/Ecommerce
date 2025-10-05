@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include("../Admin/config/connection.php"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +14,20 @@
 <body class="d-flex justify-content-center align-items-center vh-100">
   <div class="card shadow-sm p-4" style="width: 22rem;">
     <h4 class="text-center mb-4">Admin Login</h4>
-    <form>
+
+    <!-- Login Form -->
+    <form action="validate.php" method="POST">
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter email" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-primary btn-block">Login</button>
     </form>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+  </div>
 </body>
 </html>
