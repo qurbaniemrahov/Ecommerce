@@ -1,6 +1,5 @@
 <?php 
 session_start();
-include("../Admin/config/connection.php"); 
 ?>
 
 <!DOCTYPE html>
@@ -15,19 +14,22 @@ include("../Admin/config/connection.php");
   <div class="card shadow-sm p-4" style="width: 22rem;">
     <h4 class="text-center mb-4">Admin Login</h4>
 
-    <!-- Login Form -->
+    <?php if (!empty($_SESSION['error'])): ?>
+      <div class="alert alert-danger"><?= htmlspecialchars($_SESSION['error']) ?></div>
+      <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
+
     <form action="validate.php" method="POST">
       <div class="form-group">
         <label for="email">Email address</label>
-        <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter email">
+        <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+        <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
       </div>
-      <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
     </form>
-
   </div>
 </body>
 </html>
