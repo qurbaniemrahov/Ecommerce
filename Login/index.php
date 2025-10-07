@@ -19,13 +19,13 @@ include("../Admin/config/connection.php");
     <form action="validate.php" method="POST">
       <div class="form-group">
         <label for="email">Email address</label>
-        <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter email" required>
+        <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter email">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+        <input name="password" type="password" class="form-control" id="password" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Login</button>
+      <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
     </form>
 
   </div>
