@@ -19,8 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         
-     
-        echo "enter admin panel";
+     header("../Admin/public");
+        // echo "enter admin panel";
+        header("Location: ../Admin/public/index.php");
         exit();
     } else {
      
@@ -29,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
 
 
 
