@@ -14,19 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    
 
-    if ($user && $password === $user['password']) {
-    
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['email'] = $user['email'];
-        
-     header("../Admin/public");
-        // echo "enter admin panel";
-        header("Location: ../Admin/public/index.php");
-        exit();
+     if ($user) {
+        // ✅ Use password_verify to check the hashed password
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+
+            // Redirect to admin panel
+            header("Location: ../Admin/public/");
+            exit();
+        } else {
+            echo "❌ Incorrect password.";
+        }
     } else {
-     
-        echo "exit admin panel";
-        exit();
+        echo "❌ No user found with that email.";
     }
 }
 ?>
