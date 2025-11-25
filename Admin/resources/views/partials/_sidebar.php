@@ -77,6 +77,15 @@
               <span class="menu-title">Istifadəçilər</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items">
+    <a class="nav-link <?php echo ($page == 'qeydiyyat') ? 'active' : ''; ?>" href="/Ecommerce/Admin/public/register.php"
+        <span class="menu-icon">
+            <i class="mdi mdi-table-large"></i>
+        </span>
+        <span class="menu-title">Qeydiyyat</span>
+    </a>
+</li>
        
        
           
