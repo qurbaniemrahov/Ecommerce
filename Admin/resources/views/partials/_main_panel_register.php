@@ -3,12 +3,12 @@
            
             <div class="page-header">
 
-              <h3 class="page-title">İstifadəçilər</h3>
-           <a href="../resources/views/components/_user_add.php">
+              <h3 class="page-title">Sign up</h3>
+           <!-- <a href="../resources/views/components/_user_add.php">
             <button class="btn btn-info">
               Add
             </button>
-           </a>
+           </a> -->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   
@@ -27,13 +27,45 @@
                         <thead>
                           <tr>
                           <th>Id</th>
-                            <th>Email</th>
-                            <!-- <th>Şifrə</th> -->
+                           <th>Firstname</th>
+ <th>Lastname</th>
+ <th>Birthday</th>
+ <th>Gender</th>
+ <th>Email</th>
+ <th>Password</th>
+                            
+                        
                             <th>Edit</th>
                             <th>Delete</th>
                           </tr>
                         </thead>
                         <tbody>
+                          <tr>
+                                                  <td>1</td>
+                          <td>John</td>
+ <td>Doe</td>
+ <td> 05.04.1992</td>
+ <td>Male</td>
+ <td>test@mail.ru</td>
+ <td>1234</td>
+                        <td>
+                     <a href="">
+ 
+    <button  type="submit" class="btn btn-success">Edit</button>
+    </a>
+                        </td>
+
+                        <td>
+                  
+                                                <a href="">
+ 
+    <button  type="submit" class="btn btn-danger">Delete</button>
+    </a>
+                        </td>
+    
+    
+     
+                          </tr>
                          
 
 
