@@ -1,6 +1,7 @@
 <?php
 include("../../../../config/connection.php");
 
+
 try {
     // Get email and password from form
     $email = trim($_POST["email"]);
