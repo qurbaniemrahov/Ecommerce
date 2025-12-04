@@ -1,3 +1,14 @@
+<?php 
+include("../../../config/connection.php");
+
+
+
+$stmt = $pdo->prepare("SELECT * FROM signup ORDER BY id ASC");
+$stmt->execute();
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <div class="main-panel">
           <div class="content-wrapper">
            
@@ -39,39 +50,31 @@
                             <th>Delete</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                                                  <td>1</td>
-                          <td>John</td>
- <td>Doe</td>
- <td> 05.04.1992</td>
- <td>Male</td>
- <td>test@mail.ru</td>
- <td>1234</td>
-                        <td>
-                     <a href="">
- 
-    <button  type="submit" class="btn btn-success">Edit</button>
-    </a>
-                        </td>
+       <tbody>
+<?php foreach ($users as $user): ?>
+<tr>
+    <td><?= $user['id'] ?></td>
+    <td><?= htmlspecialchars($user['firstname']) ?></td>
+    <td><?= htmlspecialchars($user['lastname']) ?></td>
+    <td><?= htmlspecialchars($user['birthday']) ?></td>
+    <td><?= htmlspecialchars($user['gender']) ?></td>
+    <td><?= htmlspecialchars($user['email']) ?></td>
+    <td><?= htmlspecialchars($user['password']) ?></td>
 
-                        <td>
-                  
-                                                <a href="">
- 
-    <button  type="submit" class="btn btn-danger">Delete</button>
-    </a>
-                        </td>
-    
-    
-     
-                          </tr>
-                         
+    <td>
+        <a href="edit.php?id=<?= $user['id'] ?>">
+            <button class="btn btn-success">Edit</button>
+        </a>
+    </td>
 
-
-
-
-                        </tbody>
+    <td>
+        <a href="delete.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure?');">
+            <button class="btn btn-danger">Delete</button>
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</tbody>
                       </table>
                     </div>
                   </div>

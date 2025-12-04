@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
 ?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
@@ -25,11 +26,13 @@ session_start();
     <!--====== App ======-->
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body class="config">
     <div class="preloader is-active">
         <div class="preloader__wrap">
 
-            <img class="preloader__img" src="images/preloader.png" alt=""></div>
+            <img class="preloader__img" src="images/preloader.png" alt="">
+        </div>
     </div>
 
     <!--====== Main App ======-->
@@ -54,13 +57,14 @@ session_start();
 
 
                         <!--====== Search Form ======-->
-                        <form  class="main-form"> 
+                        <form class="main-form">
 
                             <label for="main-search"></label>
 
                             <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" placeholder="Search">
 
-                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
+                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                        </form>
                         <!--====== End - Search Form ======-->
 
 
@@ -88,22 +92,26 @@ session_start();
 
                                                 <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
-                                                    <span>Account</span></a></li>
+                                                    <span>Account</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>Signup</span></a></li>
+                                                    <span>Signup</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                                    <span>Signin</span></a></li>
+                                                    <span>Signin</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                    <span>Signout</span></a></li>
+                                                    <span>Signout</span></a>
+                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -125,16 +133,20 @@ session_start();
                                                 <ul style="width:120px">
                                                     <li>
 
-                                                        <a class="u-c-brand">ENGLISH</a></li>
+                                                        <a class="u-c-brand">ENGLISH</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>ARABIC</a></li>
+                                                        <a>ARABIC</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>FRANCAIS</a></li>
+                                                        <a>FRANCAIS</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>ESPANOL</a></li>
+                                                        <a>ESPANOL</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -148,13 +160,16 @@ session_start();
                                                 <ul style="width:225px">
                                                     <li>
 
-                                                        <a class="u-c-brand">$ - US DOLLAR</a></li>
+                                                        <a class="u-c-brand">$ - US DOLLAR</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>£ - BRITISH POUND STERLING</a></li>
+                                                        <a>£ - BRITISH POUND STERLING</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>€ - EURO</a></li>
+                                                        <a>€ - EURO</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -163,10 +178,12 @@ session_start();
                                     </li>
                                     <li data-tooltip="tooltip" data-placement="left" title="Contact">
 
-                                        <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a></li>
+                                        <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a>
+                                    </li>
                                     <li data-tooltip="tooltip" data-placement="left" title="Mail">
 
-                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
+                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a>
+                                    </li>
                                 </ul>
                                 <!--====== End - List ======-->
                             </div>
@@ -216,49 +233,56 @@ session_start();
 
                                                                 <span>Electronics</span></a>
 
-                                                            <span class="js-menu-toggle js-toggle-mark"></span></li>
+                                                            <span class="js-menu-toggle js-toggle-mark"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="shop-side-version-2.html"><i class="fas fa-female u-s-m-r-6"></i>
 
                                                                 <span>Women's Clothing</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="shop-side-version-2.html"><i class="fas fa-male u-s-m-r-6"></i>
 
                                                                 <span>Men's Clothing</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="index.html"><i class="fas fa-utensils u-s-m-r-6"></i>
 
                                                                 <span>Food & Supplies</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="index.html"><i class="fas fa-couch u-s-m-r-6"></i>
 
                                                                 <span>Furniture & Decor</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="index.html"><i class="fas fa-football-ball u-s-m-r-6"></i>
 
                                                                 <span>Sports & Game</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                         <li>
 
                                                             <a href="index.html"><i class="fas fa-heartbeat u-s-m-r-6"></i>
 
                                                                 <span>Beauty & Health</span></a>
 
-                                                            <span class="js-menu-toggle"></span></li>
+                                                            <span class="js-menu-toggle"></span>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
@@ -271,155 +295,92 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">3D PRINTER & SUPPLIES</a></li>
+                                                                    <a href="shop-side-version-2.html">3D PRINTER & SUPPLIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">3d Printer</a></li>
+                                                                    <a href="shop-side-version-2.html">3d Printer</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">3d Printing Pen</a></li>
+                                                                    <a href="shop-side-version-2.html">3d Printing Pen</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">3d Printing Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">3d Printing Accessories</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">3d Printer Module Board</a></li>
+                                                                    <a href="shop-side-version-2.html">3d Printer Module Board</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">HOME AUDIO & VIDEO</a></li>
+                                                                    <a href="shop-side-version-2.html">HOME AUDIO & VIDEO</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">TV Boxes</a></li>
+                                                                    <a href="shop-side-version-2.html">TV Boxes</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">TC Receiver & Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">TC Receiver & Accessories</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Display Dongle</a></li>
+                                                                    <a href="shop-side-version-2.html">Display Dongle</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Home Theater System</a></li>
+                                                                    <a href="shop-side-version-2.html">Home Theater System</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">MEDIA PLAYERS</a></li>
+                                                                    <a href="shop-side-version-2.html">MEDIA PLAYERS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Earphones</a></li>
+                                                                    <a href="shop-side-version-2.html">Earphones</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Mp3 Players</a></li>
+                                                                    <a href="shop-side-version-2.html">Mp3 Players</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Speakers & Radios</a></li>
+                                                                    <a href="shop-side-version-2.html">Speakers & Radios</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Microphones</a></li>
+                                                                    <a href="shop-side-version-2.html">Microphones</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">VIDEO GAME ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">VIDEO GAME ACCESSORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Nintendo Video Games Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">Nintendo Video Games Accessories</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Sony Video Games Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">Sony Video Games Accessories</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Xbox Video Games Accessories</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <!--====== End - Mega Menu Row ======-->
-                                                    <br>
-
-                                                    <!--====== Mega Menu Row ======-->
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <ul>
-                                                                <li class="mega-list-title">
-
-                                                                    <a href="shop-side-version-2.html">SECURITY & PROTECTION</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Security Cameras</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Alarm System</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Security Gadgets</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">CCTV Security & Accessories</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul>
-                                                                <li class="mega-list-title">
-
-                                                                    <a href="shop-side-version-2.html">PHOTOGRAPHY & CAMERA</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Digital Cameras</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Sport Camera & Accessories</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Camera Accessories</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Lenses & Accessories</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul>
-                                                                <li class="mega-list-title">
-
-                                                                    <a href="shop-side-version-2.html">ARDUINO COMPATIBLE</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Raspberry Pi & Orange Pi</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Module Board</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Smart Robot</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Board Kits</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul>
-                                                                <li class="mega-list-title">
-
-                                                                    <a href="shop-side-version-2.html">DSLR Camera</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Nikon Cameras</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Canon Camera</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">Sony Camera</a></li>
-                                                                <li>
-
-                                                                    <a href="shop-side-version-2.html">DSLR Lenses</a></li>
+                                                                    <a href="shop-side-version-2.html">Xbox Video Games Accessories</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -432,19 +393,126 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">NECESSARY ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">SECURITY & PROTECTION</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Flash Cards</a></li>
+                                                                    <a href="shop-side-version-2.html">Security Cameras</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Memory Cards</a></li>
+                                                                    <a href="shop-side-version-2.html">Alarm System</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Flash Pins</a></li>
+                                                                    <a href="shop-side-version-2.html">Security Gadgets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Compact Discs</a></li>
+                                                                    <a href="shop-side-version-2.html">CCTV Security & Accessories</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <ul>
+                                                                <li class="mega-list-title">
+
+                                                                    <a href="shop-side-version-2.html">PHOTOGRAPHY & CAMERA</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Digital Cameras</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Sport Camera & Accessories</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Camera Accessories</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Lenses & Accessories</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <ul>
+                                                                <li class="mega-list-title">
+
+                                                                    <a href="shop-side-version-2.html">ARDUINO COMPATIBLE</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Raspberry Pi & Orange Pi</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Module Board</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Smart Robot</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Board Kits</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <ul>
+                                                                <li class="mega-list-title">
+
+                                                                    <a href="shop-side-version-2.html">DSLR Camera</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Nikon Cameras</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Canon Camera</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Sony Camera</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">DSLR Lenses</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!--====== End - Mega Menu Row ======-->
+                                                    <br>
+
+                                                    <!--====== Mega Menu Row ======-->
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <ul>
+                                                                <li class="mega-list-title">
+
+                                                                    <a href="shop-side-version-2.html">NECESSARY ACCESSORIES</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Flash Cards</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Memory Cards</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Flash Pins</a>
+                                                                </li>
+                                                                <li>
+
+                                                                    <a href="shop-side-version-2.html">Compact Discs</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-9 mega-image">
@@ -452,7 +520,8 @@ session_start();
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-0.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-0.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--====== End - Mega Menu Row ======-->
@@ -470,14 +539,16 @@ session_start();
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-1.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-1.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-6 mega-image">
                                                             <div class="mega-banner">
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-2.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-2.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--====== End - Mega Menu Row ======-->
@@ -489,76 +560,96 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">HOT CATEGORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">HOT CATEGORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Dresses</a></li>
+                                                                    <a href="shop-side-version-2.html">Dresses</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Blouses & Shirts</a></li>
+                                                                    <a href="shop-side-version-2.html">Blouses & Shirts</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">T-shirts</a></li>
+                                                                    <a href="shop-side-version-2.html">T-shirts</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Rompers</a></li>
+                                                                    <a href="shop-side-version-2.html">Rompers</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">INTIMATES</a></li>
+                                                                    <a href="shop-side-version-2.html">INTIMATES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Bras</a></li>
+                                                                    <a href="shop-side-version-2.html">Bras</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Brief Sets</a></li>
+                                                                    <a href="shop-side-version-2.html">Brief Sets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Bustiers & Corsets</a></li>
+                                                                    <a href="shop-side-version-2.html">Bustiers & Corsets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Panties</a></li>
+                                                                    <a href="shop-side-version-2.html">Panties</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">WEDDING & EVENTS</a></li>
+                                                                    <a href="shop-side-version-2.html">WEDDING & EVENTS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Wedding Dresses</a></li>
+                                                                    <a href="shop-side-version-2.html">Wedding Dresses</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Evening Dresses</a></li>
+                                                                    <a href="shop-side-version-2.html">Evening Dresses</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Prom Dresses</a></li>
+                                                                    <a href="shop-side-version-2.html">Prom Dresses</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Flower Dresses</a></li>
+                                                                    <a href="shop-side-version-2.html">Flower Dresses</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">BOTTOMS</a></li>
+                                                                    <a href="shop-side-version-2.html">BOTTOMS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Skirts</a></li>
+                                                                    <a href="shop-side-version-2.html">Skirts</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Shorts</a></li>
+                                                                    <a href="shop-side-version-2.html">Shorts</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Leggings</a></li>
+                                                                    <a href="shop-side-version-2.html">Leggings</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Jeans</a></li>
+                                                                    <a href="shop-side-version-2.html">Jeans</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -571,76 +662,96 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">OUTWEAR</a></li>
+                                                                    <a href="shop-side-version-2.html">OUTWEAR</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Blazers</a></li>
+                                                                    <a href="shop-side-version-2.html">Blazers</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Basics Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Basics Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Trench</a></li>
+                                                                    <a href="shop-side-version-2.html">Trench</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Leather & Suede</a></li>
+                                                                    <a href="shop-side-version-2.html">Leather & Suede</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">JACKETS</a></li>
+                                                                    <a href="shop-side-version-2.html">JACKETS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Denim Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Denim Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Trucker Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Trucker Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Windbreaker Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Windbreaker Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Leather Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Leather Jackets</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">ACCESSORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Tech Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">Tech Accessories</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Headwear</a></li>
+                                                                    <a href="shop-side-version-2.html">Headwear</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Baseball Caps</a></li>
+                                                                    <a href="shop-side-version-2.html">Baseball Caps</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Belts</a></li>
+                                                                    <a href="shop-side-version-2.html">Belts</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">OTHER ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">OTHER ACCESSORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Bags</a></li>
+                                                                    <a href="shop-side-version-2.html">Bags</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Wallets</a></li>
+                                                                    <a href="shop-side-version-2.html">Wallets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Watches</a></li>
+                                                                    <a href="shop-side-version-2.html">Watches</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Sunglasses</a></li>
+                                                                    <a href="shop-side-version-2.html">Sunglasses</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -654,14 +765,16 @@ session_start();
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-3.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-3.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-3 mega-image">
                                                             <div class="mega-banner">
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-4.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-4.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--====== End - Mega Menu Row ======-->
@@ -679,21 +792,24 @@ session_start();
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-5.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-5.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-4 mega-image">
                                                             <div class="mega-banner">
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-6.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-6.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-4 mega-image">
                                                             <div class="mega-banner">
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-7.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-7.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--====== End - Mega Menu Row ======-->
@@ -705,76 +821,96 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">HOT SALE</a></li>
+                                                                    <a href="shop-side-version-2.html">HOT SALE</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">T-Shirts</a></li>
+                                                                    <a href="shop-side-version-2.html">T-Shirts</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Tank Tops</a></li>
+                                                                    <a href="shop-side-version-2.html">Tank Tops</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Polo</a></li>
+                                                                    <a href="shop-side-version-2.html">Polo</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Shirts</a></li>
+                                                                    <a href="shop-side-version-2.html">Shirts</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">OUTWEAR</a></li>
+                                                                    <a href="shop-side-version-2.html">OUTWEAR</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Hoodies</a></li>
+                                                                    <a href="shop-side-version-2.html">Hoodies</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Trench</a></li>
+                                                                    <a href="shop-side-version-2.html">Trench</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Parkas</a></li>
+                                                                    <a href="shop-side-version-2.html">Parkas</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Sweaters</a></li>
+                                                                    <a href="shop-side-version-2.html">Sweaters</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">BOTTOMS</a></li>
+                                                                    <a href="shop-side-version-2.html">BOTTOMS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Casual Pants</a></li>
+                                                                    <a href="shop-side-version-2.html">Casual Pants</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Cargo Pants</a></li>
+                                                                    <a href="shop-side-version-2.html">Cargo Pants</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Jeans</a></li>
+                                                                    <a href="shop-side-version-2.html">Jeans</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Shorts</a></li>
+                                                                    <a href="shop-side-version-2.html">Shorts</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">UNDERWEAR</a></li>
+                                                                    <a href="shop-side-version-2.html">UNDERWEAR</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Boxers</a></li>
+                                                                    <a href="shop-side-version-2.html">Boxers</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Briefs</a></li>
+                                                                    <a href="shop-side-version-2.html">Briefs</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Robes</a></li>
+                                                                    <a href="shop-side-version-2.html">Robes</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Socks</a></li>
+                                                                    <a href="shop-side-version-2.html">Socks</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -787,76 +923,96 @@ session_start();
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">JACKETS</a></li>
+                                                                    <a href="shop-side-version-2.html">JACKETS</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Denim Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Denim Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Trucker Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Trucker Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Windbreaker Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Windbreaker Jackets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Leather Jackets</a></li>
+                                                                    <a href="shop-side-version-2.html">Leather Jackets</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">SUNGLASSES</a></li>
+                                                                    <a href="shop-side-version-2.html">SUNGLASSES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Pilot</a></li>
+                                                                    <a href="shop-side-version-2.html">Pilot</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Wayfarer</a></li>
+                                                                    <a href="shop-side-version-2.html">Wayfarer</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Square</a></li>
+                                                                    <a href="shop-side-version-2.html">Square</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Round</a></li>
+                                                                    <a href="shop-side-version-2.html">Round</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">ACCESSORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Eyewear Frames</a></li>
+                                                                    <a href="shop-side-version-2.html">Eyewear Frames</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Scarves</a></li>
+                                                                    <a href="shop-side-version-2.html">Scarves</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Hats</a></li>
+                                                                    <a href="shop-side-version-2.html">Hats</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Belts</a></li>
+                                                                    <a href="shop-side-version-2.html">Belts</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <ul>
                                                                 <li class="mega-list-title">
 
-                                                                    <a href="shop-side-version-2.html">OTHER ACCESSORIES</a></li>
+                                                                    <a href="shop-side-version-2.html">OTHER ACCESSORIES</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Bags</a></li>
+                                                                    <a href="shop-side-version-2.html">Bags</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Wallets</a></li>
+                                                                    <a href="shop-side-version-2.html">Wallets</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Watches</a></li>
+                                                                    <a href="shop-side-version-2.html">Watches</a>
+                                                                </li>
                                                                 <li>
 
-                                                                    <a href="shop-side-version-2.html">Tech Accessories</a></li>
+                                                                    <a href="shop-side-version-2.html">Tech Accessories</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -870,14 +1026,16 @@ session_start();
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-8.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-8.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-6 mega-image">
                                                             <div class="mega-banner">
 
                                                                 <a class="u-d-block" href="shop-side-version-2.html">
 
-                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-9.jpg" alt=""></a></div>
+                                                                    <img class="u-img-fluid u-d-block" src="images/banners/banner-mega-9.jpg" alt=""></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--====== End - Mega Menu Row ======-->
@@ -937,7 +1095,8 @@ session_start();
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="shop-side-version-2.html">NEW ARRIVALS</a></li>
+                                        <a href="shop-side-version-2.html">NEW ARRIVALS</a>
+                                    </li>
                                     <li class="has-dropdown">
 
                                         <a>PAGES<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -956,13 +1115,16 @@ session_start();
                                                 <ul style="width:118px">
                                                     <li>
 
-                                                        <a href="index.html">Home 1</a></li>
+                                                        <a href="index.html">Home 1</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="index-2.html">Home 2</a></li>
+                                                        <a href="index-2.html">Home 2</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="index-3.html">Home 3</a></li>
+                                                        <a href="index-3.html">Home 3</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -976,13 +1138,16 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="signin.html">Signin / Already Registered</a></li>
+                                                        <a href="signin.html">Signin / Already Registered</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="signup.html">Signup / Register</a></li>
+                                                        <a href="signup.html">Signup / Register</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="lost-password.html">Lost Password</a></li>
+                                                        <a href="lost-password.html">Lost Password</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1004,19 +1169,23 @@ session_start();
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-edit-profile.html">Edit Profile</a></li>
+                                                                <a href="dash-edit-profile.html">Edit Profile</a>
+                                                            </li>
                                                             <li>
 
-                                                                <a href="dash-address-book.html">Edit Address Book</a></li>
+                                                                <a href="dash-address-book.html">Edit Address Book</a>
+                                                            </li>
                                                             <li>
 
-                                                                <a href="dash-manage-order.html">Manage Order</a></li>
+                                                                <a href="dash-manage-order.html">Manage Order</a>
+                                                            </li>
                                                         </ul>
                                                         <!--====== End - Dropdown ======-->
                                                     </li>
                                                     <li>
 
-                                                        <a href="dash-my-profile.html">My Profile</a></li>
+                                                        <a href="dash-my-profile.html">My Profile</a>
+                                                    </li>
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
                                                         <a href="dash-address-book.html">Address Book<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
@@ -1027,28 +1196,35 @@ session_start();
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-address-make-default.html">Address Make Default</a></li>
+                                                                <a href="dash-address-make-default.html">Address Make Default</a>
+                                                            </li>
                                                             <li>
 
-                                                                <a href="dash-address-add.html">Add New Address</a></li>
+                                                                <a href="dash-address-add.html">Add New Address</a>
+                                                            </li>
                                                             <li>
 
-                                                                <a href="dash-address-edit.html">Edit Address Book</a></li>
+                                                                <a href="dash-address-edit.html">Edit Address Book</a>
+                                                            </li>
                                                         </ul>
                                                         <!--====== End - Dropdown ======-->
                                                     </li>
                                                     <li>
 
-                                                        <a href="dash-track-order.html">Track Order</a></li>
+                                                        <a href="dash-track-order.html">Track Order</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="dash-my-order.html">My Orders</a></li>
+                                                        <a href="dash-my-order.html">My Orders</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="dash-payment-option.html">My Payment Options</a></li>
+                                                        <a href="dash-payment-option.html">My Payment Options</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1062,13 +1238,16 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="empty-search.html">Empty Search</a></li>
+                                                        <a href="empty-search.html">Empty Search</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="empty-cart.html">Empty Cart</a></li>
+                                                        <a href="empty-cart.html">Empty Cart</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="empty-wishlist.html">Empty Wishlist</a></li>
+                                                        <a href="empty-wishlist.html">Empty Wishlist</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1082,13 +1261,16 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="product-detail.html">Product Details</a></li>
+                                                        <a href="product-detail.html">Product Details</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="product-detail-variable.html">Product Details Variable</a></li>
+                                                        <a href="product-detail-variable.html">Product Details Variable</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="product-detail-affiliate.html">Product Details Affiliate</a></li>
+                                                        <a href="product-detail-affiliate.html">Product Details Affiliate</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1102,16 +1284,20 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="shop-grid-left.html">Shop Grid Left Sidebar</a></li>
+                                                        <a href="shop-grid-left.html">Shop Grid Left Sidebar</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="shop-grid-right.html">Shop Grid Right Sidebar</a></li>
+                                                        <a href="shop-grid-right.html">Shop Grid Right Sidebar</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="shop-grid-full.html">Shop Grid Full Width</a></li>
+                                                        <a href="shop-grid-full.html">Shop Grid Full Width</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="shop-side-version-2.html">Shop Side Version 2</a></li>
+                                                        <a href="shop-side-version-2.html">Shop Side Version 2</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1125,37 +1311,47 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="shop-list-left.html">Shop List Left Sidebar</a></li>
+                                                        <a href="shop-list-left.html">Shop List Left Sidebar</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="shop-list-right.html">Shop List Right Sidebar</a></li>
+                                                        <a href="shop-list-right.html">Shop List Right Sidebar</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a href="shop-list-full.html">Shop List Full Width</a></li>
+                                                        <a href="shop-list-full.html">Shop List Full Width</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
                                             <li>
 
-                                                <a href="cart.html">Cart</a></li>
+                                                <a href="cart.html">Cart</a>
+                                            </li>
                                             <li>
 
-                                                <a href="wishlist.html">Wishlist</a></li>
+                                                <a href="wishlist.html">Wishlist</a>
+                                            </li>
                                             <li>
 
-                                                <a href="checkout.html">Checkout</a></li>
+                                                <a href="checkout.html">Checkout</a>
+                                            </li>
                                             <li>
 
-                                                <a href="faq.html">FAQ</a></li>
+                                                <a href="faq.html">FAQ</a>
+                                            </li>
                                             <li>
 
-                                                <a href="about.html">About us</a></li>
+                                                <a href="about.html">About us</a>
+                                            </li>
                                             <li>
 
-                                                <a href="contact.html">Contact</a></li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">404</a></li>
+                                                <a href="404.html">404</a>
+                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -1169,28 +1365,35 @@ session_start();
                                         <ul style="width:200px">
                                             <li>
 
-                                                <a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                                <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
+                                            </li>
                                             <li>
 
-                                                <a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                                <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
+                                            </li>
                                             <li>
 
-                                                <a href="blog-sidebar-none.html">Blog Sidebar None</a></li>
+                                                <a href="blog-sidebar-none.html">Blog Sidebar None</a>
+                                            </li>
                                             <li>
 
-                                                <a href="blog-masonry.html">Blog Masonry</a></li>
+                                                <a href="blog-masonry.html">Blog Masonry</a>
+                                            </li>
                                             <li>
 
-                                                <a href="blog-detail.html">Blog Details</a></li>
+                                                <a href="blog-detail.html">Blog Details</a>
+                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
                                     <li>
 
-                                        <a href="shop-side-version-2.html">VALUE OF THE DAY</a></li>
+                                        <a href="shop-side-version-2.html">VALUE OF THE DAY</a>
+                                    </li>
                                     <li>
 
-                                        <a href="shop-side-version-2.html">GIFT CARDS</a></li>
+                                        <a href="shop-side-version-2.html">GIFT CARDS</a>
+                                    </li>
                                 </ul>
                                 <!--====== End - List ======-->
                             </div>
@@ -1215,10 +1418,12 @@ session_start();
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="index.html"><i class="fas fa-home"></i></a></li>
+                                        <a href="index.html"><i class="fas fa-home"></i></a>
+                                    </li>
                                     <li>
 
-                                        <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
+                                        <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                                    </li>
                                     <li class="has-dropdown">
 
                                         <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
@@ -1240,7 +1445,8 @@ session_start();
 
                                                             <a class="mini-product__link" href="product-detail.html">
 
-                                                                <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></a></div>
+                                                                <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="mini-product__info-wrapper">
 
                                                             <span class="mini-product__category">
@@ -1253,7 +1459,8 @@ session_start();
 
                                                             <span class="mini-product__quantity">1 x</span>
 
-                                                            <span class="mini-product__price">$8</span></div>
+                                                            <span class="mini-product__price">$8</span>
+                                                        </div>
                                                     </div>
 
                                                     <a class="mini-product__delete-link far fa-trash-alt"></a>
@@ -1268,7 +1475,8 @@ session_start();
 
                                                             <a class="mini-product__link" href="product-detail.html">
 
-                                                                <img class="u-img-fluid" src="images/product/electronic/product18.jpg" alt=""></a></div>
+                                                                <img class="u-img-fluid" src="images/product/electronic/product18.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="mini-product__info-wrapper">
 
                                                             <span class="mini-product__category">
@@ -1281,7 +1489,8 @@ session_start();
 
                                                             <span class="mini-product__quantity">1 x</span>
 
-                                                            <span class="mini-product__price">$8</span></div>
+                                                            <span class="mini-product__price">$8</span>
+                                                        </div>
                                                     </div>
 
                                                     <a class="mini-product__delete-link far fa-trash-alt"></a>
@@ -1296,7 +1505,8 @@ session_start();
 
                                                             <a class="mini-product__link" href="product-detail.html">
 
-                                                                <img class="u-img-fluid" src="images/product/women/product8.jpg" alt=""></a></div>
+                                                                <img class="u-img-fluid" src="images/product/women/product8.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="mini-product__info-wrapper">
 
                                                             <span class="mini-product__category">
@@ -1309,7 +1519,8 @@ session_start();
 
                                                             <span class="mini-product__quantity">1 x</span>
 
-                                                            <span class="mini-product__price">$8</span></div>
+                                                            <span class="mini-product__price">$8</span>
+                                                        </div>
                                                     </div>
 
                                                     <a class="mini-product__delete-link far fa-trash-alt"></a>
@@ -1324,7 +1535,8 @@ session_start();
 
                                                             <a class="mini-product__link" href="product-detail.html">
 
-                                                                <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></a></div>
+                                                                <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="mini-product__info-wrapper">
 
                                                             <span class="mini-product__category">
@@ -1337,7 +1549,8 @@ session_start();
 
                                                             <span class="mini-product__quantity">1 x</span>
 
-                                                            <span class="mini-product__price">$8</span></div>
+                                                            <span class="mini-product__price">$8</span>
+                                                        </div>
                                                     </div>
 
                                                     <a class="mini-product__delete-link far fa-trash-alt"></a>
@@ -1353,12 +1566,14 @@ session_start();
 
                                                     <span class="subtotal-text">SUBTOTAL</span>
 
-                                                    <span class="subtotal-value">$16</span></div>
+                                                    <span class="subtotal-value">$16</span>
+                                                </div>
                                                 <div class="mini-action">
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a>
+                                                </div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
                                         </div>
@@ -1393,10 +1608,12 @@ session_start();
                                 <ul class="breadcrumb__list">
                                     <li class="has-separator">
 
-                                        <a href="index.html">Home</a></li>
+                                        <a href="index.html">Home</a>
+                                    </li>
                                     <li class="is-marked">
 
-                                        <a href="signup.html">Signup</a></li>
+                                        <a href="signup.html">Signup</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -1435,76 +1652,88 @@ session_start();
                                         <form action="../Admin/app/Http/Controllers/signup/signup_controller.php" class="l-f-o__form" method="POST">
                                             <div class="gl-s-api">
                                                 <div class="u-s-m-b-15">
-<!-- 
+                                                    <!-- 
                                                     <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
 
                                                         <span>Signup with Facebook</span></button></div> -->
-                                                <div class="u-s-m-b-30">
+                                                    <div class="u-s-m-b-30">
 
-                                                    <!-- <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
+                                                        <!-- <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
 
                                                         <span>Signup with Google</span></button></div> -->
-                                            </div>
-                                            <div class="u-s-m-b-30">
+                                                    </div>
+                                                    <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-fname">FIRST NAME*</label>
+                                                        <label class="gl-label" for="reg-fname">FIRST NAME*</label>
 
-                                                <input name="firstname" class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="First Name"></div>
-                                            <div class="u-s-m-b-30">
+                                                        <input name="firstname" class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="First Name">
+                                                    </div>
+                                                    <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-lname">LAST NAME *</label>
+                                                        <label class="gl-label" for="reg-lname">LAST NAME *</label>
 
-                                                <input name="lastname" class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Last Name"></div>
-                                            <div class="gl-inline">
-                                                <div class="u-s-m-b-30">
+                                                        <input name="lastname" class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="gl-inline">
+                                                        <div class="u-s-m-b-30">
 
-                                                    <!--====== Date of Birth Select-Box ======-->
+                                                            <!--====== Date of Birth Select-Box ======-->
 
-                                                    <span class="gl-label">BIRTHDAY</span>
-                                                    <div class="gl-dob"><select name="month" class="select-box select-box--primary-style">
-                                                            <option selected>Month</option>
-                                                            <option value="male">January</option>
-                                                            <option value="male">February</option>
-                                                            <option value="male">March</option>
-                                                            <option value="male">April</option>
-                                                        </select><select name="day" class="select-box select-box--primary-style">
-                                                            <option selected>Day</option>
-                                                            <option value="01">01</option>
-                                                            <option value="02">02</option>
-                                                            <option value="03">03</option>
-                                                            <option value="04">04</option>
-                                                        </select><select name="year" class="select-box select-box--primary-style">
-                                                            <option selected>Year</option>
-                                                            <option value="1991">1991</option>
-                                                            <option value="1992">1992</option>
-                                                            <option value="1993">1993</option>
-                                                            <option value="1994">1994</option>
-                                                        </select></div>
-                                                    <!--====== End - Date of Birth Select-Box ======-->
-                                                </div>
-                                                <div class="u-s-m-b-30">
+                                                            <span class="gl-label">BIRTHDAY</span>
+                                                            <div class="gl-dob"><select name="month" class="select-box select-box--primary-style">
+                                                                    <option value="">Month</option>
+                                                                    <option value="01">January</option>
+                                                                    <option value="02">February</option>
+                                                                    <option value="03">March</option>
+                                                                    <option value="04">April</option>
+                                                                </select>
 
-                                                    <label class="gl-label" for="gender">GENDER</label><select name="gender" class="select-box select-box--primary-style u-w-100" id="gender">
-                                                        <option selected>Select</option>
-                                                        <option value="male">Male</option>
-                                                        <option value="male">Female</option>
-                                                    </select></div>
-                                            </div>
-                                            <div class="u-s-m-b-30">
+                                                                <select name="day" class="select-box select-box--primary-style">
+                                                                    <option value="">Day</option>
+                                                                    <option value="01">01</option>
+                                                                    <option value="02">02</option>
+                                                                    <option value="03">03</option>
+                                                                    <option value="04">04</option>
+                                                                </select>
 
-                                                <label class="gl-label" for="reg-email">E-MAIL *</label>
+                                                                <select name="year" class="select-box select-box--primary-style">
+                                                                    <option value="">Year</option>
+                                                                    <option value="1991">1991</option>
+                                                                    <option value="1992">1992</option>
+                                                                    <option value="1993">1993</option>
+                                                                    <option value="1994">1994</option>
+                                                                </select>
+                                                            </div>
+                                                            <!--====== End - Date of Birth Select-Box ======-->
+                                                        </div>
+                                                        <div class="u-s-m-b-30">
 
-                                                <input name="email" class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter E-mail"></div>
-                                            <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="gender">GENDER</label>
+                                                            <select name="gender" class="select-box select-box--primary-style u-w-100">
+                                                                <option value="">Select</option>
+                                                                <option value="male">Male</option>
+                                                                <option value="female">Female</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-password">PASSWORD *</label>
+                                                        <label class="gl-label" for="reg-email">E-MAIL *</label>
 
-                                                <input name="password" class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter Password"></div>
-                                            <div class="u-s-m-b-15">
+                                                        <input name="email" class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter E-mail">
+                                                    </div>
+                                                    <div class="u-s-m-b-30">
 
-                                                <button name="submit" class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button></div>
+                                                        <label class="gl-label" for="reg-password">PASSWORD *</label>
 
-                                            <a class="gl-link" href="#">Return to Store</a>
+                                                        <input name="password" class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter Password">
+                                                    </div>
+                                                    <div class="u-s-m-b-15">
+
+                                                        <button name="submit" class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button>
+                                                    </div>
+
+                                                    <a class="gl-link" href="#">Return to Store</a>
                                         </form>
                                     </div>
                                 </div>
@@ -1530,30 +1759,38 @@ session_start();
                                 <span class="outer-footer__content-title">Contact Us</span>
                                 <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
 
-                                    <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
+                                    <span>4247 Ashford Drive Virginia VA-20006 USA</span>
+                                </div>
                                 <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
 
-                                    <span>(+0) 900 901 904</span></div>
+                                    <span>(+0) 900 901 904</span>
+                                </div>
                                 <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
-                                    <span>contact@domain.com</span></div>
+                                    <span>contact@domain.com</span>
+                                </div>
                                 <div class="outer-footer__social">
                                     <ul>
                                         <li>
 
-                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
                                         <li>
 
-                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
                                         <li>
 
-                                            <a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a></li>
+                                            <a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a>
+                                        </li>
                                         <li>
 
-                                            <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a>
+                                        </li>
                                         <li>
 
-                                            <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -1568,19 +1805,24 @@ session_start();
                                             <ul>
                                                 <li>
 
-                                                    <a href="cart.html">Cart</a></li>
+                                                    <a href="cart.html">Cart</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="dashboard.html">Account</a></li>
+                                                    <a href="dashboard.html">Account</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="shop-side-version-2.html">Manufacturer</a></li>
+                                                    <a href="shop-side-version-2.html">Manufacturer</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="dash-payment-option.html">Finance</a></li>
+                                                    <a href="dash-payment-option.html">Finance</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="shop-side-version-2.html">Shop</a></li>
+                                                    <a href="shop-side-version-2.html">Shop</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1593,19 +1835,24 @@ session_start();
                                             <ul>
                                                 <li>
 
-                                                    <a href="about.html">About us</a></li>
+                                                    <a href="about.html">About us</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="contact.html">Contact Us</a></li>
+                                                    <a href="contact.html">Contact Us</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a></li>
+                                                    <a href="index.html">Sitemap</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="dash-my-order.html">Delivery</a></li>
+                                                    <a href="dash-my-order.html">Delivery</a>
+                                                </li>
                                                 <li>
 
-                                                    <a href="shop-side-version-2.html">Store</a></li>
+                                                    <a href="shop-side-version-2.html">Store</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1623,14 +1870,16 @@ session_start();
                                             <input type="radio" id="male" name="gender">
                                             <div class="radio-box__state radio-box__state--primary">
 
-                                                <label class="radio-box__label" for="male">Male</label></div>
+                                                <label class="radio-box__label" for="male">Male</label>
+                                            </div>
                                         </div>
                                         <div class="radio-box newsletter__radio">
 
                                             <input type="radio" id="female" name="gender">
                                             <div class="radio-box__state radio-box__state--primary">
 
-                                                <label class="radio-box__label" for="female">Female</label></div>
+                                                <label class="radio-box__label" for="female">Female</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="newsletter__group">
@@ -1639,7 +1888,8 @@ session_start();
 
                                         <input class="input-text input-text--only-white" type="text" id="newsletter" placeholder="Enter your Email">
 
-                                        <button class="btn btn--e-brand newsletter__btn" type="submit">SUBSCRIBE</button></div>
+                                        <button class="btn btn--e-brand newsletter__btn" type="submit">SUBSCRIBE</button>
+                                    </div>
 
                                     <span class="newsletter__text">Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.</span>
                                 </form>
@@ -1659,7 +1909,8 @@ session_start();
 
                                     <a href="index.html">Reshop</a>
 
-                                    <span>All Right Reserved</span></div>
+                                    <span>All Right Reserved</span>
+                                </div>
                                 <div class="lower-footer__payment">
                                     <ul>
                                         <li><i class="fab fa-cc-stripe"></i></li>
@@ -1718,4 +1969,5 @@ session_start();
         </div>
     </noscript>
 </body>
+
 </html>

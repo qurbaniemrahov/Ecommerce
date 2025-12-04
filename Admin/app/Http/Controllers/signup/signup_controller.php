@@ -5,10 +5,13 @@ include("../../../../config/connection.php");
 try {
     $firstname = trim($_POST["firstname"]);
     $lastname = trim($_POST["lastname"]);
-    $birthday = trim($_POST["birthday"]);
+    $birthday = "$year-$month-$day";
     $gender = trim($_POST["gender"]);
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
+    $month = $_POST["month"];
+$day   = $_POST["day"];
+$year  = $_POST["year"];
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
