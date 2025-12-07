@@ -1,5 +1,28 @@
 <?php 
-include("../../../config/connection.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Include database connection
+
+// ob_start();
+
+// phpinfo(INFO_MODULES);
+$dsn = 'mysql:host=127.0.0.1;dbname=corona';
+$username = 'qurbani'; // Replace with your MySQL username
+$password = '1992'; // Replace with your MySQL password
+
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connection successful!";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+// Check if $pdo is defined
+if (!isset($pdo)) {
+    die("Database connection not established.");
+}
 
 
 
@@ -62,7 +85,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <td><?= htmlspecialchars($user['password']) ?></td>
 
     <td>
-        <a href="edit.php?id=<?= $user['id'] ?>">
+        <a href="">
             <button class="btn btn-success">Edit</button>
         </a>
     </td>
