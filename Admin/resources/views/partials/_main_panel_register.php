@@ -85,7 +85,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <td><?= htmlspecialchars($user['password']) ?></td>
 
     <td>
-        <a href="">
+        <a href="../resources/views/components/register/_register_edit.php">
             <button class="btn btn-success">Edit</button>
         </a>
     </td>

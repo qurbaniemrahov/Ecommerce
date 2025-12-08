@@ -17,10 +17,10 @@ require("../../../../app/Http/Controllers/signup/signup_edit_controller.php");
     <title>Admin Panel</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
