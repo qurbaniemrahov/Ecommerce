@@ -1,6 +1,6 @@
 <?php 
-include(__DIR__ . '../../../../config/connection.php');
-require("../../../../app/Http/Controllers/signup/signup_edit_controller.php");
+include(__DIR__ . '/../../../config/connection.php');
+require("../../../app/Http/Controllers/user/user_edit_controller.php");
 
 
 
@@ -17,10 +17,10 @@ require("../../../../app/Http/Controllers/signup/signup_edit_controller.php");
     <title>Admin Panel</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../../assets/css/style.css">
-    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
@@ -66,16 +66,16 @@ require("../../../../app/Http/Controllers/signup/signup_edit_controller.php");
             <div class="main-panel">
                 <div class="content-wrapper">
             
-                <form method="POST" action="../../../../app/Http/Controllers/signup/signup_edit_controller.php">
-    <input type="hidden" name="id" value="">
+                <form method="POST" action="../../../app/Http/Controllers/user/user_edit_controller.php">
+    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
     <label>Email:</label>
-    <input type="email" name="email" value="" required><br><br>
+    <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required><br><br>
 
     <label>Password:</label>
-    <input type="text" name="password" value="" required><br><br>
+    <input type="text" name="password" value="<?php echo htmlspecialchars($password); ?>" required><br><br>
 
-    <button type="submit" name="update" value="">Update</button>
+    <button type="submit" name="update" value="1">Update</button>
 </form>
 
                 </div>
@@ -89,3 +89,14 @@ require("../../../../app/Http/Controllers/signup/signup_edit_controller.php");
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

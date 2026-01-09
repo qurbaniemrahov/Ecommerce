@@ -1,128 +1,122 @@
 <div class="main-panel">
-          <div class="content-wrapper">
-           
-            <div class="page-header">
+  <div class="content-wrapper">
 
-              <h3 class="page-title">İstifadəçilər</h3>
-           <a href="../resources/views/components/_user_add.php">
-            <button class="btn btn-info">
-              Add
-            </button>
-           </a>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  
-                 
-                </ol>
-              </nav>
-            </div>
-            <div class="row">
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                   
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                          <th>Id</th>
-                            <th>Email</th>
-                            <!-- <th>Şifrə</th> -->
-                            <th>Edit</th>
-                            <th>Delete</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                         
-                        <?php
-// Enable error reporting
+    <div class="page-header">
+      <h3 class="page-title">İstifadəçilər</h3>
+
+      <a href="../resources/views/components/_user_add.php" class="btn btn-info">
+        Add
+      </a>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb"></ol>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Include database connection
-
-// ob_start();
-
-// phpinfo(INFO_MODULES);
 $dsn = 'mysql:host=127.0.0.1;dbname=corona';
-$username = 'qurbani'; // Replace with your MySQL username
-$password = '1992'; // Replace with your MySQL password
+$username = 'qurbani';
+$password = '1992';
 
 try {
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connection successful!";
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
-// Check if $pdo is defined
-if (!isset($pdo)) {
-    die("Database connection not established.");
+    die("Connection failed: " . $e->getMessage());
 }
 
 $sql = "SELECT * FROM admin_user";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$users = $stmt->fetchAll();
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (!$users) {
-    echo "<tr><td colspan='5'>No data found!</td></tr>";
+    echo "<tr><td colspan='4'>No data found!</td></tr>";
 } else {
     foreach ($users as $user) {
-        ?>
-        <tr>
-            <td><?php echo $user['id']; ?></td>
-            <td><?php echo $user['email']; ?></td>
-         
-            <td>
-      
-  
-    <a href="../resources/views/components/_user_edit.php?id=<?php echo $user['id'] ?>">
-    <!-- <input type="hidden" name="id" value="<?php echo $user['id']; ?>"> -->
-    <button  type="submit" class="btn btn-success">Edit</button>
-    </a>
-    
-            </td>
-            <td>
-            <form action="../app/Http/Controllers/user/user_delete.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
-            </td>
+?>
+                  <tr>
+                    <td><?= $user['id']; ?></td>
+                    <td><?= $user['email']; ?></td>
 
+                    <td>
+                      <a href="../resources/views/components/_user_edit.php?id=<?= $user['id']; ?>"
+                         class="btn btn-success">
+                        Edit
+                      </a>
+                    </td>
 
-           
-        </tr>
-        <?php
+                    <td>
+                      <form id="deleteForm<?= $user['id']; ?>"
+                            action="../app/Http/Controllers/user/user_delete.php"
+                            method="POST">
+
+                        <input type="hidden" name="id" value="<?= $user['id']; ?>">
+
+                        <button type="button"
+                                class="btn btn-danger"
+                                onclick="confirmDelete(<?= $user['id']; ?>)">
+                          Delete
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+<?php
     }
 }
 ?>
 
-
-
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             
-             
-             
-             
-           
+                </tbody>
+              </table>
             </div>
+
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+        Copyright © bootstrapdash.com 2020
+      </span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+        Free
+        <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">
+          Bootstrap admin templates
+        </a>
+      </span>
+    </div>
+  </footer>
+</div>
+
+<!-- ✅ DELETE CONFIRM SCRIPT (MUST BE OUTSIDE LOOP) -->
+<script>
+function confirmDelete(id) {
+    if (confirm('Are you sure you want to delete this user?')) {
+        document.getElementById('deleteForm' + id).submit();
+    }
+}
+</script>

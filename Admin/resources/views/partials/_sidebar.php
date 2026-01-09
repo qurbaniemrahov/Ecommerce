@@ -78,14 +78,16 @@
             </a>
           </li>
 
-          <li class="nav-item menu-items">
-    <a class="nav-link" href="/Ecommerce/Admin/public/register.php"
-        <span class="menu-icon">
-            <i class="mdi mdi-account-plus"></i>
-        </span>
-        <span class="menu-title">Qeydiyyat</span>
-    </a>
-</li>
+             <li class="nav-item menu-items">
+            <a class="nav-link" href="/Ecommerce/Admin/public/register.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Qeydiyyat</span>
+            </a>
+          </li>
+
+               
        
        
           

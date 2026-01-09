@@ -66,7 +66,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
  <th>Birthday</th>
  <th>Gender</th>
  <th>Email</th>
- <th>Password</th>
+ <!-- <th>Password</th> -->
                             
                         
                             <th>Edit</th>
@@ -76,24 +76,29 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
        <tbody>
 <?php foreach ($users as $user): ?>
 <tr>
-    <td><?= $user['id'] ?></td>
+  
+     <td><?php echo $user['id']; ?></td>
     <td><?= htmlspecialchars($user['firstname']) ?></td>
     <td><?= htmlspecialchars($user['lastname']) ?></td>
     <td><?= htmlspecialchars($user['birthday']) ?></td>
     <td><?= htmlspecialchars($user['gender']) ?></td>
     <td><?= htmlspecialchars($user['email']) ?></td>
-    <td><?= htmlspecialchars($user['password']) ?></td>
+    
 
     <td>
-        <a href="../resources/views/components/register/_register_edit.php">
+        <a href="../resources/views/components/_register_edit.php">
             <button class="btn btn-success">Edit</button>
         </a>
     </td>
 
     <td>
-        <a href="delete.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure?');">
-            <button class="btn btn-danger">Delete</button>
-        </a>
+      <form  action="../../Admin/app/Http/Controllers/signup/signup_delete_controller.php" method="POST">
+<input   type="hidden" name="id" value="<?php echo $user['id']; ?> ">
+
+
+<button   type="submit" class="btn btn-danger" >Delete</button>
+      </form>
+      
     </td>
 </tr>
 <?php endforeach; ?>
@@ -105,7 +110,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
               </div>
              
              
-             
+        
+              
              
            
             </div>

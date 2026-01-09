@@ -1436,9 +1436,9 @@
                                         <h1 class="gl-h1">SIGNIN</h1>
 
                                         <span class="gl-text u-s-m-b-30">If you have an account with us, please log in.</span>
-                                        <form class="l-f-o__form">
+                                        <form class="l-f-o__form" action="../Admin/app/Http/Controllers/signin/signin_validation_controller.php" method="POST">
                                             <div class="gl-s-api">
-                                                <div class="u-s-m-b-15">
+                                                <!-- <div class="u-s-m-b-15">
 
                                                     <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
 
@@ -1447,18 +1447,18 @@
 
                                                     <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
 
-                                                        <span>Signin with Google</span></button></div>
+                                                        <span>Signin with Google</span></button></div> -->
                                             </div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login-email">E-MAIL *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="login-email" placeholder="Enter E-mail"></div>
+                                                <input name="email" class="input-text input-text--primary-style" type="text" id="login-email" placeholder="Enter E-mail"></div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login-password">PASSWORD *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="login-password" placeholder="Enter Password"></div>
+                                                <input name="password" class="input-text input-text--primary-style" type="text" id="login-password" placeholder="Enter Password"></div>
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
