@@ -1475,6 +1475,8 @@
                                                     <input type="checkbox" id="remember-me">
                                                     <div class="check-box__state check-box__state--primary">
 
+
+
                                                         <label class="check-box__label" for="remember-me">Remember Me</label></div>
                                                 </div>
                                                 <!--====== End - Check Box ======-->
