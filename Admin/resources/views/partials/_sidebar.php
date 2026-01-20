@@ -87,6 +87,15 @@
             </a>
           </li>
 
+             <li class="nav-item menu-items">
+            <a class="nav-link" href="/Ecommerce/Admin/public/banner.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Banner</span>
+            </a>
+          </li>
+
                
        
        
