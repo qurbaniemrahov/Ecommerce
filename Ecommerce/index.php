@@ -20,6 +20,55 @@
 
     <!--====== App ======-->
     <link rel="stylesheet" href="css/app.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider {
+    width: 80%;
+    height: 400px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.8);
+}
+</style>
 </head>
 <body class="config">
     <div class="preloader is-active">
@@ -1379,73 +1428,16 @@
         <div class="app-content">
 
             <!--====== Primary Slider ======-->
-            <div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
-                <div class="owl-carousel primary-style-1" id="hero-slider">
-                    <div class="hero-slide hero-slide--1">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
+ <div class="slider">
+    <div class="slides" id="slideContainer">
+        <img src="https://picsum.photos/id/1015/800/400" alt="Image 1">
+        <img src="https://picsum.photos/id/1016/800/400" alt="Image 2">
+        <img src="https://picsum.photos/id/1018/800/400" alt="Image 3">
+    </div>
 
-                                        <span class="content-span-1 u-c-secondary">Latest Update Stock</span>
-
-                                        <span class="content-span-2 u-c-secondary">30% Off On Electronics</span>
-
-                                        <span class="content-span-3 u-c-secondary">Find electronics on best prices, Also Discover most selling products of electronics</span>
-
-                                        <span class="content-span-4 u-c-secondary">Starting At
-
-                                            <span class="u-c-brand">$1050.00</span></span>
-
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide hero-slide--2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-
-                                        <span class="content-span-1 u-c-white">Find Top Brands</span>
-
-                                        <span class="content-span-2 u-c-white">10% Off On Electronics</span>
-
-                                        <span class="content-span-3 u-c-white">Find electronics on best prices, Also Discover most selling products of electronics</span>
-
-                                        <span class="content-span-4 u-c-white">Starting At
-
-                                            <span class="u-c-brand">$380.00</span></span>
-
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide hero-slide--3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-
-                                        <span class="content-span-1 u-c-secondary">Find Top Brands</span>
-
-                                        <span class="content-span-2 u-c-secondary">10% Off On Electronics</span>
-
-                                        <span class="content-span-3 u-c-secondary">Find electronics on best prices, Also Discover most selling products of electronics</span>
-
-                                        <span class="content-span-4 u-c-secondary">Starting At
-
-                                            <span class="u-c-brand">$550.00</span></span>
-
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+</div>
             <!--====== End - Primary Slider ======-->
 
 
@@ -3753,5 +3745,24 @@
             </div>
         </div>
     </noscript>
+    <script>
+let index = 0;
+const slides = document.getElementById("slideContainer");
+const totalSlides = slides.children.length;
+
+function moveSlide(step) {
+    index += step;
+
+    if (index >= totalSlides) index = 0;
+    if (index < 0) index = totalSlides - 1;
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Auto slide every 3 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 10000);
+</script>
 </body>
 </html>
