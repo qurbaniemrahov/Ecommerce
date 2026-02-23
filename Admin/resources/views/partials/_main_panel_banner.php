@@ -15,13 +15,13 @@
             <div class="mt-20">
                 <label for="imageInput" class="form-label">Select Image File</label>
                 <!-- File input field with Bootstrap class -->
-                <input class="form-control" type="file" id="imageInput" name="imagefile" accept="image/png, image/jpeg">
+                <input class="form-control" type="text" name="title" placeholder="Slider Title">
             </div>
             <!-- Image preview area -->
             <div class="mb-3">
-                <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid rounded d-none" style="max-height: 200px;">
+             <input type="file" name="image" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-success">Edit</button>
             <button type="button" class="btn btn-danger">Delete</button>
         </form>
