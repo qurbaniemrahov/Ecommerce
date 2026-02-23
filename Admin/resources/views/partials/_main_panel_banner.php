@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <!-- <h2 class="mt-20">Upload Image</h2> -->
         <!-- The form for submission -->
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <form action="../../Admin/app/Http/Controllers/sliders/slider_controller.php" method="POST" enctype="multipart/form-data">
             <div class="mt-20">
                 <label for="imageInput" class="form-label">Select Image File</label>
                 <!-- File input field with Bootstrap class -->
