@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+require_once "../Admin/config/connection.php"; 
+// if index.php is inside public folder
+
+$stmt = $pdo->query("SELECT * FROM sliders WHERE status = 1 ORDER BY id DESC");
+$sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -1428,12 +1438,16 @@ body {
         <div class="app-content">
 
             <!--====== Primary Slider ======-->
- <div class="slider">
+<div class="slider">
     <div class="slides" id="slideContainer">
-        <img src="https://picsum.photos/id/1015/800/400" alt="Image 1">
-        <img src="https://picsum.photos/id/1016/800/400" alt="Image 2">
-        <img src="https://picsum.photos/id/1018/800/400" alt="Image 3">
+
+        <?php foreach($sliders as $slide): ?>
+            <img src="<?= $slide['image']; ?>" 
+                 alt="<?= htmlspecialchars($slide['title']); ?>">
+        <?php endforeach; ?>
+
     </div>
+</div>
 
     <button class="prev" onclick="moveSlide(-1)">❮</button>
     <button class="next" onclick="moveSlide(1)">❯</button>
