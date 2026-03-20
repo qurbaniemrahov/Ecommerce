@@ -1,0 +1,59 @@
+<?php
+session_start();
+include __DIR__ . "/../../../../config/connection.php";
+
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$id = $_GET['id'] ?? $_POST['id'] ?? null;
+$email = "";
+$password = "";
+$message = "";
+$messageType = "";
+
+// GET USER
+if (isset($_GET['id'])) {
+    $stmt = $pdo->prepare("SELECT * FROM admin_user WHERE id = :id");
+    $stmt->execute(['id' => $id]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        $email = $user['email'];
+    } else {
+        exit("User not found with ID: $id");
+    }
+}
+
+// UPDATE USER
+if (isset($_POST['update'])) {
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if (!empty($password)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $pdo->prepare("
+            UPDATE admin_user
+            SET email = :email, password = :password
+            WHERE id = :id
+        ");
+        $stmt->execute([
+            ':email' => $email,
+            ':password' => $hashed_password,
+            ':id' => $id
+        ]);
+    } else {
+        $stmt = $pdo->prepare("
+            UPDATE admin_user
+            SET email = :email
+            WHERE id = :id
+        ");
+        $stmt->execute([
+            ':email' => $email,
+            ':id' => $id
+        ]);
+    }
+
+    $message = "User updated successfully.";
+    $messageType = "success";
+}
+?>
