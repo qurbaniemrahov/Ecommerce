@@ -4,6 +4,11 @@ session_start();
 require_once "../Admin/config/connection.php"; 
 // if index.php is inside public folder
 
+if (!$pdo instanceof PDO) {
+    die('Database connection not established.');
+}
+/** @var PDO $pdo */
+
 $stmt = $pdo->query("SELECT * FROM sliders WHERE status = 1 ORDER BY id DESC");
 $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -210,7 +215,7 @@ body {
                                                     <span>Account</span></a></li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
                                                     <span>Signup</span></a></li>
                                             <li>
