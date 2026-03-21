@@ -70,10 +70,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       }
 
       .banner-grid {
-        display: grid;
-        grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
-        gap: 1.5rem;
-        align-items: start;
+        margin-top: 1.5rem;
       }
 
       .banner-panel {
@@ -81,10 +78,11 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         border-radius: 24px;
         background: #ffffff;
         box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+        height: 100%;
       }
 
       .banner-panel .card-body {
-        padding: 1.5rem;
+        padding: 1.75rem;
       }
 
       .banner-label {
@@ -101,11 +99,13 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         border: 1px solid #dbe3ef;
         background: #f8fafc;
         color: #0f172a;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       }
 
       .banner-input {
-        min-height: 52px;
-        padding: 0.85rem 1rem;
+        min-height: 56px;
+        padding: 0.95rem 1rem;
+        font-size: 1rem;
       }
 
       .banner-input:focus,
@@ -117,12 +117,14 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       }
 
       .banner-file {
-        padding: 0.75rem;
+        min-height: 58px;
+        padding: 0.9rem 1rem;
+        cursor: pointer;
       }
 
       .banner-preview {
         margin-top: 1rem;
-        min-height: 220px;
+        min-height: 260px;
         border-radius: 20px;
         border: 1px dashed #cbd5e1;
         background:
@@ -136,7 +138,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
       .banner-preview img {
         width: 100%;
-        height: 220px;
+        height: 260px;
         object-fit: cover;
       }
 
@@ -148,8 +150,8 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
       .slider-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
       }
 
       .slider-card {
@@ -173,7 +175,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       }
 
       .slider-card-body {
-        padding: 1rem;
+        padding: 1.15rem;
       }
 
       .slider-title {
@@ -194,9 +196,41 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         flex-wrap: wrap;
       }
 
+      .slider-actions form {
+        width: 100%;
+      }
+
+      .banner-submit,
+      .slider-delete-btn {
+        min-height: 52px;
+        border-radius: 14px;
+        font-weight: 600;
+      }
+
+      .banner-submit {
+        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
+      }
+
+      .slider-delete-btn {
+        width: 100%;
+      }
+
+      .banner-section-head {
+        gap: 1rem;
+      }
+
+      .banner-side-note {
+        padding: 1rem 1.1rem;
+        border-radius: 16px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #64748b;
+        line-height: 1.6;
+      }
+
       @media (max-width: 991px) {
-        .banner-grid {
-          grid-template-columns: 1fr;
+        .banner-panel .card-body {
+          padding: 1.25rem;
         }
       }
     </style>
@@ -240,95 +274,103 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       </div>
     <?php endif; ?>
 
-    <div class="banner-grid">
-      <div class="card banner-panel">
-        <div class="card-body">
-          <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-              <h4 class="mb-1">Add New Slide</h4>
-              <p class="text-muted mb-0">Basliq ve sekil sec, sonra slider listesine elave et.</p>
-            </div>
-            <div class="bg-info rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-              <i class="mdi mdi-image-plus text-white" style="font-size: 1.3rem;"></i>
-            </div>
-          </div>
-
-          <form action="/Ecommerce/Admin/app/Http/Controllers/sliders/slider_controller.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="create">
-
-            <div class="form-group">
-              <label class="banner-label" for="slider-title">Slider Title</label>
-              <input class="banner-input" id="slider-title" type="text" name="title" placeholder="Summer Campaign Banner" required>
-            </div>
-
-            <div class="form-group mb-0">
-              <label class="banner-label" for="slider-image">Slider Image</label>
-              <input class="banner-file" id="slider-image" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" required>
-              <small class="text-muted d-block mt-2">Tovsiyye olunur: genis banner formatinda JPG, PNG ve ya WEBP sekil.</small>
-            </div>
-
-            <div class="banner-preview" id="bannerPreview">
-              <div class="banner-preview-empty">
-                <i class="mdi mdi-image-filter-hdr d-block mb-2" style="font-size: 2rem;"></i>
-                <div>Secdiyin sekil burada preview kimi gorunecek.</div>
+    <div class="row banner-grid">
+      <div class="col-12 col-xl-5 mb-4">
+        <div class="card banner-panel">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-4 banner-section-head flex-wrap">
+              <div>
+                <h4 class="mb-1">Add New Slide</h4>
+                <p class="text-muted mb-0">Basliq ve sekil sec, sonra slider listesine elave et.</p>
+              </div>
+              <div class="bg-info rounded-circle d-flex align-items-center justify-content-center" style="width: 56px; height: 56px; flex: 0 0 auto;">
+                <i class="mdi mdi-image-plus text-white" style="font-size: 1.4rem;"></i>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Upload Slider</button>
-          </form>
+            <form action="/Ecommerce/Admin/app/Http/Controllers/sliders/slider_controller.php" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="action" value="create">
+
+              <div class="form-group">
+                <label class="banner-label" for="slider-title">Slider Title</label>
+                <input class="banner-input" id="slider-title" type="text" name="title" placeholder="Summer Campaign Banner" required>
+              </div>
+
+              <div class="form-group mb-0">
+                <label class="banner-label" for="slider-image">Slider Image</label>
+                <input class="banner-file" id="slider-image" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" required>
+                <small class="text-muted d-block mt-2">Tovsiyye olunur: genis banner formatinda JPG, PNG ve ya WEBP sekil.</small>
+              </div>
+
+              <div class="banner-preview" id="bannerPreview">
+                <div class="banner-preview-empty">
+                  <i class="mdi mdi-image-filter-hdr d-block mb-2" style="font-size: 2rem;"></i>
+                  <div>Secdiyin sekil burada preview kimi gorunecek.</div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-block mt-4 banner-submit">Upload Slider</button>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div class="card banner-panel">
-        <div class="card-body">
-          <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
-            <div>
-              <h4 class="mb-1">Current Sliders</h4>
-              <p class="text-muted mb-0">Saytda gosterilen bannerlerin siyahisi.</p>
-            </div>
-            <span class="badge badge-outline-info px-3 py-2"><?= $sliderCount; ?> item</span>
-          </div>
-
-          <?php if (!$sliders): ?>
-            <div class="text-center py-5">
-              <div class="mb-3">
-                <i class="mdi mdi-image-off" style="font-size: 3rem; color: #94a3b8;"></i>
+      <div class="col-12 col-xl-7 mb-4">
+        <div class="card banner-panel">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap banner-section-head">
+              <div>
+                <h4 class="mb-1">Current Sliders</h4>
+                <p class="text-muted mb-0">Saytda gosterilen bannerlerin siyahisi.</p>
               </div>
-              <h5 class="text-dark">No slider added yet</h5>
-              <p class="text-muted mb-0">Ilk banneri elave etdikden sonra burada gorunecek.</p>
+              <span class="badge badge-outline-info px-3 py-2"><?= $sliderCount; ?> item</span>
             </div>
-          <?php else: ?>
-            <div class="slider-list">
-              <?php foreach ($sliders as $slider): ?>
-                <div class="slider-card">
-                  <img
-                    class="slider-thumb"
-                    src="<?= htmlspecialchars($slider['image']); ?>"
-                    alt="<?= htmlspecialchars($slider['title']); ?>"
-                  >
-                  <div class="slider-card-body">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="slider-title"><?= htmlspecialchars($slider['title']); ?></h5>
-                      <span class="badge badge-<?= (int) ($slider['status'] ?? 0) === 1 ? 'success' : 'secondary'; ?>">
-                        <?= (int) ($slider['status'] ?? 0) === 1 ? 'Active' : 'Passive'; ?>
-                      </span>
-                    </div>
-                    <div class="slider-meta">
-                      ID: <?= (int) $slider['id']; ?><br>
-                      Added: <?= htmlspecialchars((string) ($slider['created_at'] ?? '')); ?>
-                    </div>
-                    <div class="slider-actions">
-                      <form action="/Ecommerce/Admin/app/Http/Controllers/sliders/slider_controller.php" method="POST" onsubmit="return confirm('Bu slider silinsin?');">
-                        <input type="hidden" name="action" value="delete">
-                        <input type="hidden" name="id" value="<?= (int) $slider['id']; ?>">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                      </form>
+
+            <div class="banner-side-note mb-4">
+              Aktiv bannerleri buradan daha rahat izle, lazim olmayanlari tek toxunusla sil ve sekillerin gorunusunu kart icinde birbasa yoxla.
+            </div>
+
+            <?php if (!$sliders): ?>
+              <div class="text-center py-5">
+                <div class="mb-3">
+                  <i class="mdi mdi-image-off" style="font-size: 3rem; color: #94a3b8;"></i>
+                </div>
+                <h5 class="text-dark">No slider added yet</h5>
+                <p class="text-muted mb-0">Ilk banneri elave etdikden sonra burada gorunecek.</p>
+              </div>
+            <?php else: ?>
+              <div class="slider-list">
+                <?php foreach ($sliders as $slider): ?>
+                  <div class="slider-card">
+                    <img
+                      class="slider-thumb"
+                      src="<?= htmlspecialchars($slider['image']); ?>"
+                      alt="<?= htmlspecialchars($slider['title']); ?>"
+                    >
+                    <div class="slider-card-body">
+                      <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="slider-title"><?= htmlspecialchars($slider['title']); ?></h5>
+                        <span class="badge badge-<?= (int) ($slider['status'] ?? 0) === 1 ? 'success' : 'secondary'; ?>">
+                          <?= (int) ($slider['status'] ?? 0) === 1 ? 'Active' : 'Passive'; ?>
+                        </span>
+                      </div>
+                      <div class="slider-meta">
+                        ID: <?= (int) $slider['id']; ?><br>
+                        Added: <?= htmlspecialchars((string) ($slider['created_at'] ?? '')); ?>
+                      </div>
+                      <div class="slider-actions">
+                        <form action="/Ecommerce/Admin/app/Http/Controllers/sliders/slider_controller.php" method="POST" onsubmit="return confirm('Bu slider silinsin?');">
+                          <input type="hidden" name="action" value="delete">
+                          <input type="hidden" name="id" value="<?= (int) $slider['id']; ?>">
+                          <button type="submit" class="btn btn-danger slider-delete-btn">Delete</button>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-              <?php endforeach; ?>
-            </div>
-          <?php endif; ?>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     </div>
