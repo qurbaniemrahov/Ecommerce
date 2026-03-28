@@ -1458,7 +1458,7 @@
 
                                                 <label class="gl-label" for="login-password">PASSWORD *</label>
 
-                                                <input name="password" class="input-text input-text--primary-style" type="text" id="login-password" placeholder="Enter Password"></div>
+                                                <input name="password" class="input-text input-text--primary-style" type="password" id="login-password" placeholder="Enter Password"></div>
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
