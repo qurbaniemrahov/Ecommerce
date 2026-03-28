@@ -1,473 +1,299 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Corona Admin</title>
-    <!-- plugins:css -->
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/mdi/css/materialdesignicons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/css/vendor.bundle.base.css"
-    />
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/select2/select2.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css"
-    />
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <!-- End layout styles -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add User</title>
+
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
-  </head>
-  <body>
-    <div class="container-scroller">
-      <!-- partial:../../partials/_sidebar.html -->
-      <?php 
-      include("../partials/_sidebar.php")
-      ?>
-      <!-- partial -->
-      <div class="container-fluid">
-        <!-- partial:../../partials/_navbar.html -->
-        <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div
-            class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center"
-          >
-            <a class="navbar-brand brand-logo-mini" href="../../index.html"
-              ><img src="../../assets/images/logo-mini.svg" alt="logo"
-            /></a>
-          </div>
-          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-            <button
-              class="navbar-toggler navbar-toggler align-self-center"
-              type="button"
-              data-toggle="minimize"
-            >
-              <span class="mdi mdi-menu"></span>
-            </button>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search products"
-                  />
-                </form>
-              </li>
-            </ul>
-            <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item dropdown d-none d-lg-block">
-                <a
-                  class="nav-link btn btn-success create-new-button"
-                  id="createbuttonDropdown"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                  href="#"
-                  >+ Create New Project</a
-                >
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="createbuttonDropdown"
-                >
-                  <h6 class="p-3 mb-0">Projects</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-file-outline text-primary"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Software Development
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-web text-info"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        UI Development
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-layers text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Software Testing
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
-              </li>
-              <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
-                  <i class="mdi mdi-view-grid"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a
-                  class="nav-link count-indicator dropdown-toggle"
-                  id="messageDropdown"
-                  href="#"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="mdi mdi-email"></i>
-                  <span class="count bg-success"></span>
-                </a>
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="messageDropdown"
-                >
-                  <h6 class="p-3 mb-0">Messages</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="../../assets/images/faces/face4.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic"
-                      />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Mark send you a message
-                      </p>
-                      <p class="text-muted mb-0">1 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="../../assets/images/faces/face2.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic"
-                      />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Cregh send you a message
-                      </p>
-                      <p class="text-muted mb-0">15 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="../../assets/images/faces/face3.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic"
-                      />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Profile picture updated
-                      </p>
-                      <p class="text-muted mb-0">18 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">4 new messages</p>
-                </div>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a
-                  class="nav-link count-indicator dropdown-toggle"
-                  id="notificationDropdown"
-                  href="#"
-                  data-toggle="dropdown"
-                >
-                  <i class="mdi mdi-bell"></i>
-                  <span class="count bg-danger"></span>
-                </a>
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="notificationDropdown"
-                >
-                  <h6 class="p-3 mb-0">Notifications</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0">
-                        Just a reminder that you have an event today
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0">Update dashboard</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0">New admin wow!</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link"
-                  id="profileDropdown"
-                  href="#"
-                  data-toggle="dropdown"
-                >
-                  <div class="navbar-profile">
-                    <img
-                      class="img-xs rounded-circle"
-                      src="../../assets/images/faces/face15.jpg"
-                      alt=""
-                    />
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">
-                      Henry Klein
-                    </p>
-                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-                  </div>
-                </a>
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="profileDropdown"
-                >
-                  <h6 class="p-3 mb-0">Profile</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Log out</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">Advanced settings</p>
-                </div>
-              </li>
-            </ul>
-            <button
-              class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
-              type="button"
-              data-toggle="offcanvas"
-            >
-              <span class="mdi mdi-format-line-spacing"></span>
-            </button>
-          </div>
-        </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">Form elements</h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Form elements
-                  </li>
-                </ol>
-              </nav>
+
+    <style>
+        .user-add-shell {
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            background:
+                radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 32%),
+                radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.12), transparent 30%),
+                #f4f7fb;
+        }
+
+        .user-add-card {
+            max-width: 760px;
+            margin: 2rem auto;
+            border: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+        }
+
+        .user-add-hero {
+            padding: 2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8 56%, #22c55e);
+        }
+
+        .user-add-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 1rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .user-add-title {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .user-add-text {
+            max-width: 540px;
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+        }
+
+        .user-add-body {
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .user-add-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(220px, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .user-add-panel {
+            padding: 1.35rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .user-add-side {
+            padding: 1.35rem;
+            border-radius: 20px;
+            background: linear-gradient(180deg, #f8fafc, #eef4ff);
+            border: 1px solid #dbeafe;
+        }
+
+        .user-add-side h5,
+        .user-add-panel h5 {
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .user-add-field + .user-add-field {
+            margin-top: 1.15rem;
+        }
+
+        .user-add-label {
+            display: block;
+            margin-bottom: 0.55rem;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .user-add-input-wrap {
+            position: relative;
+        }
+
+        .user-add-input-icon {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .user-add-input {
+            width: 100%;
+            min-height: 54px;
+            padding: 0.9rem 1rem 0.9rem 2.9rem;
+            border: 1px solid #dbe3ef;
+            border-radius: 14px;
+            background: #f8fafc;
+            color: #0f172a;
+            transition: all 0.2s ease;
+        }
+
+        .user-add-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+
+        .user-add-help {
+            display: block;
+            margin-top: 0.55rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .user-add-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .user-add-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .user-add-list li + li {
+            margin-top: 0.75rem;
+        }
+
+        .user-add-list li::before {
+            content: "";
+            position: absolute;
+            top: 0.72rem;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #22c55e);
+        }
+
+        .user-add-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .user-add-btn {
+            min-width: 160px;
+            min-height: 48px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .user-add-btn-light {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .user-add-btn-light:hover {
+            background: #cbd5e1;
+            color: #0f172a;
+        }
+
+        @media (max-width: 767px) {
+            .user-add-shell {
+                padding: 1rem 0.75rem;
+            }
+
+            .user-add-hero,
+            .user-add-body {
+                padding: 1.5rem;
+            }
+
+            .user-add-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .user-add-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="user-add-shell">
+        <div class="card user-add-card">
+            <div class="user-add-hero">
+                <span class="user-add-badge">
+                    <i class="mdi mdi-account-plus-outline"></i>
+                    Admin Panel
+                </span>
+                <h1 class="user-add-title">Yeni istifadəçi əlavə et</h1>
+                <p class="user-add-text">
+                    İdarəetmə panelinə yeni hesab yarat, giriş məlumatlarını təyin et və
+                    istifadəçi siyahısını daha rahat idarə et.
+                </p>
             </div>
-            <div class="row">
-              <div
-                class="col-md-6 col-lg-12 col-sm-12 grid-margin stretch-card"
-              >
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Default form</h4>
-                    <p class="card-description">Basic form layout</p>
-                 
-                    <form action="../../../app/Http/Controllers/user/user.php" class="forms-sample" method="POST">
-                      <!-- <div class="form-group">
-                        <label for="exampleInputUsername1">Firstname</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleInputUsername1"
-                          placeholder="Firstname"
-                        />
-                      </div> -->
-                      <!-- <div class="form-group">
-                        <label for="exampleInputEmail1">Lastname</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          placeholder="Lastname"
-                        />
-                      </div> -->
-                      <!-- <div class="form-group">
-                        <form action="/action_page.php">
-                          <label for="birthday">Birthday:</label>
-                          <input type="date" id="birthday" name="birthday" />
-                          <input type="submit" />
+
+            <div class="user-add-body">
+                <div class="user-add-grid">
+                    <div class="user-add-panel">
+                        <h5>Hesab məlumatları</h5>
+
+                        <form action="../../../app/Http/Controllers/user/user.php" method="POST">
+                            <div class="user-add-field">
+                                <label class="user-add-label" for="email">Email</label>
+                                <div class="user-add-input-wrap">
+                                    <i class="mdi mdi-email-outline user-add-input-icon"></i>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        class="user-add-input"
+                                        placeholder="example@site.com"
+                                        required
+                                    >
+                                </div>
+                                <small class="user-add-help">İstifadəçi bu email ilə sistemə daxil olacaq.</small>
+                            </div>
+
+                            <div class="user-add-field">
+                                <label class="user-add-label" for="password">Şifrə</label>
+                                <div class="user-add-input-wrap">
+                                    <i class="mdi mdi-lock-outline user-add-input-icon"></i>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        class="user-add-input"
+                                        placeholder="Minimum 6 simvol"
+                                        required
+                                    >
+                                </div>
+                                <small class="user-add-help">Sadə deyil, təhlükəsiz bir şifrə seçmək məsləhətdir.</small>
+                            </div>
+
+                            <div class="user-add-actions">
+                                <button type="submit" name="submit" value="submit" class="btn btn-primary user-add-btn">
+                                    İstifadəçini əlavə et
+                                </button>
+                                <a href="../partials/_main_panel.php" class="btn user-add-btn user-add-btn-light">
+                                    Geri qayıt
+                                </a>
+                            </div>
                         </form>
-                      </div> -->
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          placeholder="Email"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input
-                          type="password"
-                          name="password"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <!-- <div class="form-group">
-                        <label for="exampleInputConfirmPassword1"
-                          >Confirm Password</label
-                        >
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="exampleInputConfirmPassword1"
-                          placeholder="Password"
-                        />
-                      </div> -->
-                      <div
-                        class="form-check form-check-flat form-check-primary"
-                      >
-                        <!-- <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" />
-                          Remember me
-                        </label> -->
-                      </div>
-                      <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">
-                        Submit
-                      </button>
-                      <button class="btn btn-dark">Cancel</button>
-                    </form>
-                  </div>
+                    </div>
+
+                    <aside class="user-add-side">
+                        <h5>Qısa qeydlər</h5>
+                        <ul class="user-add-list">
+                            <li>Əlavə etdiyin istifadəçi siyahıda dərhal görünəcək.</li>
+                            <li>Email formatı düzgün deyilsə brauzer göndərişi bloklayacaq.</li>
+                            <li>Bu səhifənin dizaynı edit səhifəsi ilə eyni vizual xəttdə saxlanılıb.</li>
+                        </ul>
+                    </aside>
                 </div>
-              </div>
             </div>
-          </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div
-              class="d-sm-flex justify-content-center justify-content-sm-between"
-            >
-              <span
-                class="text-muted d-block text-center text-sm-left d-sm-inline-block"
-                >Copyright © bootstrapdash.com 2020</span
-              >
-              <span
-                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
-              >
-                Free
-                <a
-                  href="https://www.bootstrapdash.com/bootstrap-admin-template/"
-                  target="_blank"
-                  >Bootstrap admin templates</a
-                >
-                from Bootstrapdash.com</span
-              >
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+
     <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="../../assets/vendors/select2/select2.min.js"></script>
-    <script src="../../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
     <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="../../assets/js/file-upload.js"></script>
-    <script src="../../assets/js/typeahead.js"></script>
-    <script src="../../assets/js/select2.js"></script>
-    <!-- End custom js for this page -->
-  </body>
+</body>
 </html>
