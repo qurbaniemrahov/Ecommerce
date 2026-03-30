@@ -210,7 +210,7 @@ body {
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href="dashboard.php"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Account</span></a></li>
                                             <li>
@@ -1112,7 +1112,7 @@ body {
                                             </li>
                                             <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                <a href="dashboard.html">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                <a href="dashboard.php">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                 <!--====== Dropdown ======-->
 

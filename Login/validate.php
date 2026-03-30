@@ -4,6 +4,11 @@ session_start();
 include("../Admin/config/connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!$pdo) {
+        echo "❌ Database connection failed.";
+        exit();
+    }
+    
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
