@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Redirect to admin panel
             echo "Login sucees";
+             
+            //  header("Location: Ecommerce/Ecommerce/dashboard.php");
             exit();
         } else {
             echo "❌ Incorrect password.";

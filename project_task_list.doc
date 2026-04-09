@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Ecommerce Project Task List</title>
+  <style>
+    body {
+      font-family: Calibri, Arial, sans-serif;
+      line-height: 1.45;
+      color: #222;
+      margin: 36px;
+    }
+    h1, h2, h3 {
+      color: #16324f;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      border-bottom: 2px solid #d7e3f0;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 26px;
+    }
+    h3 {
+      font-size: 15px;
+      margin-top: 18px;
+    }
+    p, li {
+      font-size: 12px;
+    }
+    .meta {
+      background: #f5f8fb;
+      border: 1px solid #d7e3f0;
+      padding: 12px 14px;
+      margin: 16px 0 24px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-right: 6px;
+      color: #fff;
+    }
+    .high { background: #c0392b; }
+    .medium { background: #d68910; }
+    .low { background: #2471a3; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #d7e3f0;
+      padding: 8px;
+      vertical-align: top;
+      font-size: 12px;
+    }
+    th {
+      background: #eef4fa;
+      text-align: left;
+    }
+    ul {
+      margin-top: 6px;
+    }
+    .muted {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ecommerce Layihe Analizi ve Task List</h1>
+
+  <div class="meta">
+    <p><strong>Analiz tarixi:</strong> 05.04.2026</p>
+    <p><strong>Analiz olunan hisseler:</strong> <code>Ecommerce/</code>, <code>Admin/</code>, <code>Login/</code>, <code>Admin/database/backup/corona.sql</code></p>
+    <p><strong>Qisa netice:</strong> Layihe hazir HTML template uzarinden qismen PHP ile inteqrasiya olunub. Frontend sehifelerinin boyuk hissesi statikdir, admin panelde ise esasen slider ve istifadeci elave etme axini var. Tam e-commerce mehsul, sebet, sifaris ve istifadeci hesab sistemi hele qurulmayib.</p>
+  </div>
+
+  <h2>1. Umumi Menzere</h2>
+  <table>
+    <tr>
+      <th>Modul</th>
+      <th>Movcud veziyyet</th>
+      <th>Qeyd</th>
+    </tr>
+    <tr>
+      <td>Frontend vitrin</td>
+      <td>40-a yaxin sehife, esasen template</td>
+      <td>Home, about, contact, shop, product, dashboard sehifeleri var, amma coxu statik melumatla doludur.</td>
+    </tr>
+    <tr>
+      <td>Admin panel</td>
+      <td>Qismen islek</td>
+      <td>Slider yukleme/silme var. Admin sehifelerinde merkezi auth guard gorunmur.</td>
+    </tr>
+    <tr>
+      <td>Auth</td>
+      <td>Qismen islek</td>
+      <td>Signup/signin controllerleri var, password hash olunur, amma user flow yarimciqdir.</td>
+    </tr>
+    <tr>
+      <td>Database</td>
+      <td>Cox sade schema</td>
+      <td>Yalniz <code>admin_user</code>, <code>signup</code>, <code>sliders</code> cedvelleri gorunur.</td>
+    </tr>
+    <tr>
+      <td>E-commerce core</td>
+      <td>Yoxdur</td>
+      <td>Product, category, cart, order, payment, inventory cedvelleri ve axinlari yoxdur.</td>
+    </tr>
+  </table>
+
+  <h2>2. Askar Edilen Esas Bosluqlar</h2>
+  <ul>
+    <li>Template linkleri ile real PHP route-lar qarisiq istifade olunur. Meselen bir cox yerde <code>signin.html</code>, <code>signup.html</code>, <code>dashboard.html</code>, <code>index.html</code> linkleri var, amma layihenin real fayllari <code>signin.php</code>, <code>signup.php</code>, <code>dashboard.php</code>, <code>index.php</code>-dir.</li>
+    <li>Frontend dashboard sehifesi istifadeci sessiyasi ile qorunmur ve statik demo melumat gosterir.</li>
+    <li>Admin panel public sehifelerinde giris yoxlamasi gorunmur; birbasa URL ile acilma riski var.</li>
+    <li>Contact, newsletter, wishlist, cart, checkout kimi sehifeler esasen vizualdir; real backend emeliyyatlari baglanmayib.</li>
+    <li>Database modeli e-commerce ucun kifayet deyil; mehsul ve sifaris memarligi yoxdur.</li>
+    <li>Encoding problemi var; bazi yerlerde simvollar pozulub.</li>
+    <li>Form validasiyasi, xeta idaresi, redirect ve flash message standartlasdirilmayib.</li>
+    <li>Logout, role management, access control, CSRF qorunmasi kimi vacib hisseler gorunmur.</li>
+  </ul>
+
+  <h2>3. Prioritetli Task List</h2>
+
+  <h3><span class="badge high">HIGH</span>Faza 1 - Stabil isleyen baza sistemi qurmaq</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Tesvir</th>
+      <th>Netice</th>
+    </tr>
+    <tr>
+      <td>T1</td>
+      <td>Link ve route temizliyi</td>
+      <td>Butun frontend sehifelerde <code>.html</code> linklerini real <code>.php</code> route-lara kecirmek.</td>
+      <td>Istifadeci qirilan link gormur, auth ve dashboard duz acilir.</td>
+    </tr>
+    <tr>
+      <td>T2</td>
+      <td>Auth flow-u tamamlamaq</td>
+      <td>Signup, signin, logout, session yoxlamasi, ugurlu login-den sonra yonlendirme ve xeta mesajlarini standartlasdirmaq.</td>
+      <td>Hem admin, hem customer girisi stabil isleyir.</td>
+    </tr>
+    <tr>
+      <td>T3</td>
+      <td>Admin paneli qorumaq</td>
+      <td>Admin public sehifeleri ucun auth middleware/guard mentiqi elave etmek.</td>
+      <td>Giris etmeden admin URL-lerine daxil olmaq mumkun olmur.</td>
+    </tr>
+    <tr>
+      <td>T4</td>
+      <td>Customer dashboard-u dinamik etmek</td>
+      <td><code>dashboard.php</code> sehifesini session-dan oxuyan real user datasina baglamaq.</td>
+      <td>Demo melumat evezine real profil gosterilir.</td>
+    </tr>
+    <tr>
+      <td>T5</td>
+      <td>Validation ve error handling</td>
+      <td>Signup/signin/user create formalari ucun server-side validation, duplicate email yoxlamasi, temiz mesajlasma.</td>
+      <td>Form xetalari idare olunan olur.</td>
+    </tr>
+    <tr>
+      <td>T6</td>
+      <td>Encoding problemlerini duzeltmek</td>
+      <td>Pozulmus simvol ve metnleri UTF-8 standartina getirmek.</td>
+      <td>UI metnleri duz ve pesekar gorunur.</td>
+    </tr>
+  </table>
+
+  <h3><span class="badge high">HIGH</span>Faza 2 - E-commerce datamodel ve core funksiyalar</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Tesvir</th>
+      <th>Netice</th>
+    </tr>
+    <tr>
+      <td>T7</td>
+      <td>Database schema genisletmek</td>
+      <td>Category, product, product_images, cart, cart_items, orders, order_items, addresses, payments cedvellerini dizayn etmek.</td>
+      <td>Layihe real e-commerce esasina kecir.</td>
+    </tr>
+    <tr>
+      <td>T8</td>
+      <td>Product idarəetmesi yaratmaq</td>
+      <td>Admin panelde mehsul elave etme, redakte, silme, status, stok ve sekil yukleme modulu yazmaq.</td>
+      <td>Frontendde gostərilecek real mehsullar yaranir.</td>
+    </tr>
+    <tr>
+      <td>T9</td>
+      <td>Category ve filter sistemi</td>
+      <td>Shop sehifelerini real category/filter datasina baglamaq.</td>
+      <td>Shop pages demo yox, islek olur.</td>
+    </tr>
+    <tr>
+      <td>T10</td>
+      <td>Product detail sehifesini dinamik etmek</td>
+      <td>Mehsul adi, qiymet, sekil, aciqlama, stok, review sayini DB-den oxutmaq.</td>
+      <td>Product detail sehifeleri real mehsula baglanir.</td>
+    </tr>
+    <tr>
+      <td>T11</td>
+      <td>Cart sistemi</td>
+      <td>Add to cart, quantity update, remove item, empty cart axinini qurmaq.</td>
+      <td>Cart ve checkout sehifeleri funksional olur.</td>
+    </tr>
+    <tr>
+      <td>T12</td>
+      <td>Checkout ve order placement</td>
+      <td>Address, order summary, order create, order history axinini qurmaq.</td>
+      <td>Minimal satis prosesi tamamlanir.</td>
+    </tr>
+  </table>
+
+  <h3><span class="badge medium">MEDIUM</span>Faza 3 - Admin panelin genisledilmesi</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Tesvir</th>
+      <th>Netice</th>
+    </tr>
+    <tr>
+      <td>T13</td>
+      <td>Admin dashboard statistikalari</td>
+      <td>Mehsul sayi, sifaris sayi, aktiv istifadeci, son sifarisler kimi bloklar elave etmek.</td>
+      <td>Admin panel menali olur.</td>
+    </tr>
+    <tr>
+      <td>T14</td>
+      <td>User management modulu</td>
+      <td>Customer list, axtaris, status, edit ve delete axinlarini tamamlamaq.</td>
+      <td>Istifadeci idaresi rahatlasir.</td>
+    </tr>
+    <tr>
+      <td>T15</td>
+      <td>Slider modulunu genisletmek</td>
+      <td>Status toggle, siralama, update, preview, alt text ve target link elave etmek.</td>
+      <td>Homepage bannerleri idarə olunan olur.</td>
+    </tr>
+    <tr>
+      <td>T16</td>
+      <td>Admin formalarda ortaq component ve layout</td>
+      <td>Partial-lari ve form axinlarini standartlasdirmaq.</td>
+      <td>Kodun saxlanmasi asanlasir.</td>
+    </tr>
+  </table>
+
+  <h3><span class="badge medium">MEDIUM</span>Faza 4 - Frontend UX ve content tamamlanmasi</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Tesvir</th>
+      <th>Netice</th>
+    </tr>
+    <tr>
+      <td>T17</td>
+      <td>About, Contact, FAQ contentini lokallasdirmaq</td>
+      <td>Demo metnleri cixarmaq, real brand/content ile evezlemek.</td>
+      <td>Sayt hazir mehsul kimi gorunur.</td>
+    </tr>
+    <tr>
+      <td>T18</td>
+      <td>Contact form backend-i</td>
+      <td>Mesaj qebulu, admin panelde baxis ve ya email gonderimi qurmaq.</td>
+      <td>Contact sehifesi islek olur.</td>
+    </tr>
+    <tr>
+      <td>T19</td>
+      <td>Wishlist sistemi</td>
+      <td>Login telebi, save/remove, dashboard-da siyahi gosterimi.</td>
+      <td>Template action-lari real funksiyaya cevrilir.</td>
+    </tr>
+    <tr>
+      <td>T20</td>
+      <td>Search sistemi</td>
+      <td>Header search-u product search backend-ine baglamaq.</td>
+      <td>Istifadeci mehsul tapa bilir.</td>
+    </tr>
+    <tr>
+      <td>T21</td>
+      <td>Responsive ve cross-page UI cleanup</td>
+      <td>Header/footer/menu komponentlerini ortaq hale getirmek, tekrari template kodunu azaltmaq.</td>
+      <td>Yenileme prosesi sadeleşir.</td>
+    </tr>
+  </table>
+
+  <h3><span class="badge low">LOW</span>Faza 5 - Keyfiyyet, tehlukesizlik ve deploy hazirligi</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Tesvir</th>
+      <th>Netice</th>
+    </tr>
+    <tr>
+      <td>T22</td>
+      <td>CSRF, input sanitization, access control</td>
+      <td>Form tokenleri, role check, file upload security, stricter validation elave etmek.</td>
+      <td>Tehlukesizlik seviyesi artir.</td>
+    </tr>
+    <tr>
+      <td>T23</td>
+      <td>Env ve config standardi</td>
+      <td><code>.env</code> istifadəsini tamamlamaq, config-lari merkezi etmek.</td>
+      <td>Deploy ve migration prosesi rahatlasir.</td>
+    </tr>
+    <tr>
+      <td>T24</td>
+      <td>Migration ve seed sistemi</td>
+      <td>SQL dump yerine idare olunan migration/seeder mentiqi qurmaq.</td>
+      <td>Yeni muhitde qurasdirma asan olur.</td>
+    </tr>
+    <tr>
+      <td>T25</td>
+      <td>Test plan ve smoke tests</td>
+      <td>Signup, signin, add product, add slider, cart, checkout ucun minimum test checklist hazirlamaq.</td>
+      <td>Regression riski azalir.</td>
+    </tr>
+    <tr>
+      <td>T26</td>
+      <td>README ve qurasdirma senedi</td>
+      <td>DB import, Apache path, login melumatlari, modul strukturu ve deploy addimlarini yazmaq.</td>
+      <td>Layiheni teslim etmek ve inkisaf etdirmek asanlasir.</td>
+    </tr>
+  </table>
+
+  <h2>4. Tevsiyye Olunan Sprint Sirasi</h2>
+  <ol>
+    <li>Sprint 1: T1, T2, T3, T5, T6</li>
+    <li>Sprint 2: T4, T7, T8</li>
+    <li>Sprint 3: T9, T10, T11, T12</li>
+    <li>Sprint 4: T13, T14, T15, T18, T20</li>
+    <li>Sprint 5: T17, T19, T21, T22, T23, T24, T25, T26</li>
+  </ol>
+
+  <h2>5. Qisa Yekun</h2>
+  <p>Bu layihə dizayn baximindan guclu template bazasina malikdir, amma biznes mentiqi hissesinde hele ilkin merhelededir. En duzgun yanaşma once auth, route, session ve admin qorumasini sabitlesdirmek, daha sonra mehsul-sebet-sifaris memarligini qurmaqdir.</p>
+
+  <p class="muted">Qeyd: Bu task list yalniz movcud kod bazanin lokal analizine esasen hazirlanib. Browser test, real DB run ve tam manual click-test aparilmadan yazilib.</p>
+</body>
+</html>
