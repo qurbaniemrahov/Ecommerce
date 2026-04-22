@@ -20,9 +20,20 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
   <div class="content-wrapper">
     <style>
       .banner-shell {
-        width: 100%;
-        max-width: 1180px;
+        width: min(100%, 1180px);
         margin: 0 auto;
+      }
+
+      .main-panel {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .content-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: clamp(1rem, 2vw, 2rem);
       }
 
       .banner-topbar {
@@ -65,6 +76,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
           linear-gradient(135deg, #07111f 0%, #0f172a 46%, #123b4a 100%);
         color: #fff;
         box-shadow: 0 28px 48px rgba(15, 23, 42, 0.14);
+        width: 100%;
         max-width: 1180px;
         margin-left: auto;
         margin-right: auto;
@@ -156,9 +168,10 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
       .banner-layout {
         display: grid;
-        grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
         gap: 1.5rem;
         align-items: start;
+        width: 100%;
         max-width: 1180px;
         margin: 0 auto;
       }
@@ -169,6 +182,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
         width: 100%;
+        min-width: 0;
       }
 
       .banner-card-body {
@@ -445,6 +459,10 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       }
 
       @media (max-width: 767px) {
+        .content-wrapper {
+          padding: 0.85rem;
+        }
+
         .banner-topbar {
           flex-direction: column;
           align-items: flex-start;
@@ -465,6 +483,13 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
         .banner-card-body {
           padding: 1rem;
+        }
+
+        .banner-chip {
+          width: 100%;
+          justify-content: center;
+          white-space: normal;
+          text-align: center;
         }
 
         .banner-section-head,
