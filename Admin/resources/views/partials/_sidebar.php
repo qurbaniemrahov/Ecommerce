@@ -1,3 +1,7 @@
+<?php
+$currentAdminPage = basename($_SERVER['PHP_SELF'] ?? 'index.php');
+?>
+
 <body>
   <div class="container-scroller">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -33,7 +37,7 @@
           <span class="nav-link">Workspace</span>
         </li>
 
-        <li class="nav-item menu-items active">
+        <li class="nav-item menu-items <?= $currentAdminPage === 'index.php' ? 'active' : ''; ?>">
           <a class="nav-link" href="/Ecommerce/Admin/public/index.php">
             <span class="menu-icon">
               <i class="mdi mdi-view-dashboard-outline"></i>
@@ -42,7 +46,7 @@
           </a>
         </li>
 
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items <?= $currentAdminPage === 'register.php' ? 'active' : ''; ?>">
           <a class="nav-link" href="/Ecommerce/Admin/public/register.php">
             <span class="menu-icon">
               <i class="mdi mdi-account-multiple-outline"></i>
@@ -51,7 +55,7 @@
           </a>
         </li>
 
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items <?= $currentAdminPage === 'banner.php' ? 'active' : ''; ?>">
           <a class="nav-link" href="/Ecommerce/Admin/public/banner.php">
             <span class="menu-icon">
               <i class="mdi mdi-image-multiple-outline"></i>

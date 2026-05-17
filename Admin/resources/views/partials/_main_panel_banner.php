@@ -17,23 +17,29 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 ?>
 
 <div class="main-panel">
-  <div class="content-wrapper">
+  <div class="content-wrapper banner-content-wrapper">
     <style>
+      .banner-content-wrapper {
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: clamp(1.25rem, 2.4vw, 2.5rem);
+        box-sizing: border-box;
+      }
+
       .banner-shell {
-        width: min(100%, 1180px);
+        width: 100%;
+        flex: 1 1 auto;
+        max-width: 1360px;
         margin: 0 auto;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .main-panel {
         width: 100%;
         min-width: 0;
-      }
-
-      .content-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: clamp(1rem, 2vw, 2rem);
       }
 
       .banner-topbar {
@@ -77,7 +83,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         color: #fff;
         box-shadow: 0 28px 48px rgba(15, 23, 42, 0.14);
         width: 100%;
-        max-width: 1180px;
+        max-width: 1360px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -104,10 +110,11 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
       .banner-overview-copy h2 {
         margin-bottom: 0.65rem;
-        font-size: 2.1rem;
+        max-width: 720px;
+        font-size: clamp(1.9rem, 3vw, 2.75rem);
         line-height: 1.1;
         font-weight: 700;
-        letter-spacing: -0.03em;
+        letter-spacing: 0;
       }
 
       .banner-overview-copy p {
@@ -172,7 +179,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
         gap: 1.5rem;
         align-items: start;
         width: 100%;
-        max-width: 1180px;
+        max-width: 1360px;
         margin: 0 auto;
       }
 
@@ -459,7 +466,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
       }
 
       @media (max-width: 767px) {
-        .content-wrapper {
+        .banner-content-wrapper {
           padding: 0.85rem;
         }
 
@@ -554,7 +561,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
             </div>
             <div class="banner-stat-card banner-stat-card--wide">
               <strong><?= $sliderCount > 0 ? 'Ready to manage' : 'Start adding'; ?></strong>
-              <span><?= $sliderCount > 0 ? 'Movcud bannerler bir panelde toplanib.' : 'Ilk banneri elave ederek bu hisseni doldura bilersen.'; ?></span>
+              <span><?= $sliderCount > 0 ? 'Mövcud bannerlər bir paneldə toplanıb.' : 'İlk banneri əlavə edərək bu hissəni doldura bilərsən.'; ?></span>
             </div>
           </div>
         </div>
@@ -590,22 +597,22 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
               <div class="form-group mb-0">
                 <label class="banner-label" for="slider-image">Slider Image</label>
                 <input class="banner-file" id="slider-image" type="file" name="image" accept=".jpg,.jpeg,.png,.webp" required>
-                <small class="text-muted d-block mt-2">Tovsiyye olunur: genis banner olcusu, JPG, PNG ve ya WEBP.</small>
+                <small class="text-muted d-block mt-2">Tövsiyə olunur: geniş banner ölçüsü, JPG, PNG və ya WEBP.</small>
               </div>
 
               <div class="banner-preview" id="bannerPreview">
                 <div class="banner-preview-empty">
                   <i class="mdi mdi-image-filter-center-focus d-block mb-2" style="font-size: 2rem;"></i>
-                  <div>Secdiyin sekil burada preview kimi gorunecek.</div>
+                  <div>Seçdiyin şəkil burada önbaxış kimi görünəcək.</div>
                 </div>
               </div>
 
               <div class="banner-helper">
                 <div class="banner-helper-box">
-                  Basliq qisa ve aydin olsa, slider kartlarinda daha seliqeli gorunur.
+                  Başlıq qısa və aydın olsa, slider kartlarında daha səliqəli görünür.
                 </div>
                 <div class="banner-helper-box">
-                  Sekil secenden sonra on baxis dərhal asagida gorunur.
+                  Şəkil seçəndən sonra önbaxış dərhal aşağıda görünür.
                 </div>
               </div>
 
@@ -618,21 +625,21 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
           <div class="banner-card-body">
             <div class="banner-library-head">
               <div>
-                <h4 class="mb-1">Movcud sliderler</h4>
-                <p>Saytda gosterilen bannerler kart gorunusunde burada toplanir.</p>
+                <h4 class="mb-1">Mövcud sliderlər</h4>
+                <p>Saytda göstərilən bannerlər kart görünüşündə burada toplanır.</p>
               </div>
               <span class="badge badge-outline-info px-3 py-2"><?= $sliderCount; ?> item</span>
             </div>
 
             <div class="banner-note">
-              Lazim olmayan bannerleri bir toxunusla sil, sekilleri kart icinde yoxla ve paneli hem desktop, hem de mobil ekranda rahat istifade et.
+              Lazım olmayan bannerləri bir toxunuşla sil, şəkilləri kart içində yoxla və paneli həm desktop, həm də mobil ekranda rahat istifadə et.
             </div>
 
             <?php if (!$sliders): ?>
               <div class="banner-empty">
                 <i class="mdi mdi-image-off"></i>
                 <h5 class="text-dark">No slider added yet</h5>
-                <p class="text-muted mb-0">Ilk banner elave edildikden sonra burada gorunecek.</p>
+                <p class="text-muted mb-0">İlk banner əlavə edildikdən sonra burada görünəcək.</p>
               </div>
             <?php else: ?>
               <div class="slider-list">
@@ -711,7 +718,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
       if (!file) {
         preview.innerHTML =
-          '<div class="banner-preview-empty"><i class="mdi mdi-image-filter-hdr d-block mb-2" style="font-size: 2rem;"></i><div>Secdiyin sekil burada preview kimi gorunecek.</div></div>';
+          '<div class="banner-preview-empty"><i class="mdi mdi-image-filter-hdr d-block mb-2" style="font-size: 2rem;"></i><div>Seçdiyin şəkil burada önbaxış kimi görünəcək.</div></div>';
         return;
       }
 
