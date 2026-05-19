@@ -1,3 +1,29 @@
+
+<?php
+session_start();
+require_once "../Admin/config/connection.php";
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+$stmt = $pdo->prepare("SELECT firstname FROM signup WHERE id = :id LIMIT 1");
+$stmt->execute([
+    'id' => $user_id
+]);
+
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$firstname = $user ? $user['firstname'] : '';
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -1634,7 +1660,7 @@
                                     <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
                                         <div class="dash__pad-1">
 
-                                            <span class="dash__text u-s-m-b-16">Hello, John Doe</span>
+                                            <span class="dash__text u-s-m-b-16">Hello, <?= htmlspecialchars($firstname) ?></span>
                                             <ul class="dash__f-list">
                                                 <li>
 
