@@ -50,7 +50,7 @@ session_start();
 
                         <!--====== Main Logo ======-->
 
-                        <a class="main-logo" href="index.html">
+                        <a class="main-logo" href="index.php">
 
                             <img src="images/logo/logo-1.png" alt=""></a>
                         <!--====== End - Main Logo ======-->
@@ -90,25 +90,25 @@ session_start();
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href="dashboard.php"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Account</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
                                                     <span>Signup</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a href="signin.php"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                     <span>Signin</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Signout</span></a>
                                             </li>
@@ -253,7 +253,7 @@ session_start();
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-utensils u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-utensils u-s-m-r-6"></i>
 
                                                                 <span>Food & Supplies</span></a>
 
@@ -261,7 +261,7 @@ session_start();
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-couch u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-couch u-s-m-r-6"></i>
 
                                                                 <span>Furniture & Decor</span></a>
 
@@ -269,7 +269,7 @@ session_start();
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-football-ball u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-football-ball u-s-m-r-6"></i>
 
                                                                 <span>Sports & Game</span></a>
 
@@ -277,7 +277,7 @@ session_start();
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-heartbeat u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-heartbeat u-s-m-r-6"></i>
 
                                                                 <span>Beauty & Health</span></a>
 
@@ -1115,7 +1115,7 @@ session_start();
                                                 <ul style="width:118px">
                                                     <li>
 
-                                                        <a href="index.html">Home 1</a>
+                                                        <a href="index.php">Home 1</a>
                                                     </li>
                                                     <li>
 
@@ -1138,22 +1138,22 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="signin.html">Signin / Already Registered</a>
+                                                        <a href="signin.php">Signin / Already Registered</a>
                                                     </li>
                                                     <li>
 
-                                                        <a href="signup.html">Signup / Register</a>
+                                                        <a href="signup.php">Signup / Register</a>
                                                     </li>
                                                     <li>
 
-                                                        <a href="lost-password.html">Lost Password</a>
+                                                        <a href="lost-password.php">Lost Password</a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
                                             <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                <a href="dashboard.html">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                <a href="dashboard.php">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                 <!--====== Dropdown ======-->
 
@@ -1161,7 +1161,7 @@ session_start();
                                                 <ul style="width:200px">
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                        <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                        <a href="dashboard.php">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                         <!--====== Dropdown ======-->
 
@@ -1242,7 +1242,7 @@ session_start();
                                                     </li>
                                                     <li>
 
-                                                        <a href="empty-cart.html">Empty Cart</a>
+                                                        <a href="empty-cart.php">Empty Cart</a>
                                                     </li>
                                                     <li>
 
@@ -1326,7 +1326,7 @@ session_start();
                                             </li>
                                             <li>
 
-                                                <a href="cart.html">Cart</a>
+                                                <a href="cart.php">Cart</a>
                                             </li>
                                             <li>
 
@@ -1418,7 +1418,7 @@ session_start();
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="index.html"><i class="fas fa-home"></i></a>
+                                        <a href="index.php"><i class="fas fa-home"></i></a>
                                     </li>
                                     <li>
 
@@ -1572,7 +1572,7 @@ session_start();
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.php">VIEW CART</a>
                                                 </div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
@@ -1608,11 +1608,11 @@ session_start();
                                 <ul class="breadcrumb__list">
                                     <li class="has-separator">
 
-                                        <a href="index.html">Home</a>
+                                        <a href="index.php">Home</a>
                                     </li>
                                     <li class="is-marked">
 
-                                        <a href="signup.html">Signup</a>
+                                        <a href="signup.php">Signup</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1805,11 +1805,11 @@ session_start();
                                             <ul>
                                                 <li>
 
-                                                    <a href="cart.html">Cart</a>
+                                                    <a href="cart.php">Cart</a>
                                                 </li>
                                                 <li>
 
-                                                    <a href="dashboard.html">Account</a>
+                                                    <a href="dashboard.php">Account</a>
                                                 </li>
                                                 <li>
 
@@ -1843,7 +1843,7 @@ session_start();
                                                 </li>
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a>
+                                                    <a href="index.php">Sitemap</a>
                                                 </li>
                                                 <li>
 
@@ -1907,7 +1907,7 @@ session_start();
 
                                     <span>Copyright © 2018</span>
 
-                                    <a href="index.html">Reshop</a>
+                                    <a href="index.php">Reshop</a>
 
                                     <span>All Right Reserved</span>
                                 </div>

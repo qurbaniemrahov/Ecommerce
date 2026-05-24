@@ -1482,80 +1482,42 @@
                                         <div class="dash__pad-2">
                                             <h1 class="dash__h1 u-s-m-b-14">Edit Profile</h1>
 
-                                            <span class="dash__text u-s-m-b-30">Looks like you haven't update your profile</span>
+                                            <span class="dash__text u-s-m-b-30">Update your account email or password.</span>
+                                            <div class="u-s-m-b-30" id="profile-status" style="display:none;"></div>
                                             <div class="dash__link dash__link--secondary u-s-m-b-30">
 
                                                 <a data-modal="modal" data-modal-id="#dash-newsletter">Subscribe Newsletter</a></div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <form class="dash-edit-p">
-                                                        <div class="gl-inline">
-                                                            <div class="u-s-m-b-30">
+                                                    <form class="dash-edit-p" action="../Admin/app/Http/Controllers/signup/profile_update_controller.php" method="POST">
+                                                        <div class="u-s-m-b-30">
 
-                                                                <label class="gl-label" for="reg-fname">FIRST NAME *</label>
+                                                            <label class="gl-label" for="account-email">EMAIL *</label>
 
-                                                                <input class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="John"></div>
-                                                            <div class="u-s-m-b-30">
-
-                                                                <label class="gl-label" for="reg-lname">LAST NAME *</label>
-
-                                                                <input class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Doe"></div>
+                                                            <input class="input-text input-text--primary-style" type="email" id="account-email" name="email" placeholder="your@email.com" required>
                                                         </div>
                                                         <div class="gl-inline">
                                                             <div class="u-s-m-b-30">
 
-                                                                <!--====== Date of Birth Select-Box ======-->
+                                                                <label class="gl-label" for="current-password">CURRENT PASSWORD *</label>
 
-                                                                <span class="gl-label">BIRTHDAY</span>
-                                                                <div class="gl-dob"><select class="select-box select-box--primary-style">
-                                                                        <option selected>Month</option>
-                                                                        <option value="male">January</option>
-                                                                        <option value="male">February</option>
-                                                                        <option value="male">March</option>
-                                                                        <option value="male">April</option>
-                                                                    </select><select class="select-box select-box--primary-style">
-                                                                        <option selected>Day</option>
-                                                                        <option value="01">01</option>
-                                                                        <option value="02">02</option>
-                                                                        <option value="03">03</option>
-                                                                        <option value="04">04</option>
-                                                                    </select><select class="select-box select-box--primary-style">
-                                                                        <option selected>Year</option>
-                                                                        <option value="1991">1991</option>
-                                                                        <option value="1992">1992</option>
-                                                                        <option value="1993">1993</option>
-                                                                        <option value="1994">1994</option>
-                                                                    </select></div>
-                                                                <!--====== End - Date of Birth Select-Box ======-->
+                                                                <input class="input-text input-text--primary-style" type="password" id="current-password" name="current_password" placeholder="Current password" required>
                                                             </div>
                                                             <div class="u-s-m-b-30">
 
-                                                                <label class="gl-label" for="gender">GENDER</label><select class="select-box select-box--primary-style u-w-100" id="gender">
-                                                                    <option selected>Select</option>
-                                                                    <option value="male">Male</option>
-                                                                    <option value="male">Female</option>
-                                                                </select></div>
-                                                        </div>
-                                                        <div class="gl-inline">
-                                                            <div class="u-s-m-b-30">
-                                                                <h2 class="dash__h2 u-s-m-b-8">E-mail</h2>
+                                                                <label class="gl-label" for="new-password">NEW PASSWORD *</label>
 
-                                                                <span class="dash__text">johndoe@domain.com</span>
-                                                                <div class="dash__link dash__link--secondary">
-
-                                                                    <a href="#">Change</a></div>
-                                                            </div>
-                                                            <div class="u-s-m-b-30">
-                                                                <h2 class="dash__h2 u-s-m-b-8">Phone</h2>
-
-                                                                <span class="dash__text">Please enter your mobile</span>
-                                                                <div class="dash__link dash__link--secondary">
-
-                                                                    <a href="#">Add</a></div>
+                                                                <input class="input-text input-text--primary-style" type="password" id="new-password" name="new_password" placeholder="New password" minlength="6" required>
                                                             </div>
                                                         </div>
+                                                        <div class="u-s-m-b-30">
 
-                                                        <button class="btn btn--e-brand-b-2" type="submit">SAVE</button>
+                                                            <label class="gl-label" for="confirm-password">CONFIRM NEW PASSWORD *</label>
+
+                                                            <input class="input-text input-text--primary-style" type="password" id="confirm-password" name="confirm_password" placeholder="Confirm new password" minlength="6" required>
+                                                        </div>
+
+                                                        <button class="btn btn--e-brand-b-2" type="submit">SAVE CHANGES</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -1782,6 +1744,33 @@
 
     <!--====== App ======-->
     <script src="js/app.js"></script>
+    <script>
+        (function () {
+            var messages = {
+                updated: 'Your email and password were updated successfully.',
+                invalid: 'Invalid request.',
+                db_error: 'Database connection error.',
+                missing: 'Please fill in all fields.',
+                invalid_email: 'Please enter a valid email address.',
+                weak_password: 'Password must be at least 6 characters.',
+                password_mismatch: 'New password and confirmation do not match.',
+                wrong_password: 'Current password is incorrect.',
+                email_exists: 'This email is already used by another account.'
+            };
+            var status = new URLSearchParams(window.location.search).get('status');
+            var box = document.getElementById('profile-status');
+
+            if (status && messages[status] && box) {
+                box.textContent = messages[status];
+                box.style.display = 'block';
+                box.style.padding = '12px 16px';
+                box.style.borderRadius = '4px';
+                box.style.color = status === 'updated' ? '#155724' : '#721c24';
+                box.style.background = status === 'updated' ? '#d4edda' : '#f8d7da';
+                box.style.border = status === 'updated' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+            }
+        }());
+    </script>
 
     <!--====== Noscript ======-->
     <noscript>

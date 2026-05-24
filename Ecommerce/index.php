@@ -171,7 +171,7 @@ body {
 
                         <!--====== Main Logo ======-->
 
-                        <a class="main-logo" href="index.html">
+                        <a class="main-logo" href="index.php">
 
                             <img src="images/logo/logo-1.png" alt=""></a>
                         <!--====== End - Main Logo ======-->
@@ -220,12 +220,12 @@ body {
                                                     <span>Signup</span></a></li>
                                             <li>
 
-                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a href="signin.php"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                     <span>Signin</span></a></li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Signout</span></a></li>
                                         </ul>
@@ -357,28 +357,28 @@ body {
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-utensils u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-utensils u-s-m-r-6"></i>
 
                                                                 <span>Food & Supplies</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-couch u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-couch u-s-m-r-6"></i>
 
                                                                 <span>Furniture & Decor</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-football-ball u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-football-ball u-s-m-r-6"></i>
 
                                                                 <span>Sports & Game</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-heartbeat u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-heartbeat u-s-m-r-6"></i>
 
                                                                 <span>Beauty & Health</span></a>
 
@@ -1080,7 +1080,7 @@ body {
                                                 <ul style="width:118px">
                                                     <li>
 
-                                                        <a href="index.html">Home 1</a></li>
+                                                        <a href="index.php">Home 1</a></li>
                                                     <li>
 
                                                         <a href="index-2.html">Home 2</a></li>
@@ -1100,13 +1100,13 @@ body {
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="signin.html">Signin / Already Registered</a></li>
+                                                        <a href="signin.php">Signin / Already Registered</a></li>
                                                     <li>
 
-                                                        <a href="signup.html">Signup / Register</a></li>
+                                                        <a href="signup.php">Signup / Register</a></li>
                                                     <li>
 
-                                                        <a href="lost-password.html">Lost Password</a></li>
+                                                        <a href="lost-password.php">Lost Password</a></li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -1120,7 +1120,7 @@ body {
                                                 <ul style="width:200px">
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                        <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                        <a href="dashboard.php">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                         <!--====== Dropdown ======-->
 
@@ -1189,7 +1189,7 @@ body {
                                                         <a href="empty-search.html">Empty Search</a></li>
                                                     <li>
 
-                                                        <a href="empty-cart.html">Empty Cart</a></li>
+                                                        <a href="empty-cart.php">Empty Cart</a></li>
                                                     <li>
 
                                                         <a href="empty-wishlist.html">Empty Wishlist</a></li>
@@ -1261,7 +1261,7 @@ body {
                                             </li>
                                             <li>
 
-                                                <a href="cart.html">Cart</a></li>
+                                                <a href="cart.php">Cart</a></li>
                                             <li>
 
                                                 <a href="wishlist.html">Wishlist</a></li>
@@ -1339,7 +1339,7 @@ body {
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
+                                        <a href="index.php"><i class="fas fa-home u-c-brand"></i></a></li>
                                     <li>
 
                                         <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
@@ -1482,7 +1482,7 @@ body {
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.php">VIEW CART</a></div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
                                         </div>
@@ -1658,10 +1658,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1699,10 +1699,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1740,10 +1740,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1781,10 +1781,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1822,10 +1822,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1863,10 +1863,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1904,10 +1904,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1945,10 +1945,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1986,10 +1986,10 @@ body {
                                                                 <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                             <li>
 
-                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                                <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2072,10 +2072,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2116,10 +2116,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2190,10 +2190,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2231,10 +2231,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2272,10 +2272,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2313,10 +2313,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2354,10 +2354,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2395,10 +2395,10 @@ body {
                                                         <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                     <li>
 
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                        <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2505,10 +2505,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2546,10 +2546,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2587,10 +2587,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2628,10 +2628,10 @@ body {
                                                     <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                                                 <li>
 
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                    <a href="signin.php" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -3409,10 +3409,10 @@ body {
                                             <ul>
                                                 <li>
 
-                                                    <a href="cart.html">Cart</a></li>
+                                                    <a href="cart.php">Cart</a></li>
                                                 <li>
 
-                                                    <a href="dashboard.html">Account</a></li>
+                                                    <a href="dashboard.php">Account</a></li>
                                                 <li>
 
                                                     <a href="shop-side-version-2.html">Manufacturer</a></li>
@@ -3440,7 +3440,7 @@ body {
                                                     <a href="contact.html">Contact Us</a></li>
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a></li>
+                                                    <a href="index.php">Sitemap</a></li>
                                                 <li>
 
                                                     <a href="dash-my-order.html">Delivery</a></li>
@@ -3498,7 +3498,7 @@ body {
 
                                     <span>Copyright © 2018</span>
 
-                                    <a href="index.html">Reshop</a>
+                                    <a href="index.php">Reshop</a>
 
                                     <span>All Right Reserved</span></div>
                                 <div class="lower-footer__payment">
@@ -3630,7 +3630,7 @@ body {
 
                                             <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
 
-                                                <a href="signin.html">Add to Wishlist</a>
+                                                <a href="signin.php">Add to Wishlist</a>
 
                                                 <span class="pd-detail__click-count">(222)</span></span></div>
                                     </div>
@@ -3639,7 +3639,7 @@ body {
 
                                             <span class="pd-detail__click-wrap"><i class="far fa-envelope u-s-m-r-6"></i>
 
-                                                <a href="signin.html">Email me When the price drops</a>
+                                                <a href="signin.php">Email me When the price drops</a>
 
                                                 <span class="pd-detail__click-count">(20)</span></span></div>
                                     </div>
@@ -3742,7 +3742,7 @@ body {
 
                                         <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">CONTINUE SHOPPING</a>
 
-                                        <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">VIEW CART</a>
+                                        <a class="s-option__link btn--e-white-brand-shadow" href="cart.php">VIEW CART</a>
 
                                         <a class="s-option__link btn--e-brand-shadow" href="checkout.html">PROCEED TO CHECKOUT</a></div>
                                 </div>
