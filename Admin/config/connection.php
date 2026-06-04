@@ -1,7 +1,17 @@
 <?php
 
 $dbName = getenv('DB_NAME') ?: 'corona';
-$dbPort = getenv('DB_PORT') ?: '3306';
+
+$portCandidates = [];
+$envPort = getenv('DB_PORT');
+if ($envPort !== false && $envPort !== '') {
+    $portCandidates[] = $envPort;
+}
+
+// XAMPP usually uses 3306, but it is often moved to 3307 when 3306 is busy.
+$portCandidates[] = '3306';
+$portCandidates[] = '3307';
+$portCandidates = array_values(array_unique($portCandidates));
 
 $hostCandidates = [];
 
@@ -34,16 +44,18 @@ $pdo = null;
 $connectionErrors = [];
 
 foreach ($hostCandidates as $host) {
-    $dsn = "mysql:host={$host};port={$dbPort};dbname={$dbName};charset=utf8mb4";
+    foreach ($portCandidates as $port) {
+        $dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8mb4";
 
-    foreach ($credentialCandidates as $credentials) {
-        try {
-            $pdo = new PDO($dsn, $credentials['username'], $credentials['password']);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            break 2;
-        } catch (PDOException $e) {
-            $connectionErrors[] = "[host={$host} user={$credentials['username']}] " . $e->getMessage();
+        foreach ($credentialCandidates as $credentials) {
+            try {
+                $pdo = new PDO($dsn, $credentials['username'], $credentials['password']);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                break 3;
+            } catch (PDOException $e) {
+                $connectionErrors[] = "[host={$host} port={$port} user={$credentials['username']}] " . $e->getMessage();
+            }
         }
     }
 }

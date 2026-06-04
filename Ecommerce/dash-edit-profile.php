@@ -1,3 +1,27 @@
+<?php
+session_start();
+require_once "../Admin/config/connection.php";
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+$stmt = $pdo->prepare("SELECT * FROM signup WHERE id = :id LIMIT 1");
+$stmt->execute([
+    'id' => $user_id
+]); 
+                
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$firstname = $user ? $user['firstname'] : '';
+$email = $user ? $user['email'] : '';
+$password = $user ? $user['password'] : '';
+?>
+
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -43,7 +67,7 @@
 
                         <!--====== Main Logo ======-->
 
-                        <a class="main-logo" href="index.html">
+                        <a class="main-logo" href="index.php">
 
                             <img src="images/logo/logo-1.png" alt=""></a>
                         <!--====== End - Main Logo ======-->
@@ -82,22 +106,22 @@
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href="dashboard.php"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Account</span></a></li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
                                                     <span>Signup</span></a></li>
                                             <li>
 
-                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a href="signin.php"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                     <span>Signin</span></a></li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href="signup.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Signout</span></a></li>
                                         </ul>
@@ -229,28 +253,28 @@
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-utensils u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-utensils u-s-m-r-6"></i>
 
                                                                 <span>Food & Supplies</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-couch u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-couch u-s-m-r-6"></i>
 
                                                                 <span>Furniture & Decor</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-football-ball u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-football-ball u-s-m-r-6"></i>
 
                                                                 <span>Sports & Game</span></a>
 
                                                             <span class="js-menu-toggle"></span></li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-heartbeat u-s-m-r-6"></i>
+                                                            <a href="index.php"><i class="fas fa-heartbeat u-s-m-r-6"></i>
 
                                                                 <span>Beauty & Health</span></a>
 
@@ -952,7 +976,7 @@
                                                 <ul style="width:118px">
                                                     <li>
 
-                                                        <a href="index.html">Home 1</a></li>
+                                                        <a href="index.php">Home 1</a></li>
                                                     <li>
 
                                                         <a href="index-2.html">Home 2</a></li>
@@ -972,19 +996,19 @@
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="signin.html">Signin / Already Registered</a></li>
+                                                        <a href="signin.php">Signin / Already Registered</a></li>
                                                     <li>
 
-                                                        <a href="signup.html">Signup / Register</a></li>
+                                                        <a href="signup.php">Signup / Register</a></li>
                                                     <li>
 
-                                                        <a href="lost-password.html">Lost Password</a></li>
+                                                        <a href="lost-password.php">Lost Password</a></li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
                                             <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                <a href="dashboard.html">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                <a href="dashboard.php">Dashboard<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                 <!--====== Dropdown ======-->
 
@@ -992,7 +1016,7 @@
                                                 <ul style="width:200px">
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                        <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                        <a href="dashboard.php">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                         <!--====== Dropdown ======-->
 
@@ -1000,7 +1024,7 @@
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-edit-profile.html">Edit Profile</a></li>
+                                                                <a href="dash-edit-profile.php">Edit Profile</a></li>
                                                             <li>
 
                                                                 <a href="dash-address-book.html">Edit Address Book</a></li>
@@ -1061,7 +1085,7 @@
                                                         <a href="empty-search.html">Empty Search</a></li>
                                                     <li>
 
-                                                        <a href="empty-cart.html">Empty Cart</a></li>
+                                                        <a href="empty-cart.php">Empty Cart</a></li>
                                                     <li>
 
                                                         <a href="empty-wishlist.html">Empty Wishlist</a></li>
@@ -1133,7 +1157,7 @@
                                             </li>
                                             <li>
 
-                                                <a href="cart.html">Cart</a></li>
+                                                <a href="cart.php">Cart</a></li>
                                             <li>
 
                                                 <a href="wishlist.html">Wishlist</a></li>
@@ -1211,7 +1235,7 @@
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="index.html"><i class="fas fa-home"></i></a></li>
+                                        <a href="index.php"><i class="fas fa-home"></i></a></li>
                                     <li>
 
                                         <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
@@ -1354,7 +1378,7 @@
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.php">VIEW CART</a></div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
                                         </div>
@@ -1389,10 +1413,10 @@
                                 <ul class="breadcrumb__list">
                                     <li class="has-separator">
 
-                                        <a href="index.html">Home</a></li>
+                                        <a href="index.php">Home</a></li>
                                     <li class="is-marked">
 
-                                        <a href="dash-edit-profile.html">My Account</a></li>
+                                        <a href="dash-edit-profile.php">My Account</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1416,11 +1440,11 @@
                                     <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
                                         <div class="dash__pad-1">
 
-                                            <span class="dash__text u-s-m-b-16">Hello, John Doe</span>
+                                            <span class="dash__text u-s-m-b-16"><?= htmlspecialchars($firstname) ?></span>
                                             <ul class="dash__f-list">
                                                 <li>
 
-                                                    <a class="dash-active" href="dashboard.html">Manage My Account</a></li>
+                                                    <a class="dash-active" href="dashboard.php">Manage My Account</a></li>
                                                 <li>
 
                                                     <a href="dash-my-profile.html">My Profile</a></li>
@@ -1494,14 +1518,14 @@
 
                                                             <label class="gl-label" for="account-email">EMAIL *</label>
 
-                                                            <input class="input-text input-text--primary-style" type="email" id="account-email" name="email" placeholder="your@email.com" required>
+                                                            <input class="input-text input-text--primary-style" type="email" id="account-email" name="email" placeholder="<?= htmlspecialchars($email) ?>" required>
                                                         </div>
                                                         <div class="gl-inline">
                                                             <div class="u-s-m-b-30">
 
                                                                 <label class="gl-label" for="current-password">CURRENT PASSWORD *</label>
 
-                                                                <input class="input-text input-text--primary-style" type="password" id="current-password" name="current_password" placeholder="Current password" required>
+                                                                <input class="input-text input-text--primary-style" type="password" id="current-password" name="current_password" placeholder="Password" required>
                                                             </div>
                                                             <div class="u-s-m-b-30">
 
@@ -1582,10 +1606,10 @@
                                             <ul>
                                                 <li>
 
-                                                    <a href="cart.html">Cart</a></li>
+                                                    <a href="cart.php">Cart</a></li>
                                                 <li>
 
-                                                    <a href="dashboard.html">Account</a></li>
+                                                    <a href="dashboard.php">Account</a></li>
                                                 <li>
 
                                                     <a href="shop-side-version-2.html">Manufacturer</a></li>
@@ -1613,7 +1637,7 @@
                                                     <a href="contact.html">Contact Us</a></li>
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a></li>
+                                                    <a href="index.php">Sitemap</a></li>
                                                 <li>
 
                                                     <a href="dash-my-order.html">Delivery</a></li>
@@ -1671,7 +1695,7 @@
 
                                     <span>Copyright © 2018</span>
 
-                                    <a href="index.html">Reshop</a>
+                                    <a href="index.php">Reshop</a>
 
                                     <span>All Right Reserved</span></div>
                                 <div class="lower-footer__payment">
@@ -1705,7 +1729,7 @@
 
                                 <span class="gl-modal-text">I have read and understood</span>
 
-                                <a class="d_modal__link" href="dash-edit-profile.html">Ludus Privacy Policy</a>
+                                <a class="d_modal__link" href="dash-edit-profile.php">Ludus Privacy Policy</a>
                             </div>
                             <div class="gl-modal-btn-group">
 

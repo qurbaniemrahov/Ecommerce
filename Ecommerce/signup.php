@@ -1169,7 +1169,7 @@ session_start();
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-edit-profile.html">Edit Profile</a>
+                                                                <a href="dash-edit-profile.php">Edit Profile</a>
                                                             </li>
                                                             <li>
 

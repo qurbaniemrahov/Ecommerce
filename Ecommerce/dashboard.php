@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once "../Admin/config/connection.php";
@@ -13,8 +12,8 @@ $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT firstname FROM signup WHERE id = :id LIMIT 1");
 $stmt->execute([
     'id' => $user_id
-]);
-
+]); 
+                
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $firstname = $user ? $user['firstname'] : '';
@@ -1180,7 +1179,7 @@ $firstname = $user ? $user['firstname'] : '';
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-edit-profile.html">Edit Profile</a>
+                                                                <a href="dash-edit-profile.php">Edit Profile</a>
                                                             </li>
                                                             <li>
 
@@ -1732,7 +1731,7 @@ $firstname = $user ? $user['firstname'] : '';
                                                             <h2 class="dash__h2 u-s-m-b-8">PERSONAL PROFILE</h2>
                                                             <div class="dash__link dash__link--secondary u-s-m-b-8">
 
-                                                                <a href="dash-edit-profile.html">Edit</a>
+                                                                <a href="dash-edit-profile.php">Edit</a>
                                                             </div>
 
                                                             <span class="dash__text"><?= htmlspecialchars($firstname) ?></span>
