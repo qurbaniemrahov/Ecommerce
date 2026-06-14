@@ -8,7 +8,7 @@ unset($_SESSION['user']);
 
 session_destroy();
 
-header("Location: signin.php");
+header("Location: ../../../../../../Ecommerce/Ecommerce/signin.php");
 exit();
 
 
