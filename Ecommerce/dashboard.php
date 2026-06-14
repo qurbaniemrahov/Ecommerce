@@ -118,7 +118,7 @@ $firstname = $user ? $user['firstname'] : '';
                                             </li>
                                             <li>
 
-                                                <a href="signup.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href="../Admin/app/Http/Controllers/signin/logout_controller.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Signout</span></a>
                                             </li>

@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . "/../../../../config/connection.php";
 
-$redirectUrl = "/Ecommerce/Ecommerce/dash-edit-profile.html";
+$redirectUrl = "/Ecommerce/Ecommerce/dash-edit-profile.php";
 
 function redirectToProfile(string $status): void
 {
