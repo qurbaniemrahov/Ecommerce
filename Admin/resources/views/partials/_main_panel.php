@@ -16,56 +16,6 @@ $userCount = count($users);
 
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="admin-hero">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <span class="admin-hero-badge">
-            <i class="mdi mdi-shield-account-outline"></i>
-            Admin management
-          </span>
-          <h2>User paneli daha temiz ve daha premium gorunuse kecdi.</h2>
-          <p>Buradan admin user hesablarini yarat, redakte et ve sil. Dizayn daha aydin iyerarxiya, yumshaq kartlar ve rahat oxunan table ritmi ile yenilendi.</p>
-        </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <div class="admin-stat-grid">
-            <div class="admin-stat-card">
-              <span class="admin-stat-value"><?= $userCount; ?></span>
-              <span class="admin-stat-label">Total users</span>
-            </div>
-            <div class="admin-stat-card">
-              <span class="admin-stat-value"><?= $userCount > 0 ? 'Live' : 'Empty'; ?></span>
-              <span class="admin-stat-label">Current state</span>
-            </div>
-            <div class="admin-stat-card">
-              <span class="admin-stat-value">24/7</span>
-              <span class="admin-stat-label">Panel access</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mb-4">
-      <div class="col-md-4 mb-3">
-        <div class="admin-soft-card">
-          <h5>User management</h5>
-          <p>Admin hesablarini bir yerde topla ve lazim olan emeliyyatlari vaxt itirmeden yerine yetir.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="admin-soft-card">
-          <h5>Fast actions</h5>
-          <p>Yeni user elavesi bir klik mesafesindedir ve action buttonlar table daxilinde daha temiz gorunur.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="admin-soft-card">
-          <h5>Cleaner reading</h5>
-          <p>Sutunlar, spacing ve hover hallari daha rahat scan oluna bilen struktur verir.</p>
-        </div>
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card admin-panel-card">
@@ -130,9 +80,6 @@ $userCount = count($users);
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
       <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
         Ecommerce admin panel
-      </span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-        Users, registrations and banners in one place
       </span>
     </div>
   </footer>

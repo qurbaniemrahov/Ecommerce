@@ -517,54 +517,7 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
 
     <div class="banner-shell">
       <div class="banner-topbar">
-        <div>
-          <h3 class="page-title mb-1">Banner Slider</h3>
-          <p>Banner idarəsini sıfırdan daha təmiz, səliqəli və responsive panel kimi qurduq. Əlavə etmə, preview və silmə əməliyyatları eyni axında daha rahat görünür.</p>
-        </div>
-        <div class="banner-chip">
-          <i class="mdi mdi-monitor-dashboard"></i>
-          Visual control panel
-        </div>
-      </div>
-
-      <div class="banner-overview">
-        <div class="banner-overview-grid">
-          <div class="banner-overview-copy">
-            <span class="badge badge-success px-3 py-2 mb-3">Homepage Visual Manager</span>
-            <h2>Homepage slider hissəsini daha güclü vizual idarə panelinə çevirdik.</h2>
-            <p>Yeni banner əlavə et, şəkli öncədən yoxla və aktiv bannerləri kart şəklində rahat idarə et. Dizayn həm geniş ekranda, həm də mobil görünüşdə balanslı qalır.</p>
-
-            <div class="banner-pill-row">
-              <div class="banner-pill">
-                <i class="mdi mdi-image-multiple"></i>
-                Daha rahat siyahı görünüşü
-              </div>
-              <div class="banner-pill">
-                <i class="mdi mdi-cellphone"></i>
-                Responsive layout
-              </div>
-              <div class="banner-pill">
-                <i class="mdi mdi-eye-outline"></i>
-                Instant preview
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-stat-grid">
-            <div class="banner-stat-card">
-              <strong><?= $sliderCount; ?></strong>
-              <span>Total sliders</span>
-            </div>
-            <div class="banner-stat-card">
-              <strong><?= $activeCount; ?></strong>
-              <span>Active sliders</span>
-            </div>
-            <div class="banner-stat-card banner-stat-card--wide">
-              <strong><?= $sliderCount > 0 ? 'Ready to manage' : 'Start adding'; ?></strong>
-              <span><?= $sliderCount > 0 ? 'Mövcud bannerlər bir paneldə toplanıb.' : 'İlk banneri əlavə edərək bu hissəni doldura bilərsən.'; ?></span>
-            </div>
-          </div>
-        </div>
+        <h3 class="page-title mb-1">Banner Slider</h3>
       </div>
 
       <?php if (!empty($flash)): ?>
@@ -579,7 +532,6 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
             <div class="banner-section-head">
               <div>
                 <h4 class="mb-1">Yeni banner əlavə et</h4>
-                <p>Başlıq və şəkil seç, sonra slider listinə göndər.</p>
               </div>
               <div class="banner-icon-box">
                 <i class="mdi mdi-image-plus" style="font-size: 1.35rem;"></i>
@@ -607,15 +559,6 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
                 </div>
               </div>
 
-              <div class="banner-helper">
-                <div class="banner-helper-box">
-                  Başlıq qısa və aydın olsa, slider kartlarında daha səliqəli görünür.
-                </div>
-                <div class="banner-helper-box">
-                  Şəkil seçəndən sonra önbaxış dərhal aşağıda görünür.
-                </div>
-              </div>
-
               <button type="submit" class="btn btn-primary btn-lg btn-block banner-submit">Upload Slider</button>
             </form>
           </div>
@@ -626,13 +569,8 @@ $activeCount = count(array_filter($sliders, static fn ($slider) => (int) ($slide
             <div class="banner-library-head">
               <div>
                 <h4 class="mb-1">Mövcud sliderlər</h4>
-                <p>Saytda göstərilən bannerlər kart görünüşündə burada toplanır.</p>
               </div>
               <span class="badge badge-outline-info px-3 py-2"><?= $sliderCount; ?> item</span>
-            </div>
-
-            <div class="banner-note">
-              Lazım olmayan bannerləri bir toxunuşla sil, şəkilləri kart içində yoxla və paneli həm desktop, həm də mobil ekranda rahat istifadə et.
             </div>
 
             <?php if (!$sliders): ?>

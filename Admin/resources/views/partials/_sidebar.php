@@ -64,12 +64,24 @@ $currentAdminPage = basename($_SERVER['PHP_SELF'] ?? 'index.php');
           </a>
         </li>
 
-        <li class="nav-item px-3 mt-4">
-          <div class="admin-soft-card" style="background: rgba(255, 255, 255, 0.06); border-color: rgba(148, 163, 184, 0.14);">
-            <h5 class="text-white">Control Center</h5>
-            <p style="color: #cbd5e1;">Istifadeci, qeydiyyat ve homepage bannerlerini bir panelden idare et.</p>
-          </div>
+        <li class="nav-item menu-items <?= $currentAdminPage === 'product.php' ? 'active' : ''; ?>">
+          <a class="nav-link" href="/Ecommerce/Admin/public/product.php">
+            <span class="menu-icon">
+              <i class="mdi mdi-package-variant-closed"></i>
+            </span>
+            <span class="menu-title">Məhsul əlavə et</span>
+          </a>
         </li>
+
+        <li class="nav-item menu-items <?= $currentAdminPage === 'categories.php' ? 'active' : ''; ?>">
+          <a class="nav-link" href="/Ecommerce/Admin/public/categories.php">
+            <span class="menu-icon">
+              <i class="mdi mdi-format-list-bulleted-type"></i>
+            </span>
+            <span class="menu-title">Kateqoriyalar</span>
+          </a>
+        </li>
+
       </ul>
     </nav>
 
@@ -87,10 +99,6 @@ $currentAdminPage = basename($_SERVER['PHP_SELF'] ?? 'index.php');
               <span class="mdi mdi-menu"></span>
             </button>
 
-            <div class="d-none d-lg-block">
-              <div class="text-muted" style="font-size: 0.8rem;">Admin workspace</div>
-              <div style="font-weight: 700; color: #0f172a;">Modern ecommerce control panel</div>
-            </div>
           </div>
 
           <div class="d-flex align-items-center">

@@ -16,50 +16,6 @@ $signupCount = count($users);
 
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="admin-hero" style="background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 28%), linear-gradient(135deg, #0f172a 0%, #0f766e 55%, #22c55e 100%);">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <span class="admin-hero-badge">
-            <i class="mdi mdi-account-multiple-outline"></i>
-            Registration flow
-          </span>
-          <h2>Qeydiyyat siyahisi de yeni panel dili ile toparlandi.</h2>
-          <p>Yeni qeydiyyatlari, istifadeci melumatlarini ve emeliyyat buttonlarini daha rahat gorunen vahid strukturda topladıq.</p>
-        </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <div class="admin-stat-grid">
-            <div class="admin-stat-card">
-              <span class="admin-stat-value"><?= $signupCount; ?></span>
-              <span class="admin-stat-label">Registrations</span>
-            </div>
-            <div class="admin-stat-card">
-              <span class="admin-stat-value">Full</span>
-              <span class="admin-stat-label">Profile data</span>
-            </div>
-            <div class="admin-stat-card">
-              <span class="admin-stat-value">Ready</span>
-              <span class="admin-stat-label">Review status</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mb-4">
-      <div class="col-md-6 mb-3">
-        <div class="admin-soft-card">
-          <h5>Structured table</h5>
-          <p>Firstname, lastname, birthday, gender ve email indi daha nizamli spacing ile oxunur.</p>
-        </div>
-      </div>
-      <div class="col-md-6 mb-3">
-        <div class="admin-soft-card">
-          <h5>Action clarity</h5>
-          <p>Edit ve delete emeliyyatlari daha secilen kart strukturunda ayri-seckili gorunur.</p>
-        </div>
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card admin-panel-card">
@@ -125,9 +81,6 @@ $signupCount = count($users);
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
       <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
         Ecommerce admin panel
-      </span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-        Registration records with cleaner dashboard styling
       </span>
     </div>
   </footer>
