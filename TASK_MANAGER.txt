@@ -1,0 +1,210 @@
+ECOMMERCE LAYİHƏSİ — BAŞDAN SONA İCRA CHECKLIST-İ
+===================================================
+
+NECƏ İSTİFADƏ ETMƏLİ
+---------------------
+• Yalnız cari nömrəli taskı et. Bitmədən növbəti taska keçmə.
+• Bitirəndə [ ] işarəsini [x] et və tarixi yaz: [x] (11.08.2026).
+• Taskın qəbul meyarı ödənmirsə, onu bitmiş sayma.
+• Bu siyahı ilə 1-dən 55-ə qədər getdikdə layihənin işlək e-commerce MVP-si tamamlanmış olacaq.
+
+HƏDƏF
+-----
+Müştəri qeydiyyatdan keçə, daxil ola, məhsulları axtarıb səbətə ata, sifariş verə və sifarişini izləyə bilsin.
+Admin daxil olub kateqoriya, məhsul, banner və sifarişləri idarə edə bilsin.
+
+FAZA A — MÜHİT VƏ TƏMƏL (1–8)
+------------------------------
+
+[ ] 0 Apache və MySQL xidmətlərini XAMPP-dən başlat.
+    Bitmiş sayılır: http://localhost/Ecommerce/ açılır və phpMyAdmin açılır.1.
+
+[ ] 02. phpMyAdmin-də `corona` adlı database yarat.
+    Bitmiş sayılır: database UTF-8/utf8mb4 kodlaşdırması ilə görünür.
+
+[ ] 03. Mövcud migration-ları işə sal: admin_user, password_resets, signup, categories, sliders.
+    Bitmiş sayılır: bu 5 cədvəl database-də görünür.
+
+[ ] 04. Layihə üçün `.env.example` yarat və DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS yaz.
+    Bitmiş sayılır: real şifrə yazılmadan başqa kompüterdə qoşulma dəyişənləri aydındır.
+
+[ ] 05. `Admin/config/connection.php`-ni yalnız `.env` dəyişənlərindən oxuyan sabit konfiqurasiyaya çevir.
+    Bitmiş sayılır: database adı, istifadəçi və parol kodun içində təkrar yazılmır.
+
+[ ] 06. `README.md`-yə quraşdırma addımlarını yaz: XAMPP, database, migration və lokal URL.
+    Bitmiş sayılır: layihəni ilk dəfə açan şəxs işlədə bilir.
+
+[ ] 07. Bütün PHP fayllarının encoding-ini UTF-8 (BOM-suz) et.
+    Bitmiş sayılır: ə, ş, ç, ğ, ö, ü, ı simvolları bütün səhifələrdə düzgün görünür.
+
+[ ] 08. Git-də ilk iş nöqtəsini commit et: `chore: prepare local project setup`.
+    Bitmiş sayılır: bu mərhələyə geri dönmək üçün təmiz commit var.
+
+FAZA B — DATABASE DİZAYNI (9–16)
+---------------------------------
+
+[ ] 09. Qərar ver və yaz: customer üçün mövcud `signup` cədvəli qalacaq, yoxsa `users` cədvəlinə köçəcəksən.
+    Bitmiş sayılır: admin və customer hesablarının qaydası bir cümlə ilə README-də qeyd olunur.
+
+[ ] 10. Customer e-mail ünvanına UNIQUE indeks əlavə et.
+    Bitmiş sayılır: eyni e-mail ilə ikinci customer yaradılmır.
+
+[ ] 11. `categories` cədvəlini tamamla: name, slug, image, status, created_at, updated_at; slug UNIQUE olsun.
+    Bitmiş sayılır: kateqoriya üçün lazım olan bütün sahələr və indeks var.
+
+[ ] 12. `products` cədvəlini yarat: category_id, name, slug, sku, description, price, sale_price,
+    stock, cover_image, status, created_at, updated_at.
+    Bitmiş sayılır: məhsul kateqoriyaya foreign key ilə bağlıdır; slug və sku unikaldır.
+
+[ ] 13. `product_images` cədvəlini yarat: product_id, image, sort_order.
+    Bitmiş sayılır: bir məhsula bir neçə şəkil əlavə etmək olur.
+
+[ ] 14. `addresses` cədvəlini yarat: user_id, full_name, phone, city, district, address_line, is_default.
+    Bitmiş sayılır: bir customer bir neçə çatdırılma ünvanı saxlaya bilir.
+
+[ ] 15. `orders` və `order_items` cədvəllərini yarat.
+    Bitmiş sayılır: sifarişin customer-i, ünvan snapshot-u, totalı, payment_status və order_status-u;
+    item-in isə məhsul adı, qiyməti, miqdarı və subtotalı saxlanır.
+
+[ ] 16. `payments` cədvəlini yarat və bütün yeni migration-ları ikinci dəfə işlədib yoxla.
+    Bitmiş sayılır: migrations təkrar çalışanda xəta yoxdur; lazımi FK və indekslər var.
+
+FAZA C — GİRİŞ, SESSİYA VƏ TƏHLÜKƏSİZLİK (17–25)
+--------------------------------------------------
+
+[ ] 17. Customer signup backend-ini yaz: input validation, e-mail yoxlaması, password_hash və flash mesaj.
+    Bitmiş sayılır: düzgün qeydiyyat edir; boş/səhv/duplicate məlumatda aydın xəta verir.
+
+[ ] 18. Customer signin backend-ini yaz: password_verify, `customer_id` sessiyası, redirect.
+    Bitmiş sayılır: yalnız düzgün e-mail/parol ilə customer hesabı açılır.
+
+[ ] 19. Customer logout endpoint-i yarat.
+    Bitmiş sayılır: logout-dan sonra dashboard-a giriş signin səhifəsinə yönəlir.
+
+[ ] 20. Admin login flow-u təmizlə: `admin_id` sessiyası istifadə et, user və customer sessiyalarını qarışdırma.
+    Bitmiş sayılır: admin login customer dashboard-u, customer login admin paneli açmır.
+
+[ ] 21. Admin auth guard yarat və `Admin/public/`-dakı bütün idarəetmə səhifələrinə əlavə et.
+    Bitmiş sayılır: URL-ni birbaşa açan sessiyasız istifadəçi login-ə göndərilir.
+
+[ ] 22. Customer auth guard yarat və dashboard, order history, address səhifələrinə əlavə et.
+    Bitmiş sayılır: sessiyasız customer qorunan səhifə görə bilmir.
+
+[ ] 23. Bütün POST formaları üçün CSRF token helper yarat və istifadə et.
+    Bitmiş sayılır: token-siz POST sorğusu rədd edilir.
+
+[ ] 24. Bütün çıxış məlumatlarını `htmlspecialchars` ilə render et və bütün SQL-ləri prepared statement et.
+    Bitmiş sayılır: istifadəçi məlumatı HTML/SQL injection yaratmır.
+
+[ ] 25. Auth axınını əl ilə test et: signup → signin → protected page → logout; admin üçün də təkrarla.
+    Bitmiş sayılır: hər iki rol üçün test nəticəsi qeyd olunur.
+
+FAZA D — ADMIN: KATEQORİYA VƏ MƏHSUL (26–34)
+------------------------------------------------
+
+[ ] 26. Admin-də category list səhifəsini database-dən oxuyan hala gətir.
+    Bitmiş sayılır: statik nümunələr yox, real kateqoriyalar görünür.
+
+[ ] 27. Category create endpoint/formunu yaz; şəkil yükləməsini təhlükəsiz yoxla.
+    Bitmiş sayılır: yeni kateqoriya və şəkli database-də saxlanır.
+
+[ ] 28. Category edit, status dəyişmə və delete funksiyalarını yaz.
+    Bitmiş sayılır: əlavə/redaktə/passivləşdirmə/silmə işləyir; məhsulu olan kateqoriya təsadüfən silinmir.
+
+[ ] 29. Admin-də məhsul siyahısı səhifəsini yarat: axtarış, kateqoriya filtri, status və pagination olsun.
+    Bitmiş sayılır: çox məhsul arasında düzgün filtr və səhifələmə işləyir.
+
+[ ] 30. Product create formunu yaz: kateqoriya, ad, SKU, qiymət, endirim qiyməti, stok, təsvir, status, cover şəkli.
+    Bitmiş sayılır: validasiyadan keçən məhsul database-də və siyahıda görünür.
+
+[ ] 31. Məhsul üçün əlavə şəkillərin upload/silmə/sıralama funksiyasını yaz.
+    Bitmiş sayılır: hər məhsulun bir neçə şəkli düzgün açılır.
+
+[ ] 32. Product edit, status və delete funksiyalarını yaz.
+    Bitmiş sayılır: məhsul məlumatı yenilənir; sifarişdə istifadə edilən məhsul təhlükəsiz şəkildə passivləşdirilir.
+
+[ ] 33. Upload qaydasını yekunlaşdır: MIME yoxlaması, ölçü limiti, unikallı fayl adı, upload qovluğundan kənara çıxmama.
+    Bitmiş sayılır: yalnız icazəli şəkillər yüklənir və yanlış fayl rədd edilir.
+
+[ ] 34. Admin-də kateqoriya və məhsul CRUD-u tam test et.
+    Bitmiş sayılır: create → list → edit → status → delete ssenarisi keçir.
+
+FAZA E — MAĞAZA VİTRİNİ (35–40)
+--------------------------------
+
+[ ] 35. Header, footer və əsas menyu linklərini `.html`-dən real `.php` route-lara düzəlt.
+    Bitmiş sayılır: əsas menyudan heç bir 404/qırıq keçid yoxdur.
+
+[ ] 36. Ana səhifədə aktiv slider və seçilmiş/son məhsulları database-dən göstər.
+    Bitmiş sayılır: admin əlavə etdiyi aktiv banner və məhsul vitrində görünür.
+
+[ ] 37. Shop səhifəsini yarat: aktiv məhsullar, kateqoriya filtri, qiymət filtri, axtarış, pagination.
+    Bitmiş sayılır: filtr URL parametrləri ilə işləyir və nəticə düzgündür.
+
+[ ] 38. Product detail səhifəsini slug ilə yarat.
+    Bitmiş sayılır: ad, qiymət, endirim, stok, təsvir, kateqoriya və bütün şəkillər real məlumatdır.
+
+[ ] 39. Stokda olmayan və passiv məhsulun storefront-da davranışını yaz.
+    Bitmiş sayılır: passiv məhsul açılmır; stokda olmayan məhsul səbətə əlavə edilmir.
+
+[ ] 40. Storefront-u mobil və desktop-da yoxla.
+    Bitmiş sayılır: ana səhifə, shop və product detail əsas ekran ölçülərində istifadəyə yararlıdır.
+
+FAZA F — SƏBƏT VƏ CHECKOUT (41–47)
+-----------------------------------
+
+[ ] 41. Session əsaslı səbət helper-i yarat: add, update quantity, remove, clear, totals.
+    Bitmiş sayılır: eyni məhsul iki dəfə əlavə olunanda yeni sətir yox, miqdar artır.
+
+[ ] 42. Product detail və shop kartlarına “Add to cart” backend-ini bağla.
+    Bitmiş sayılır: yalnız aktiv və stokda olan məhsul səbətə düşür.
+
+[ ] 43. Cart səhifəsini real data ilə yarat: məhsullar, miqdar dəyişməsi, silmə, ara cəm və total.
+    Bitmiş sayılır: hər dəyişiklikdən sonra məbləğ və stok yoxlaması düzdür.
+
+[ ] 44. Customer address CRUD yarat: ünvan əlavə et, redaktə et, sil, default seç.
+    Bitmiş sayılır: customer checkout-dan əvvəl ünvanını idarə edə bilir.
+
+[ ] 45. Checkout səhifəsini yarat: login yoxlaması, ünvan seçimi, order summary və payment metodu.
+    Bitmiş sayılır: boş səbət və ünvanı olmayan customer sifarişə keçə bilmir.
+
+[ ] 46. Order placement endpoint-ini database transaction ilə yaz: yenidən stok yoxla, order/order_items yarat,
+    stoku azalt, səbəti təmizlə.
+    Bitmiş sayılır: hər hansı xəta olarsa nə sifariş, nə stok qismən dəyişmir.
+
+[ ] 47. Sifariş təsdiq səhifəsini yarat və checkout axınını tam sına.
+    Bitmiş sayılır: customer məhsul seçib sifariş verir və order nömrəsini görür.
+
+FAZA G — SİFARİŞ, PANEL VƏ YEKUN (48–55)
+------------------------------------------
+
+[ ] 48. Customer dashboard-u real profil, ünvanlar və son sifarişlər ilə doldur.
+    Bitmiş sayılır: demo məlumatı yoxdur, yalnız daxil olan customer-in datası görünür.
+
+[ ] 49. Customer “My Orders” və order detail səhifələrini yaz.
+    Bitmiş sayılır: customer yalnız öz sifarişlərini və item-lərini görə bilir.
+
+[ ] 50. Admin order list səhifəsini yaz: axtarış, status filtri, tarix sıralaması.
+    Bitmiş sayılır: yeni sifariş dərhal admin siyahısında görünür.
+
+[ ] 51. Admin order detail və order status dəyişmə funksiyasını yaz.
+    Bitmiş sayılır: pending → processing → shipped → delivered/cancelled keçidləri qaydalı işləyir.
+
+[ ] 52. Admin dashboard statistikalarını real query-lərlə bağla: məhsul, customer, sifariş və gəlir.
+    Bitmiş sayılır: göstəricilər database məlumatı ilə uyğun gəlir.
+
+[ ] 53. Slider modulunu tamamla: admin guard, CSRF, status dəyişimi və redaktə.
+    Bitmiş sayılır: yalnız admin aktiv banner yarada, redaktə edə və silə bilir.
+
+[ ] 54. Tam qəbul testi et: customer qeydiyyatı → login → məhsul axtarışı → səbət → ünvan →
+    checkout → customer order detail → admin order status.
+    Bitmiş sayılır: bu axın təzə browser sessiyasında səhvsiz keçir.
+
+[ ] 55. Production checklist: display_errors=Off, error log, `.env` Git-dən kənar, backup,
+    upload limit, HTTPS/cookie secure parametrləri və README-nin son versiyası.
+    Bitmiş sayılır: layihə lokalda və hosting-də deploy üçün hazırdır.
+
+SON NƏTİCƏ
+----------
+55-ci task bitəndə layihə tamamlanmış sayılır: qorunan admin panel, real məhsul kataloqu,
+customer hesabı, səbət, checkout, sifariş izləmə və sifariş idarəetməsi işləyir.

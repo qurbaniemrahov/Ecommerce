@@ -1,68 +1,36 @@
 <?php
 
-$dbName = getenv('DB_NAME') ?: 'corona';
+$envPath = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . '.env';
+$env = is_file($envPath) ? parse_ini_file($envPath, false, INI_SCANNER_RAW) : false;
 
-$portCandidates = [];
-$envPort = getenv('DB_PORT');
-if ($envPort !== false && $envPort !== '') {
-    $portCandidates[] = $envPort;
+if ($env === false) {
+    throw new RuntimeException('.env file could not be loaded.');
 }
 
-// XAMPP usually uses 3306, but it is often moved to 3307 when 3306 is busy.
-$portCandidates[] = '3306';
-$portCandidates[] = '3307';
-$portCandidates = array_values(array_unique($portCandidates));
-
-$hostCandidates = [];
-
-$envHost = getenv('DB_HOST');
-if ($envHost !== false && $envHost !== '') {
-    $hostCandidates[] = $envHost;
+foreach ($env as $key => $value) {
+    $value = trim((string) $value, "\"'");
+    putenv("{$key}={$value}");
+    $_ENV[$key] = $value;
 }
 
-$hostCandidates[] = '127.0.0.1';
-$hostCandidates[] = 'localhost';
-$hostCandidates = array_values(array_unique($hostCandidates));
-
-$credentialCandidates = [];
-
-$envUser = getenv('DB_USER');
-$envPassword = getenv('DB_PASS');
-
-if ($envUser !== false && $envUser !== '') {
-    $credentialCandidates[] = [
-        'username' => $envUser,
-        'password' => $envPassword !== false ? $envPassword : '',
-    ];
-}
-
-// Common XAMPP local defaults.
-$credentialCandidates[] = ['username' => 'root', 'password' => ''];
-$credentialCandidates[] = ['username' => 'root', 'password' => 'root'];
-
-$pdo = null;
-$connectionErrors = [];
-
-foreach ($hostCandidates as $host) {
-    foreach ($portCandidates as $port) {
-        $dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8mb4";
-
-        foreach ($credentialCandidates as $credentials) {
-            try {
-                $pdo = new PDO($dsn, $credentials['username'], $credentials['password']);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-                break 3;
-            } catch (PDOException $e) {
-                $connectionErrors[] = "[host={$host} port={$port} user={$credentials['username']}] " . $e->getMessage();
-            }
-        }
+$requiredVariables = ['DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USER', 'DB_PASS'];
+foreach ($requiredVariables as $variable) {
+    if (getenv($variable) === false) {
+        throw new RuntimeException("Missing required environment variable: {$variable}");
     }
 }
 
-if (!$pdo instanceof PDO) {
-    $lastError = end($connectionErrors) ?: 'Unknown database connection error.';
-    die('Database connection failed. Please make sure Apache and MySQL are running in XAMPP. Last error: ' . $lastError);
-}
+$dsn = sprintf(
+    'mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4',
+    getenv('DB_HOST'),
+    getenv('DB_PORT'),
+    getenv('DB_NAME')
+);
 
-?>
+try {
+    $pdo = new PDO($dsn, getenv('DB_USER'), getenv('DB_PASS'));
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    throw new RuntimeException('Database connection failed.', 0, $e);
+}
