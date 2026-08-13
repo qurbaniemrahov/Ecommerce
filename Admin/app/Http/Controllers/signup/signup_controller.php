@@ -1,6 +1,10 @@
 <?php
-include("../../../../config/connection.php");
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method Not Allowed');
+}
 
+include("../../../../config/connection.php");
 
 try {
     $month = $_POST["month"];
@@ -37,7 +41,11 @@ try {
 
 
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    if ($e->getCode() === '23000') {
+        echo "Bu e-mail ünvanı ilə artıq hesab mövcuddur.";
+    } else {
+        echo "Error: " . $e->getMessage();
+    }
 }
 
 ?>

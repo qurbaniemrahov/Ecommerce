@@ -1,210 +1,270 @@
-ECOMMERCE LAYİHƏSİ — BAŞDAN SONA İCRA CHECKLIST-İ
-===================================================
-
-NECƏ İSTİFADƏ ETMƏLİ
----------------------
-• Yalnız cari nömrəli taskı et. Bitmədən növbəti taska keçmə.
-• Bitirəndə [ ] işarəsini [x] et və tarixi yaz: [x] (11.08.2026).
-• Taskın qəbul meyarı ödənmirsə, onu bitmiş sayma.
-• Bu siyahı ilə 1-dən 55-ə qədər getdikdə layihənin işlək e-commerce MVP-si tamamlanmış olacaq.
-
-HƏDƏF
------
-Müştəri qeydiyyatdan keçə, daxil ola, məhsulları axtarıb səbətə ata, sifariş verə və sifarişini izləyə bilsin.
-Admin daxil olub kateqoriya, məhsul, banner və sifarişləri idarə edə bilsin.
-
-FAZA A — MÜHİT VƏ TƏMƏL (1–8)
-------------------------------
-
-[ ] 0 Apache və MySQL xidmətlərini XAMPP-dən başlat.
-    Bitmiş sayılır: http://localhost/Ecommerce/ açılır və phpMyAdmin açılır.1.
-
-[ ] 02. phpMyAdmin-də `corona` adlı database yarat.
-    Bitmiş sayılır: database UTF-8/utf8mb4 kodlaşdırması ilə görünür.
-
-[ ] 03. Mövcud migration-ları işə sal: admin_user, password_resets, signup, categories, sliders.
-    Bitmiş sayılır: bu 5 cədvəl database-də görünür.
-
-[ ] 04. Layihə üçün `.env.example` yarat və DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS yaz.
-    Bitmiş sayılır: real şifrə yazılmadan başqa kompüterdə qoşulma dəyişənləri aydındır.
-
-[ ] 05. `Admin/config/connection.php`-ni yalnız `.env` dəyişənlərindən oxuyan sabit konfiqurasiyaya çevir.
-    Bitmiş sayılır: database adı, istifadəçi və parol kodun içində təkrar yazılmır.
-
-[ ] 06. `README.md`-yə quraşdırma addımlarını yaz: XAMPP, database, migration və lokal URL.
-    Bitmiş sayılır: layihəni ilk dəfə açan şəxs işlədə bilir.
-
-[ ] 07. Bütün PHP fayllarının encoding-ini UTF-8 (BOM-suz) et.
-    Bitmiş sayılır: ə, ş, ç, ğ, ö, ü, ı simvolları bütün səhifələrdə düzgün görünür.
-
-[ ] 08. Git-də ilk iş nöqtəsini commit et: `chore: prepare local project setup`.
-    Bitmiş sayılır: bu mərhələyə geri dönmək üçün təmiz commit var.
-
-FAZA B — DATABASE DİZAYNI (9–16)
----------------------------------
-
-[ ] 09. Qərar ver və yaz: customer üçün mövcud `signup` cədvəli qalacaq, yoxsa `users` cədvəlinə köçəcəksən.
-    Bitmiş sayılır: admin və customer hesablarının qaydası bir cümlə ilə README-də qeyd olunur.
-
-[ ] 10. Customer e-mail ünvanına UNIQUE indeks əlavə et.
-    Bitmiş sayılır: eyni e-mail ilə ikinci customer yaradılmır.
-
-[ ] 11. `categories` cədvəlini tamamla: name, slug, image, status, created_at, updated_at; slug UNIQUE olsun.
-    Bitmiş sayılır: kateqoriya üçün lazım olan bütün sahələr və indeks var.
-
-[ ] 12. `products` cədvəlini yarat: category_id, name, slug, sku, description, price, sale_price,
-    stock, cover_image, status, created_at, updated_at.
-    Bitmiş sayılır: məhsul kateqoriyaya foreign key ilə bağlıdır; slug və sku unikaldır.
-
-[ ] 13. `product_images` cədvəlini yarat: product_id, image, sort_order.
-    Bitmiş sayılır: bir məhsula bir neçə şəkil əlavə etmək olur.
-
-[ ] 14. `addresses` cədvəlini yarat: user_id, full_name, phone, city, district, address_line, is_default.
-    Bitmiş sayılır: bir customer bir neçə çatdırılma ünvanı saxlaya bilir.
-
-[ ] 15. `orders` və `order_items` cədvəllərini yarat.
-    Bitmiş sayılır: sifarişin customer-i, ünvan snapshot-u, totalı, payment_status və order_status-u;
-    item-in isə məhsul adı, qiyməti, miqdarı və subtotalı saxlanır.
-
-[ ] 16. `payments` cədvəlini yarat və bütün yeni migration-ları ikinci dəfə işlədib yoxla.
-    Bitmiş sayılır: migrations təkrar çalışanda xəta yoxdur; lazımi FK və indekslər var.
-
-FAZA C — GİRİŞ, SESSİYA VƏ TƏHLÜKƏSİZLİK (17–25)
---------------------------------------------------
-
-[ ] 17. Customer signup backend-ini yaz: input validation, e-mail yoxlaması, password_hash və flash mesaj.
-    Bitmiş sayılır: düzgün qeydiyyat edir; boş/səhv/duplicate məlumatda aydın xəta verir.
-
-[ ] 18. Customer signin backend-ini yaz: password_verify, `customer_id` sessiyası, redirect.
-    Bitmiş sayılır: yalnız düzgün e-mail/parol ilə customer hesabı açılır.
-
-[ ] 19. Customer logout endpoint-i yarat.
-    Bitmiş sayılır: logout-dan sonra dashboard-a giriş signin səhifəsinə yönəlir.
-
-[ ] 20. Admin login flow-u təmizlə: `admin_id` sessiyası istifadə et, user və customer sessiyalarını qarışdırma.
-    Bitmiş sayılır: admin login customer dashboard-u, customer login admin paneli açmır.
-
-[ ] 21. Admin auth guard yarat və `Admin/public/`-dakı bütün idarəetmə səhifələrinə əlavə et.
-    Bitmiş sayılır: URL-ni birbaşa açan sessiyasız istifadəçi login-ə göndərilir.
-
-[ ] 22. Customer auth guard yarat və dashboard, order history, address səhifələrinə əlavə et.
-    Bitmiş sayılır: sessiyasız customer qorunan səhifə görə bilmir.
-
-[ ] 23. Bütün POST formaları üçün CSRF token helper yarat və istifadə et.
-    Bitmiş sayılır: token-siz POST sorğusu rədd edilir.
-
-[ ] 24. Bütün çıxış məlumatlarını `htmlspecialchars` ilə render et və bütün SQL-ləri prepared statement et.
-    Bitmiş sayılır: istifadəçi məlumatı HTML/SQL injection yaratmır.
-
-[ ] 25. Auth axınını əl ilə test et: signup → signin → protected page → logout; admin üçün də təkrarla.
-    Bitmiş sayılır: hər iki rol üçün test nəticəsi qeyd olunur.
-
-FAZA D — ADMIN: KATEQORİYA VƏ MƏHSUL (26–34)
-------------------------------------------------
-
-[ ] 26. Admin-də category list səhifəsini database-dən oxuyan hala gətir.
-    Bitmiş sayılır: statik nümunələr yox, real kateqoriyalar görünür.
-
-[ ] 27. Category create endpoint/formunu yaz; şəkil yükləməsini təhlükəsiz yoxla.
-    Bitmiş sayılır: yeni kateqoriya və şəkli database-də saxlanır.
-
-[ ] 28. Category edit, status dəyişmə və delete funksiyalarını yaz.
-    Bitmiş sayılır: əlavə/redaktə/passivləşdirmə/silmə işləyir; məhsulu olan kateqoriya təsadüfən silinmir.
-
-[ ] 29. Admin-də məhsul siyahısı səhifəsini yarat: axtarış, kateqoriya filtri, status və pagination olsun.
-    Bitmiş sayılır: çox məhsul arasında düzgün filtr və səhifələmə işləyir.
-
-[ ] 30. Product create formunu yaz: kateqoriya, ad, SKU, qiymət, endirim qiyməti, stok, təsvir, status, cover şəkli.
-    Bitmiş sayılır: validasiyadan keçən məhsul database-də və siyahıda görünür.
-
-[ ] 31. Məhsul üçün əlavə şəkillərin upload/silmə/sıralama funksiyasını yaz.
-    Bitmiş sayılır: hər məhsulun bir neçə şəkli düzgün açılır.
-
-[ ] 32. Product edit, status və delete funksiyalarını yaz.
-    Bitmiş sayılır: məhsul məlumatı yenilənir; sifarişdə istifadə edilən məhsul təhlükəsiz şəkildə passivləşdirilir.
-
-[ ] 33. Upload qaydasını yekunlaşdır: MIME yoxlaması, ölçü limiti, unikallı fayl adı, upload qovluğundan kənara çıxmama.
-    Bitmiş sayılır: yalnız icazəli şəkillər yüklənir və yanlış fayl rədd edilir.
-
-[ ] 34. Admin-də kateqoriya və məhsul CRUD-u tam test et.
-    Bitmiş sayılır: create → list → edit → status → delete ssenarisi keçir.
-
-FAZA E — MAĞAZA VİTRİNİ (35–40)
---------------------------------
-
-[ ] 35. Header, footer və əsas menyu linklərini `.html`-dən real `.php` route-lara düzəlt.
-    Bitmiş sayılır: əsas menyudan heç bir 404/qırıq keçid yoxdur.
-
-[ ] 36. Ana səhifədə aktiv slider və seçilmiş/son məhsulları database-dən göstər.
-    Bitmiş sayılır: admin əlavə etdiyi aktiv banner və məhsul vitrində görünür.
-
-[ ] 37. Shop səhifəsini yarat: aktiv məhsullar, kateqoriya filtri, qiymət filtri, axtarış, pagination.
-    Bitmiş sayılır: filtr URL parametrləri ilə işləyir və nəticə düzgündür.
-
-[ ] 38. Product detail səhifəsini slug ilə yarat.
-    Bitmiş sayılır: ad, qiymət, endirim, stok, təsvir, kateqoriya və bütün şəkillər real məlumatdır.
-
-[ ] 39. Stokda olmayan və passiv məhsulun storefront-da davranışını yaz.
-    Bitmiş sayılır: passiv məhsul açılmır; stokda olmayan məhsul səbətə əlavə edilmir.
-
-[ ] 40. Storefront-u mobil və desktop-da yoxla.
-    Bitmiş sayılır: ana səhifə, shop və product detail əsas ekran ölçülərində istifadəyə yararlıdır.
-
-FAZA F — SƏBƏT VƏ CHECKOUT (41–47)
------------------------------------
-
-[ ] 41. Session əsaslı səbət helper-i yarat: add, update quantity, remove, clear, totals.
-    Bitmiş sayılır: eyni məhsul iki dəfə əlavə olunanda yeni sətir yox, miqdar artır.
-
-[ ] 42. Product detail və shop kartlarına “Add to cart” backend-ini bağla.
-    Bitmiş sayılır: yalnız aktiv və stokda olan məhsul səbətə düşür.
-
-[ ] 43. Cart səhifəsini real data ilə yarat: məhsullar, miqdar dəyişməsi, silmə, ara cəm və total.
-    Bitmiş sayılır: hər dəyişiklikdən sonra məbləğ və stok yoxlaması düzdür.
-
-[ ] 44. Customer address CRUD yarat: ünvan əlavə et, redaktə et, sil, default seç.
-    Bitmiş sayılır: customer checkout-dan əvvəl ünvanını idarə edə bilir.
-
-[ ] 45. Checkout səhifəsini yarat: login yoxlaması, ünvan seçimi, order summary və payment metodu.
-    Bitmiş sayılır: boş səbət və ünvanı olmayan customer sifarişə keçə bilmir.
-
-[ ] 46. Order placement endpoint-ini database transaction ilə yaz: yenidən stok yoxla, order/order_items yarat,
-    stoku azalt, səbəti təmizlə.
-    Bitmiş sayılır: hər hansı xəta olarsa nə sifariş, nə stok qismən dəyişmir.
-
-[ ] 47. Sifariş təsdiq səhifəsini yarat və checkout axınını tam sına.
-    Bitmiş sayılır: customer məhsul seçib sifariş verir və order nömrəsini görür.
-
-FAZA G — SİFARİŞ, PANEL VƏ YEKUN (48–55)
-------------------------------------------
-
-[ ] 48. Customer dashboard-u real profil, ünvanlar və son sifarişlər ilə doldur.
-    Bitmiş sayılır: demo məlumatı yoxdur, yalnız daxil olan customer-in datası görünür.
-
-[ ] 49. Customer “My Orders” və order detail səhifələrini yaz.
-    Bitmiş sayılır: customer yalnız öz sifarişlərini və item-lərini görə bilir.
-
-[ ] 50. Admin order list səhifəsini yaz: axtarış, status filtri, tarix sıralaması.
-    Bitmiş sayılır: yeni sifariş dərhal admin siyahısında görünür.
-
-[ ] 51. Admin order detail və order status dəyişmə funksiyasını yaz.
-    Bitmiş sayılır: pending → processing → shipped → delivered/cancelled keçidləri qaydalı işləyir.
-
-[ ] 52. Admin dashboard statistikalarını real query-lərlə bağla: məhsul, customer, sifariş və gəlir.
-    Bitmiş sayılır: göstəricilər database məlumatı ilə uyğun gəlir.
-
-[ ] 53. Slider modulunu tamamla: admin guard, CSRF, status dəyişimi və redaktə.
-    Bitmiş sayılır: yalnız admin aktiv banner yarada, redaktə edə və silə bilir.
-
-[ ] 54. Tam qəbul testi et: customer qeydiyyatı → login → məhsul axtarışı → səbət → ünvan →
-    checkout → customer order detail → admin order status.
-    Bitmiş sayılır: bu axın təzə browser sessiyasında səhvsiz keçir.
-
-[ ] 55. Production checklist: display_errors=Off, error log, `.env` Git-dən kənar, backup,
-    upload limit, HTTPS/cookie secure parametrləri və README-nin son versiyası.
-    Bitmiş sayılır: layihə lokalda və hosting-də deploy üçün hazırdır.
-
-SON NƏTİCƏ
-----------
-55-ci task bitəndə layihə tamamlanmış sayılır: qorunan admin panel, real məhsul kataloqu,
-customer hesabı, səbət, checkout, sifariş izləmə və sifariş idarəetməsi işləyir.
+LARAVEL E-COMMERCE — BAŞDAN SONA MASTER TASK SİYAHISI
+======================================================
+
+İSTİFADƏ QAYDASI
+----------------
+Bu sənəd sənin iş axınındır. Task-ları yalnız nömrə sırası ilə et.
+Bir taskın “Yoxlama” hissəsi keçməyibsə, onu [x] etmə və növbəti taska keçmə.
+Hər bitən işdə statusu və tarixi yaz: [x] 01 — 12.08.2026.
+
+SON HƏDƏF
+---------
+Customer qeydiyyatdan keçir, məhsullara baxır, səbətə əlavə edir, checkout edir və sifarişini izləyir.
+Admin daxil olur, istifadəçi/kateqoriya/məhsul/banner/sifarişləri idarə edir.
+Sonuncu task bitəndə layihə deploy edilə bilən işlək e-commerce tətbiqidir.
+
+======================================================
+MƏRHƏLƏ 1 — LAYİHƏNİ İŞLƏK VƏ SƏLİS BAŞLAT (01–08)
+======================================================
+
+[ ] 01. Layihənin əsas qovluğunu və Laravel `backend/` qovluğunu dəqiqləşdir.
+    Et: composer.json, artisan, .env, routes, app, resources və database qovluqlarının yerini yoxla.
+    Yoxlama: `php artisan --version` işləyir.
+
+[ ] 02. Lokal mühiti hazırla.
+    Et: .env-i qur, APP_URL, DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD dəyərlərini yaz.
+    Yoxlama: `php artisan config:clear` və `php artisan migrate:status` xəta vermir.
+
+[ ] 03. Frontend build sistemini işə sal.
+    Et: package.json varsa npm install və development build əmrlərini qur.
+    Yoxlama: CSS/JS asset-ləri səhifədə yüklənir.
+
+[ ] 04. Git qaydalarını hazırla.
+    Et: .env, vendor, node_modules, log və istifadəçi upload-larının Git-ə düşmədiyini yoxla.
+    Yoxlama: `git status` məxfi və generasiya olunan faylları göstərmir.
+
+[ ] 05. README-yə lokal quraşdırma addımlarını yaz.
+    Et: clone → .env → database → migrate → serve → frontend build ardıcıllığını qeyd et.
+    Yoxlama: başqa şəxs README ilə layihəni aça bilər.
+
+[ ] 06. Admin panel üçün dizayn qaydasını müəyyən et.
+    Et: hazır `resources/views/pages/Admin/public/index.blade.php` səhifəsini əsas layout kimi seç;
+    header, sidebar, content və alert hissələrini partial/component-lərə bölmək üçün plan yaz.
+    Yoxlama: təkrarlanan HTML hissələri müəyyən olunub.
+
+[ ] 07. Route xəritəsini yaz.
+    Et: storefront, auth, customer account və admin route qruplarını README-də sadala.
+    Yoxlama: hər gələcək səhifənin URL və controller yeri əvvəlcədən məlumdur.
+
+[ ] 08. Bu mərhələni commit et.
+    Commit: `chore: prepare laravel project foundation`
+    Yoxlama: layihə təmiz vəziyyətdə açılır.
+
+======================================================
+MƏRHƏLƏ 2 — DATABASE VƏ ƏSAS MODELLƏR (09–17)
+======================================================
+
+[x] 09. İstifadəçi modelini qərarlaşdır.
+    Et: vahid `users` cədvəli + `role` (admin/customer) istifadə et; ayrı admin/customer cədvəli yaratma.
+    Yoxlama: roles üçün `admin` və `customer` qaydası sənədləşib.
+
+[ ] 10. Users migration və modelini tamamla.
+    Et: name, email (unique), password, role, status, email_verified_at, timestamps sahələrini yaz.
+    Yoxlama: migration işləyir və modeldə fillable/hidden/casts doğrudur.
+
+[ ] 11. Categories migration, model və factory yarat.
+    Et: name, slug (unique), image, status, sort_order, timestamps sahələrini əlavə et.
+    Yoxlama: bir kateqoriya factory/seed ilə yaradıla bilir.
+
+[ ] 12. Products migration, model və factory yarat.
+    Et: category_id FK, name, slug, sku unique, description, price, sale_price nullable,
+    stock, cover_image, status, timestamps sahələrini əlavə et.
+    Yoxlama: Product → Category əlaqəsi işləyir.
+
+[ ] 13. ProductImages migration və modelini yarat.
+    Et: product_id FK, path, sort_order sahələrini əlavə et.
+    Yoxlama: bir məhsula bir neçə şəkil bağlıdır.
+
+[ ] 14. Addresses migration və modelini yarat.
+    Et: user_id FK, full_name, phone, city, district, address_line, is_default.
+    Yoxlama: User → Addresses əlaqəsi işləyir.
+
+[ ] 15. Orders və OrderItems migration/model-lərini yarat.
+    Et: order_number unique, user_id, ünvan snapshot-u, subtotal, shipping_total, grand_total,
+    order_status, payment_status; item üçün məhsul snapshot-u, unit_price, quantity, subtotal saxla.
+    Yoxlama: sifariş və item-lər transaction daxilində yaradıla bilir.
+
+[ ] 16. Payments migration/modelini yarat.
+    Et: order_id FK, provider, transaction_id, amount, status, payload nullable sahələrini əlavə et.
+    Yoxlama: bir sifarişin payment qeydi saxlanır.
+
+[ ] 17. Seeder yaz və fresh database test et.
+    Et: 1 admin, 2 customer, kateqoriyalar və test məhsulları seed et.
+    Yoxlama: `php artisan migrate:fresh --seed` tam işləyir.
+
+======================================================
+MƏRHƏLƏ 3 — AUTH VƏ TƏHLÜKƏSİZLİK (18–25)
+======================================================
+
+[ ] 18. Laravel auth scaffolding seç və quraşdır.
+    Et: Breeze və ya mövcud auth sistemindən birini seç; register/login/logout/reset password axınını qur.
+    Yoxlama: customer qeydiyyat və login edə bilir.
+
+[ ] 19. Role middleware yarat.
+    Et: `role:admin` middleware-i və admin route group-u yaz.
+    Yoxlama: customer `/admin` URL-lərinə daxil ola bilmir.
+
+[ ] 20. Customer protected route-larını yarat.
+    Et: profile, addresses, orders səhifələrini auth middleware ilə qoruyun.
+    Yoxlama: login olmadan həmin URL-lər login səhifəsinə yönəlir.
+
+[ ] 21. Form Request validasiyalarını yarat.
+    Et: register, category, product, address, cart və checkout üçün ayrı Request sinifləri yaz.
+    Yoxlama: səhv form input-u database-ə yazılmır, xəta ekranda görünür.
+
+[ ] 22. Authorization policy-ləri yaz.
+    Et: customer yalnız öz address/order datasını görə və dəyişə bilsin.
+    Yoxlama: başqa customer-in order URL-si 403/404 qaytarır.
+
+[ ] 23. Fayl upload təhlükəsizliyini qur.
+    Et: image MIME/ölçü validasiyası, Storage disk, unikallı fayl adları və `storage:link` istifadə et.
+    Yoxlama: yanlış tipli fayl yüklənmir, şəkil düzgün açılır.
+
+[ ] 24. İstifadəçi məlumatının render qaydalarını yoxla.
+    Et: Blade escaped output (`{{ }}`), CSRF (`@csrf`) və mass-assignment qorumasını tətbiq et.
+    Yoxlama: form token-siz sorğu rədd edilir, HTML daxil edilən ad təhlükəsiz görünür.
+
+[ ] 25. Auth və security testlərini yaz.
+    Et: admin route qoruması, login, register və ownership üçün feature test yarat.
+    Yoxlama: `php artisan test` testləri keçir.
+
+======================================================
+MƏRHƏLƏ 4 — ADMIN PANELİ (26–35)
+======================================================
+
+[ ] 26. Admin Blade layout və component-lərini tamamla.
+    Et: layout, sidebar, navbar, breadcrumbs, flash alerts və form error component-lərini yarat.
+    Yoxlama: admin səhifələrində təkrar markup minimumdur.
+
+[ ] 27. Admin dashboard-u yarat.
+    Et: ümumi məhsul, customer, sifariş və gəlir göstəriciləri üçün controller/query yaz.
+    Yoxlama: index.blade.php-də “Add user” və digər action-lar real route-a bağlıdır.
+
+[ ] 28. Category CRUD-u yarat.
+    Et: index, create, store, edit, update, status və delete axınlarını yaz.
+    Yoxlama: create → edit → status → delete ssenarisi işləyir.
+
+[ ] 29. Product CRUD-un siyahı hissəsini yarat.
+    Et: axtarış, kateqoriya/status filter və pagination əlavə et.
+    Yoxlama: query parametrləri ilə nəticələr dəyişir.
+
+[ ] 30. Product create/edit formunu yarat.
+    Et: bütün məhsul sahələrini, cover image və əlavə şəkilləri bağla.
+    Yoxlama: məhsul admin paneldə yaradılır və storefront üçün hazırdır.
+
+[ ] 31. Product silmə və stok qaydasını yaz.
+    Et: sifarişdə olan məhsulu silmək əvəzinə passivləşdir; stok mənfi olmasın.
+    Yoxlama: mövcud sifarişlərin tarixi item məlumatı qorunur.
+
+[ ] 32. User management yarat.
+    Et: customer list, axtarış, status dəyişmə və lazım olan minimum məlumat baxışı yarat.
+    Yoxlama: admin customer hesabını deaktivləşdirə bilir.
+
+[ ] 33. Banner/slider CRUD-u yarat.
+    Et: şəkil, başlıq, link, sıralama, status və silmə funksiyasını əlavə et.
+    Yoxlama: aktiv banner storefront-da görünür.
+
+[ ] 34. Admin order list və detail səhifəsini yarat.
+    Et: axtarış, status filtri, sifariş item-ləri və customer/ünvan məlumatını göstər.
+    Yoxlama: yeni sifariş admin tərəfindən görünür.
+
+[ ] 35. Admin order status keçidlərini yaz.
+    Et: pending → processing → shipped → delivered/cancelled qaydalarını müəyyən et.
+    Yoxlama: hər status dəyişməsi qeyd olunur və customer tərəfdə görünür.
+
+======================================================
+MƏRHƏLƏ 5 — STOREFRONT (36–41)
+======================================================
+
+[ ] 36. Storefront üçün Blade layout və əsas navigasiyanı hazırla.
+    Et: ana səhifə, shop, cart, auth və account route-larını real linklərə bağla.
+    Yoxlama: əsas menyuda qırıq link yoxdur.
+
+[ ] 37. Ana səhifəni dinamik et.
+    Et: aktiv slider, kateqoriya və seçilmiş/yeni məhsulları controller-dən göstər.
+    Yoxlama: admin paneldən əlavə edilən aktiv məlumat ana səhifədə görünür.
+
+[ ] 38. Shop/catalog səhifəsini yarat.
+    Et: kateqoriya, qiymət, axtarış, sıralama və pagination filtrlərini əlavə et.
+    Yoxlama: filter URL-də saxlanır və düzgün nəticə qaytarır.
+
+[ ] 39. Product detail səhifəsini yarat.
+    Et: slug route, şəkil qalereyası, stok, qiymət, endirim və “səbətə əlavə et” formu yarat.
+    Yoxlama: passiv məhsul 404 qaytarır; stok 0 olanda səbətə əlavə edilmir.
+
+[ ] 40. 404 və boş vəziyyət ekranlarını yarat.
+    Et: boş catalog, boş cart, icazəsiz giriş və məhsul tapılmadı halları üçün UI yarat.
+    Yoxlama: istifadəçi texniki xəta yox, aydın mesaj görür.
+
+[ ] 41. Responsive test et.
+    Et: home, shop, product və admin əsas səhifələrini mobil/desktop ölçülərdə yoxla.
+    Yoxlama: əsas əməliyyatlar telefonda da yerinə yetirilir.
+
+======================================================
+MƏRHƏLƏ 6 — SƏBƏT VƏ SİFARİŞ (42–48)
+======================================================
+
+[ ] 42. Səbət modelini seç və yaz.
+    Et: ilkin versiya üçün Laravel session cart service yarat: add, update, remove, clear, totals.
+    Yoxlama: eyni məhsul yenidən əlavə ediləndə quantity artır.
+
+[ ] 43. Add-to-cart endpoint və cart page yarat.
+    Et: məhsulun status/stokunu server tərəfdə yoxla; quantity dəyişmə və silmə əməliyyatları əlavə et.
+    Yoxlama: total hər dəyişiklikdə düzgün hesablanır.
+
+[ ] 44. Login zamanı guest cart merge qaydasını yaz.
+    Et: qonaq səbətini login edən customer-in session/cart datası ilə birləşdir.
+    Yoxlama: login-dən sonra səbətdəki məhsullar itmir.
+
+[ ] 45. Address CRUD-u storefront-da yarat.
+    Et: address list/create/edit/delete/default səhifələrini yaz.
+    Yoxlama: customer yalnız öz ünvanlarını idarə edir.
+
+[ ] 46. Checkout ekranını yarat.
+    Et: auth, boş səbət, ünvan seçimi, order summary, çatdırılma və payment metodu validasiyasını yaz.
+    Yoxlama: uyğun olmayan checkout sorğusu sifariş yaratmır.
+
+[ ] 47. Order placement service yaz.
+    Et: DB transaction daxilində stok yenidən yoxlansın, order/orderItems yaransın, stok azalsın və cart təmizlənsin.
+    Yoxlama: xəta halında qismən sifariş və ya qismən stok dəyişikliyi qalmır.
+
+[ ] 48. Order success, My Orders və order detail səhifələrini yarat.
+    Et: order number, item-lər, total və status göstər.
+    Yoxlama: customer yalnız öz sifarişlərini görə bilir.
+
+======================================================
+MƏRHƏLƏ 7 — ÖDƏNİŞ, KEYFİYYƏT VƏ DEPLOY (49–55)
+======================================================
+
+[ ] 49. Ödəniş modelini müəyyən et.
+    Et: əvvəl Cash on Delivery işlət; sonra seçilmiş provayderin sandbox inteqrasiyasını əlavə et.
+    Yoxlama: uğurlu, uğursuz və cancel payment statusları doğru yazılır.
+
+[ ] 50. Bildirişləri əlavə et.
+    Et: order created və order status changed üçün e-mail notification/mail template yaz.
+    Yoxlama: test mail/log-da bildiriş görünür.
+
+[ ] 51. Əsas business logic üçün testlər yaz.
+    Et: product stock, cart total, checkout transaction və order status üçün feature/unit testlər əlavə et.
+    Yoxlama: `php artisan test` yaşıl nəticə verir.
+
+[ ] 52. Tam manual qəbul testi et.
+    Et: register → login → filter → cart → address → checkout → order detail → admin status axınını təzə browserdə yoxla.
+    Yoxlama: bütün axın bir dəfə də olsa xətasız bitir.
+
+[ ] 53. Production parametrlərini hazırla.
+    Et: APP_ENV=production, APP_DEBUG=false, loglama, queue/cache driver, mail və storage konfiqurasiyasını qur.
+    Yoxlama: production .env-də debug açıq deyil.
+
+[ ] 54. Backup və deployment checklist yarat.
+    Et: database backup, storage backup, migrate --force, cache clear/build və rollback qaydalarını README-yə yaz.
+    Yoxlama: deploy addımları təkrar oluna bilir.
+
+[ ] 55. Final release et.
+    Et: son `php artisan test`, lint/build, responsive yoxlama və Git release commit-i et.
+    Commit: `feat: complete ecommerce application`
+    Yoxlama: bütün yuxarıdakı tasklar [x]-dir və layihə tam işləyir.
+
+LAYİHƏ TAMAMLANIB
+------------------
+55-ci task [x] olduqda layihə bitmiş sayılır.
