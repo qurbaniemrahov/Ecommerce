@@ -14,6 +14,5 @@ Before running the project, install:
 
 ## User roles
 
-Admin və customer hesabları vahid `users` cədvəlində saxlanılır, `role` sahəsi yalnız `admin` və ya `customer` olur; mövcud `signup` cədvəli istifadəçi mənbəyi kimi saxlanılmır və ayrıca admin/customer cədvəlləri yaradılmır.
-
+Admin and customer accounts are stored in a single users table. The role field can only be admin or customer. The existing signup table is not used as a user source, and no separate admin/customer tables are created.
 
