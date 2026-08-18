@@ -6415,3 +6415,20 @@ input::-ms-clear {
 #js-product-detail-modal-thumbnail:hover .pt-prev, #js-product-detail-modal-thumbnail:hover .pt-next {
   opacity: .8; }
 
+/* Checkout requirements */
+.checkout-notice, .checkout-policy {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  background: #f7f8fa;
+  border-left: 3px solid #ff4500;
+  color: #333; }
+.checkout-notice i { color: #ff4500; font-size: 20px; margin-top: 3px; }
+.checkout-policy { border-left: 0; justify-content: space-between; flex-wrap: wrap; }
+.checkout-policy > div { flex: 1 1 180px; display: grid; grid-template-columns: 26px 1fr; column-gap: 8px; }
+.checkout-policy i { grid-row: 1 / span 2; color: #ff4500; padding-top: 2px; }
+.checkout-policy strong { font-size: 13px; text-transform: uppercase; }
+.checkout-policy span { font-size: 12px; color: #777; line-height: 1.5; }
+.checkout-f__payment .is-disabled { opacity: .45; }
+@media (max-width: 575px) { .checkout-policy { display: grid; } }
+

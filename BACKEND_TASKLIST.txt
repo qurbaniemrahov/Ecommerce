@@ -1,0 +1,138 @@
+CORE PHP E-COMMERCE — YEKUN TASKLIST
+=====================================
+
+Məqsəd: mövcud şablon yönümlü layihəni işlək, təhlükəsiz və yayıma hazır
+e-commerce tətbiqinə çevirmək. Tasklar asılılıq sırasındadır.
+
+MÖVCUD VƏZİYYƏT
+----------------
+- Storefront-da yalnız aktiv sliderlər DB-dən oxunur; məhsul, kateqoriya,
+  səbət, wishlist, checkout və sifarişlər dinamik deyil.
+- Admin paneldə slider create/delete işləyir, lakin məhsul və kateqoriya
+  formaları action="#" olduğuna görə məlumat saxlamır.
+- Müştəri və admin iki ayrı cədvəldədir (`signup`, `admin_user`); README-də
+  nəzərdə tutulan vahid `users` + `role` modeli ilə uyğunsuzluq var.
+- `products` migration-da `category_id` səhvən AUTO_INCREMENT PRIMARY KEY-dir;
+  məhsulun ayrıca id-si və düzgün əlaqəsi yoxdur.
+- db.sql yalnız admin_user, signup və sliders cədvəllərini daşıyır.
+- PDO prepared statement və password hash istifadə olunur, amma CSRF, role
+  authorization, vahid validasiya, rate limiting və təhlükəsiz error handling yoxdur.
+- Parol reset endpoint-i linki ekrana çıxarır; e-poçt, token expiry/hash və
+  real reset tam deyil.
+
+STATUS
+------
+[ ] görüləcək iş
+[x] mövcud və saxlanılacaq iş
+P0 bloklayıcı / təhlükəsizlik
+P1 əsas satış funksionallığı
+P2 keyfiyyət və yayıma hazırlıq
+
+1. TƏLƏBLƏR VƏ LOKAL QURAŞDIRMA (P0)
+-------------------------------------
+[ x] 1.1 Məhsul tələblərini yaz: məhsul növləri, çatdırılma zonaları, AZN vergi,
+        qonaq checkout, ödəmə provayderi və qaytarma siyasəti.
+[ ] 1.2 README-ni yenilə: XAMPP, PHP/MySQL versiyası, URL, .env nümunəsi,
+        DB import/migration və demo hesablar.
+[ x] 1.3 .env.example yarat; real .env və gizli açarlar Git-ə düşməsin.
+[ x] 1.4 C:\xampp\php\php.exe ilə bütün tətbiq PHP fayllarını php -l yoxlamasından keçir.
+[ ] 1.5 Storefront, admin login/panel, asset və upload URL-ləri üçün vahid
+        giriş nöqtəsi və route xəritəsi təyin et.
+
+2. ARXİTEKTURA VƏ VERİLƏNLƏR BAZASI (P0)
+-----------------------------------------
+[ ] 2.1 Vahid users cədvəli qur: id, ad, soyad, unique email, password hash,
+        role (admin/customer), status və timestamp-lər.
+[ ] 2.2 Mövcud signup/admin_user məlumatını migration ilə users-a köçür.
+[ ] 2.3 Versiyalanmış migration runner, transaction, backup/rollback və seed
+        mexanizmi yarat.
+[ ] 2.4 Categories: id, nullable parent_id, name, slug, image, status və FK/index.
+[ ] 2.5 Products: ayrıca id, düzgün category_id, slug/SKU, DECIMAL(12,2) qiymət,
+        stok, status, təsvir və timestamps.
+[ ] 2.6 Product_images və lazım olduqda variant cədvəllərini yarat.
+[ ] 2.7 Carts, cart_items, wishlists, addresses, orders, order_items, payments,
+        password_resets cədvəllərini FK və indekslərlə yarat.
+[ ] 2.8 Order_items-də məhsul adı, SKU, qiymət və vergi snapshot-u saxla.
+[ ] 2.9 Təhlükəsiz demo/seed məlumatı əlavə et; dump-da real məlumat/token saxlama.
+
+3. ORTAQ CORE PHP QATLARI (P0)
+------------------------------
+[ ] 3.1 bootstrap.php: session cookie parametrləri, .env, PDO, timezone,
+        error handling və autoload/include qaydası.
+[ ] 3.2 Router/controller qur; view-də SQL və biznes məntiqi saxlama.
+[ ] 3.3 DB əməliyyatlarını repository/model qatında prepared statement ilə topla.
+[ ] 3.4 Validator, flash message, redirect, pagination, slug və upload helper yarat.
+[ ] 3.5 Təkrarlanan storefront header/footer/nav hissələrini partial-lara çıxar.
+[ ] 3.6 403/404/422/500 səhifələri və production-safe error log qur.
+
+4. TƏHLÜKƏSİZLİK VƏ GİRİŞ (P0)
+-------------------------------
+[ ] 4.1 Customer/admin login, register, logout-u vahid users modeli üzərinə keçir.
+[ ] 4.2 requireAuth() və requireRole('admin') middleware-ni bütün admin route və
+        controller-lərə tətbiq et.
+[ ] 4.3 Bütün state dəyişən formalar üçün CSRF token yarat və yoxla.
+[ ] 4.4 Email, parol, tarix, qiymət, stok, status və ID-lərə server-side validasiya et.
+[ ] 4.5 Secure session parametrləri və login sonrası session_regenerate_id tətbiq et.
+[ ] 4.6 Login/reset endpoint-lərinə rate limiting və vahid xəta mesajı əlavə et.
+[ ] 4.7 Reset parolu tamamla: token hash, expiry, single-use, e-poçt, server
+        validasiyası və tokenin silinməsi.
+[ ] 4.8 Output escape, MIME/ölçü/image yoxlaması, random fayl adı və təhlükəsiz
+        upload storage tətbiq et.
+[ ] 4.9 HTTPS, Secure/HttpOnly/SameSite cookie və security headers qur.
+
+5. ADMIN PANEL (P1)
+-------------------
+[ ] 5.1 Dashboard-da real məhsul, stok, sifariş, gəlir və son sifariş statistikası.
+[ ] 5.2 Kateqoriya CRUD: yarat, siyahı, edit, sil/soft delete, slug, şəkil, parent.
+[ ] 5.3 Məhsul CRUD: DB kateqoriyaları, create/edit/delete, stok, endirim, status,
+        cover və gallery şəkilləri.
+[ ] 5.4 Məhsul siyahısına axtarış, filter, sort, pagination və bulk əməliyyatları.
+[ ] 5.5 Slider: edit, status toggle, sort order, təhlükəsiz silmə, CSRF/auth.
+[ ] 5.6 Müştəri idarəetməsi: siyahı, axtarış, hesab statusu.
+[ ] 5.7 Sifariş statusları: pending, paid, processing, shipped, delivered, cancelled.
+[ ] 5.8 Admin dəyişiklikləri üçün audit log yarat.
+
+6. STOREFRONT VƏ KATALOQ (P1)
+-----------------------------
+[ ] 6.1 Ana səhifədə kateqoriya və seçilmiş məhsulları DB-dən göstər.
+[ ] 6.2 Məhsul siyahısı: kateqoriya, qiymət, stok, axtarış filteri və pagination.
+[ ] 6.3 Slug ilə məhsul detalı: gallery, variant, stok, təsvir, oxşar məhsullar, 404.
+[ ] 6.4 Bütün shop/detail/wishlist/checkout .html səhifələrini PHP route/view-a çevir.
+[ ] 6.5 Axtarışı endpoint-ə bağla, minimum simvol və pagination qaydası yaz.
+[ ] 6.6 Wishlist: login tələb et, əlavə/silmə/siyahı funksiyasını qur.
+
+7. SƏBƏT, CHECKOUT VƏ SİFARİŞ (P1)
+-----------------------------------
+[ ] 7.1 Səbətə əlavə, miqdar dəyişmə, silmə və mini-cart totalını qur.
+[ ] 7.2 Qiymət və stoku hər sorğuda server-də yenidən yoxla.
+[ ] 7.3 Ünvan CRUD və checkout-da ünvan seçimi.
+[ ] 7.4 Subtotal, endirim, çatdırılma, vergi və yekunu server-də hesabla;
+        sifariş yaratmada transaction istifadə et.
+[ ] 7.5 Sifarişdə stok azalt/rezerv et, order_items snapshot və idempotency yarat.
+[ ] 7.6 Ödəmə provayderini sandbox, imzalı webhook və payment status update ilə inteqrasiya et.
+[ ] 7.7 Ödəniş xətası/ləğv/təkrar callback və stok bərpasını idarə et.
+[ ] 7.8 Dashboard-da yalnız sifariş sahibinə tarixçə, detal və izləmə göstər.
+[ ] 7.9 Sifariş/reset/status e-poçtları və göndəriş failure log-u əlavə et.
+
+8. KEYFİYYƏT, TEST VƏ YAYIM (P2)
+---------------------------------
+[ ] 8.1 Unit test: validator, qiymət hesablaması, slug, auth/role və CSRF.
+[ ] 8.2 Integration test: auth, məhsul CRUD, səbət, checkout, order transaction,
+        payment webhook və parol reset.
+[ ] 8.3 Manual qəbul checklist: mobil/desktop, qonaq/customer/admin, boş hal,
+        invalid input, 403/404/500, upload, stok və e-mail.
+[ ] 8.4 PSR-12 linter/formatter, statik analiz, test DB-si və CI pipeline.
+[ ] 8.5 İndekslər, N+1 query yoxlaması, WebP/image resize, pagination və cache.
+[ ] 8.6 Backup/restore, şifrəli DB/upload backup, monitoring və health check sənədi.
+[ ] 8.7 Production deployment: HTTPS, .env, permissions, scheduler/queue, logs,
+        rollback planı.
+[ ] 8.8 Privacy/cookie/terms, kontakt və return məlumatlarını əlavə et.
+
+9. SON TASK — LAYİHƏ HAZIRDIR (P0, FINAL GATE)
+------------------------------------------------
+[ ] 9.1 Staging-də end-to-end qəbul testi keçir:
+        admin login -> kateqoriya -> məhsul -> storefront filter/detal -> səbət
+        -> checkout -> sandbox payment/webhook -> sifariş statusu -> customer
+        dashboard/e-mail.
+        Bütün P0/P1 tasklar bağlı, kritik/major bug yoxdur, backup/restore və
+        production checklist təsdiqlənib. Bu task tamamlandıqda layihə HAZIRDIR.
