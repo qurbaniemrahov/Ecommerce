@@ -25,7 +25,7 @@
         <section class="category-card">
           <div class="category-card__head"><h5>Kateqoriya yarat</h5></div>
           <div class="category-card__body">
-            <form action="#" method="post">
+            <form action="../../Admin/app/Http/Controllers/categories/dashboard_categories_controller.php" method="post">
               <div class="form-group"><label for="category-name">Kateqoriya adı</label><input id="category-name" name="category_name" class="form-control" type="text" required></div>
               <div class="form-group"><label for="category-slug">Slug</label><input id="category-slug" name="category_slug" class="form-control" type="text" placeholder="elektronika"></div>
               <div class="form-group"><label for="category-image">Şəkil</label><input id="category-image" name="category_image" class="form-control" type="file" accept="image/*"></div>

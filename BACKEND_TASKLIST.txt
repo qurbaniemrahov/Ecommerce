@@ -41,7 +41,7 @@ P2 keyfiyyət və yayıma hazırlıq
 
 2. ARXİTEKTURA VƏ VERİLƏNLƏR BAZASI (P0)
 -----------------------------------------
-[ ] 2.1 Vahid users cədvəli qur: id, ad, soyad, unique email, password hash,
+[ x] 2.1 Vahid users cədvəli qur: id, ad, soyad, unique email, password hash,
         role (admin/customer), status və timestamp-lər.
 [ ] 2.2 Mövcud signup/admin_user məlumatını migration ilə users-a köçür.
 [ ] 2.3 Versiyalanmış migration runner, transaction, backup/rollback və seed
